@@ -1,0 +1,94 @@
+     # /*********************** Landing / Main ********************/
+
+platon_main_landing:
+    path: /
+    controller: App\Controller\LandingController::index
+
+platon_main_home:
+    path: /home
+    controller: App\Controller\LandingController::home
+
+
+
+
+    # /*********************** Log ********************/
+platon_login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+platon_logout:
+    path: /logout
+    controller: App\Controller\SecurityController::logout
+
+
+
+
+    # /*********************** HowTo ********************/
+
+platon_howto_main:
+    path : /how/to
+    controller : App\Controller\HowToController::index
+
+
+
+
+
+    # /*********************** Catalog ********************/
+
+platon_catalog_main:
+    path : /catalog
+    controller : App\Controller\CatalogController::index
+
+
+
+
+
+
+    # /*********************** User ********************/
+
+platon_user_index:
+    path : /user
+    controller : App\Controller\UserController::index
+
+platon_user_new:
+    path : /user/new
+    controller : App\Controller\UserController::new
+
+platon_user_show:
+    path : /user/{id}
+    controller : App\Controller\UserController::show
+
+platon_user_edit:
+    path : /user/{id}/edit
+    controller : App\Controller\UserController::edit
+
+platon_user_delete:
+    path : /user/{id}/delete
+    controller : App\Controller\UserController::delete
+
+
+    # /*********************** registration ********************/
+platon_register:
+    path : /register
+    controller : App\Controller\RegistrationController::register
+
+
+######################################################################
+#                            Pages Statiques                        #
+#####################################################################
+
+platon_main_cgu:
+    path: /cgu
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        templates: 'statique/cgu.html.'
+
+platon_main_contact:
+    path: /contact
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        templates: 'statique/contact.html.'
+
+
+
+

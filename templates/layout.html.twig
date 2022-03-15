@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+   
+        {% block body %}
+            <header>
+                <nav>
+                    {% if is_granted('ROLE_USER') %}
+                        <p>Bonjour {{app.user.prenom}}</p>
+                        <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    {% else %}
+                        <a href="{{ path('app_login')}}">Se connecter</a>
+                        <a href="{{ path('app_how_to')}}">Comment ça marche</a>
+                        <a href="{{ path('app_catalog')}}">Catalogue</a>
+                      
+                    
+                    {% endif %}            
+                </nav>
+                        <a href="{{ path('app_register')}}">Inscription</a>
+                        
+            </header>
+
+            
+
+            <main>
+
+                {% block innerContent %}
+                {% endblock %}
+
+            </main>
+
+            <footer>
+            <a href="{{ path('platon_main_cgu')}}">CGU</a>
+            <a href="{{ path('platon_main_contact')}}">Contact</a>
+
+            
+
+            </footer>
+        {% endblock %}
+    
+
