@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Création fiche utilisateur - {{ parent() }}{% endblock title %}
+
+{% block innerContent %}
+
+<h2>Fiche Profile</h2>
+
+{{form_start(form,
+{
+    attr:
+    {
+        'novalidate': 'novalidate',
+    }
+}
+
+)}}
+    {{ form_rest(form)}}
+    {{form_end(form)}}
+
+{% endblock innerContent %}

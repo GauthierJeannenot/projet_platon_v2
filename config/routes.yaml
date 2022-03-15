@@ -31,19 +31,6 @@ platon_howto_main:
 
 
 
-
-
-    # /*********************** Catalog ********************/
-
-platon_catalog_main:
-    path : /catalog
-    controller : App\Controller\CatalogController::index
-
-
-
-
-
-
     # /*********************** User ********************/
 
 platon_user_index:
@@ -68,6 +55,7 @@ platon_user_delete:
 
 
     # /*********************** registration ********************/
+
 platon_register:
     path : /register
     controller : App\Controller\RegistrationController::register
@@ -76,18 +64,54 @@ platon_register:
 ######################################################################
 #                            Pages Statiques                        #
 #####################################################################
+platon_quisommesnous:
+    path: /qui-sommes-nous
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'statique/quisommesnous.html.'
 
-platon_main_cgu:
+platon_mentionslegales:
+    path: /mentions-legales
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'statique/mentionslegales.html.'
+
+
+platon_cgu:
     path: /cgu
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
     defaults:
-        templates: 'statique/cgu.html.'
+        template: 'statique/cgu.html.'
 
-platon_main_contact:
+platon_contact:
     path: /contact
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
     defaults:
-        templates: 'statique/contact.html.'
+        template: 'statique/contact.html.'
+
+platon_informationslegales:
+    path: /informations-legales
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'statique/informationslegales.html.'
+
+platon_parametresdescookies:
+    path: /parametres-des-cookies
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'statique/parametresdescookies.html.'
+
+platon_commentcamarche:
+    path: /comment-ca-marche
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'statique/commentcamarche.html.'
+
+platon_lachartedeplaton:
+    path: /la-charte-de-platon
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'statique/lachartedeplaton.html.'
 
 
 
