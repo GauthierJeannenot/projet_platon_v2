@@ -33,11 +33,27 @@ platon_howto_main:
 
 
 
-    # /*********************** Catalog ********************/
+    # /*********************** Catalogue ********************/
 
-platon_catalog_main:
+platon_catalogue_index:
     path : /catalog
-    controller : App\Controller\CatalogController::index
+    controller : App\Controller\CatalogueController::index
+
+platon_catalogue_new:
+    path : /catalog/new
+    controller : App\Controller\CatalogueController::new
+
+platon_catalogue_show:
+    path : /catalog/{id}
+    controller : App\Controller\CatalogueController::show
+
+platon_catalogue_edit:
+    path : /catalog/{id}/edit
+    controller : App\Controller\CatalogueController::edit
+
+platon_catalogue_delete:
+    path : /catalog/{id}/delete
+    controller : App\Controller\CatalogueController::delete
 
 
 
@@ -77,17 +93,7 @@ platon_register:
 #                            Pages Statiques                        #
 #####################################################################
 
-platon_main_cgu:
-    path: /cgu
-    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    defaults:
-        templates: 'statique/cgu.html.'
 
-platon_main_contact:
-    path: /contact
-    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    defaults:
-        templates: 'statique/contact.html.'
 
 
 

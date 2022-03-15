@@ -24,6 +24,10 @@ class Catalogue
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(targetEntity=SubCategories::class, mappedBy="catalogue")
+     */
+    private $subCategories;
 
     public function __construct()
     {
