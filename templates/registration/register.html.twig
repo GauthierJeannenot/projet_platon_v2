@@ -1,26 +1,73 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
 
-    <section id="inscription">
+	<section id="inscription">
 
-      <div class="container">
+		<div class="container">
 
-        <form action="" class="offset-md-3 col-md-6 col-12 formulaire">
-          <h2>Inscription</h2>
+			<form action="" class="offset-md-3 col-md-6 col-12 formulaire">
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
+				<h2>Inscription</h2>
+
+				{{ form_start(registrationForm) }}
+
+				<div class="name row col-12 justify-content-between">
+					<input class="col-lg-5 col-12 prenom" type="text" placeholder="Prénom *">
+
+					<input class="col-lg-5 col-12" type="text" placeholder="Nom *">
+				</div>
+
+				<div class="mail">
+					<input class="" type="email" placeholder="Adresse mail *">
+				</div>
+
+				<div class="mdp">
+					<input class="" type="text" placeholder="Mot de passe *">
+
+					<img src="icones/mdp_hidden.svg" alt="oeilferme">
+				</div>
+
+				<div class="confmdp">
+					<input class="" type="text" placeholder="Confirmer mot de passe *">
+
+					<img src="icones/mdp_hidden.svg" alt="oeilferme">
+				</div>
+
+				<div class="cgu d-flex">
+					<input type="checkbox">
+					<a href="#">J'accepte les conditions générales d'utilisation*
+					</a>
+				</div>
+
+				<div class="agemin d-flex">
+					<input type="checkbox">
+					<p>Je certifie avoir plus de 18 ans *</p>
+				</div>
+
+				<div class="d-flex justify-content-between">
+					<button class="inscription" type="submit">Déjà inscrit</button>
+					<button type="button" class="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">S'inscrire</button>
+				</div>
+
+
+				{{ form_row(registrationForm.email) }}
+				{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+				{{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+				<button type="submit" class="btn">Register</button>
+
+				{{ form_end(registrationForm) }}
+			</form>
+		</div>
+
+	</section>
 {% endblock %}
