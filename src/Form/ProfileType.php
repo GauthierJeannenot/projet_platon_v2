@@ -16,21 +16,27 @@ class ProfileType extends AbstractType
         $builder
             ->add('classType')
             ->add('bio')
-            ->add('personnality')
             // ->add('knowledges')
-            ->add('preciseKnowledge')
             ->add('opinion')
+            ->add('personnality')
             // ->add('subCategories')
             // ->add('personnalities')
-            
-            // ->add('knowledges', ChoiceType::class, [
+             ->add('knowledges', ChoiceType::class, [
+                 'choices'  => [
+                     'Maybe' => null,
+                     'Yes' => true,
+                     'No' => false,
+                 ],
+             ])
+            //  ->add('preciseKnowledge', ChoiceType::class, [
             //     'choices'  => [
             //         'Maybe' => null,
             //         'Yes' => true,
             //         'No' => false,
             //     ],
             // ])
-            ->add('sauver', SubmitType::class)
+            //  ->add('preciseKnowledge')
+             ->add('sauver', SubmitType::class)
            
         ;
     }

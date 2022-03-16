@@ -97,13 +97,44 @@ platon_quisommesnous:
     path: /qui-sommes-nous
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
     defaults:
-        template: 'statique/quisommesnous.html.'
+        template: 'statique/quisommesnous.html.twig'
 
 platon_mentionslegales:
     path: /mentions-legales
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
     defaults:
-        template: 'statique/mentionslegales.html.'
+        template: 'statique/mentionslegales.html.twig'
+
+# platon_mentionslegales:
+#     path: /cgu
+#     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+#     defaults:
+#         template: 'statique/cgu.html.twig'
+
+# platon_mentionslegales:
+#     path: /contact
+#     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+#     defaults:
+#         template: 'statique/contact.html.twig'
+
+# platon_mentionslegales:
+#     path: /informationslegales
+#     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+#     defaults:
+#         template: 'statique/informationslegales.html.twig'
+
+# platon_mentionslegales:
+#     path: /parametresdescookies
+#     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+#     defaults:
+#         template: 'statique/parametresdescookies.html.twig'
+
+# platon_mentionslegales:
+#     path: /lachartedeplaton
+#     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+#     defaults:
+#         template: 'statique/lachartedeplaton.html.twig'
+
 
 
 

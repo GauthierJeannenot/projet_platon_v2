@@ -1,0 +1,144 @@
+/* BODY */ 
+
+body{
+    font-family: 'spartan';
+    background-color: #fbfbfb;
+}
+
+ul{
+    padding: 0; 
+    list-style: none; 
+}
+
+/* NAV */
+
+
+nav{
+    background-color: #25366f;
+}
+
+nav li a{
+    color: #fbfbfb;
+}
+
+nav a{
+    color: #fbfbfb;
+}
+
+nav input{
+    background-color: #fbfbfb;
+    border: none !important;
+}
+
+nav a:hover{
+    color:#E5CFA9;
+    text-decoration-line: underline;
+}
+
+
+/* MAIN */
+
+h2{ 
+    color: #fbfbfb;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+a{ 
+    color: #e5cfa9;
+}
+
+form{ 
+    background-color: #25366f;
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    border-radius: 20px;
+    margin-top: 10em;
+    margin-bottom: 10em;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: content-box;
+    padding: 70px 70px 70px 70px;
+} 
+   
+input[type="email"]{
+    border-radius: 5px;
+    border: solid 2px #e5cfa9;
+    font-size: smaller;
+    padding: 8px 0px 8px 8px;
+}
+   
+input[type="password"]{
+    border-radius: 5px;
+    border: solid 2px #e5cfa9;
+    margin-top: 20px;
+    font-size: smaller;
+    padding: 8px 0px 8px 8px;
+}
+
+.inscription{
+    color: #e5cfa9;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+}
+
+.inscription:hover{
+    color: #fbfbfb;
+}
+
+.connexion{
+    color: #25366F;
+    background-color: #e5cfa9;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 15px;
+    box-shadow: 2px 2px 3px #202020;
+}
+
+.connexion:hover{
+    color: #25366F;
+    background-color: #fbfbfb
+}
+   
+.mdp{
+    color: #fbfbfb;
+    font-size: x-small;
+    margin: 10px 0px 40px 0px;   
+}
+
+.mdp:hover{
+    color: #e5cfa9;
+}
+
+
+/* FOOTER */
+
+footer h4{
+    font-weight: bold;
+}
+
+footer{
+    padding: 50px 0px 50px 0px;
+    color: #fbfbfb;
+    background-color: #25366F;
+}
+
+footer a{
+    color: #fbfbfb;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #E5CFA9;
+}
+
+footer .RS{
+    margin-top: 25px;
+    display: flex;
+}
+
+footer .RS img{
+    margin-right: 40px;
+}
