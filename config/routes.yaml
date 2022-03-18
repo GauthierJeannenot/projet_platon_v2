@@ -139,5 +139,7 @@ platon_lachartedeplaton:
 
 
 
-
+api_data:
+    path: /api_data
+    controller: App\Controller\Api©ontroller::getData
 

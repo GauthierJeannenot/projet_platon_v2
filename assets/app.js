@@ -6,7 +6,22 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
 
-// start the Stimulus application
-import './bootstrap';
+
+import './styles/connexion.css';
+import './styles/inscription.css';
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { App } from './component/App';
+
+
+
+let reactRoot = document.getElementById('root')
+
+if(reactRoot != undefined){
+   
+    ReactDOM.render(<App/>, reactRoot);
+}
+
