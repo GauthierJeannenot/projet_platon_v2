@@ -23,7 +23,8 @@
                     <a href="{{ path('app_catalogue_edit', {'id': catalogue.id}) }}">edit</a>
                 </td>
             </tr>
-            <tr><td>
+            <tr>
+            <td>
             {% for subCate in catalogue.subCategories %}
                 {{ subCate.name }}
             {% endfor %}

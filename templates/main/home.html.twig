@@ -1,21 +1,36 @@
 {% extends 'layout.html.twig' %}
 
-
-{% block title %}Welcome!
-{% endblock %}
-
-{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-{% block stylesheets %}
-	{# {{ encore_entry_link_tags('app') }} #}
-{% endblock %}
-
-{% block javascripts %}
-	{# {{ encore_entry_script_tags('app') }} #}
-{% endblock %}
-
-{% block body %}
-	<h1>Bonjour
-		{{app.user.prenom}}</h1>
-
-
-{% endblock %}
+        {% block innerContent %}
+        <h1>Bonjour {{app.user.prenom}}</h1>
+		<h1>Cours prévu à donner</h1>
+        <div>
+            {% for ticket in app.user.tickets %}
+                {% if ticket.status is same as(0) %}
+                    {{ticket.receiver.prenom}} <br>
+                    {{ticket.content}} <br>
+                    {{ticket.status}}
+                {% endif %}
+            {% endfor %}
+        </div>
+		<h1>cours prévus à recevoir</h1>
+        <div>
+            {% for ticket in app.user.tickets %}
+                {% if ticket.status is same as(0) %}
+					<p>Vous avez cours avec :</p>
+                    {{ticket.receiver.prenom}} <br>
+                    {{ticket.content}} <br>
+                    {{ticket.status}}
+                {% endif %}
+            {% endfor %}
+        </div>
+		<h1>Cours passés</h1>
+		<div>
+            {% for ticket in app.user.tickets %}
+                {% if ticket.status is same as(3) %}
+                    {{ticket.receiver.prenom}} <br>
+                    {{ticket.content}} <br>
+                    {{ticket.status}}
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endblock %}
