@@ -1,0 +1,81 @@
+/* BODY */ 
+body{
+    font-family: 'Spartan';
+    font-variant-ligatures: no-common-ligatures;
+}
+
+ul{
+    padding: 0; 
+    list-style: none; 
+}
+
+
+/* NAV */
+
+#modale .categorie{
+    color: #E5CFA9;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.marge{
+    margin-top: 40px;
+}
+
+.marge_between{
+    margin-top: 20px;
+}
+
+#modale{
+    color: #f3f3f3;
+    margin-bottom: 7px;
+}
+
+#modale .administratif{
+    margin: 20px 0px;
+}
+
+#modale a{
+    color: #f3f3f3;
+    font-weight: 400;
+}
+
+#modale a:hover{
+    color: #E5CFA9;
+}
+
+#modale li{
+    margin-top: 10px;
+}
+
+/* FOOTER */
+
+h4{
+    font-weight: bold;
+}
+
+footer{
+    padding: 50px 0px 50px 0px;
+    color: white;
+    background-color: #25366F;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #E5CFA9;
+}
+
+footer .RS{
+    margin-top: 25px;
+    display: flex;
+}
+
+footer .RS img{
+    margin-right: 40px;
+}
+
+

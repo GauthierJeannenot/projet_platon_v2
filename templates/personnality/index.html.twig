@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personnality index{% endblock %}
+
+{% block body %}
+    <h1>Personnality index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for personnality in personnalities %}
+            <tr>
+                <td>{{ personnality.id }}</td>
+                <td>{{ personnality.name }}</td>
+                <td>
+                    <a href="{{ path('app_personnality_show', {'id': personnality.id}) }}">show</a>
+                    <a href="{{ path('app_personnality_edit', {'id': personnality.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_personnality_new') }}">Create new</a>
+{% endblock %}

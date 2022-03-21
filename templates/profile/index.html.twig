@@ -1,21 +1,30 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Création fiche utilisateur - {{ parent() }}{% endblock title %}
+{% block title %}Création fiche utilisateur -
+	{{ parent() }}
+{% endblock title %}
 
 {% block innerContent %}
 
-<h2>Fiche Profile</h2>
+	<h2>Fiche Profile</h2>
 
-{{form_start(form,
-{
-    attr:
-    {
-        'novalidate': 'novalidate',
-    }
-}
 
-)}}
-    {{ form_rest(form)}}
-    {{form_end(form)}}
+	{{form_start(form)}}
+
+	<hr>
+
+	{{form_row(form.classType)}}
+
+	<hr>
+	{{form_row(form.bio)}}
+	<hr>
+	{{form_row(form.opinion)}}
+	<hr>
+	{{form_row(form.personnality)}}
+	<hr>
+
+	{{form_row(form.catalogues)}}
+
+	{{form_end(form)}}
 
 {% endblock innerContent %}

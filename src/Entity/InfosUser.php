@@ -30,21 +30,6 @@ class InfosUser
     private $bio;
 
     /**
-     * @ORM\Column(type="array", nullable=true)
-     */
-    private $personnality = [];
-
-    /**
-     * @ORM\Column(type="array", nullable=true)
-     */
-    private $knowledges = [];
-
-    /**
-     * @ORM\Column(type="array", nullable=true)
-     */
-    private $preciseKnowledge = [];
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $opinion;
@@ -57,14 +42,18 @@ class InfosUser
     /**
      * @ORM\ManyToMany(targetEntity=Personnality::class, mappedBy="infosUser")
      */
-    private $personnalities;
+    private $personnality;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Catalogue::class)
+     */
+    private $catalogues;
 
     public function __construct()
     {
-        $this->catalogue = new ArrayCollection();
         $this->subCategories = new ArrayCollection();
-        $this->personnalities = new ArrayCollection();
+        $this->personnality = new ArrayCollection();
+        $this->catalogues = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -92,42 +81,6 @@ class InfosUser
     public function setBio(?string $bio): self
     {
         $this->bio = $bio;
-
-        return $this;
-    }
-
-    public function getPersonnality(): ?array
-    {
-        return $this->personnality;
-    }
-
-    public function setPersonnality(?array $personnality): self
-    {
-        $this->personnality = $personnality;
-
-        return $this;
-    }
-
-    public function getKnowledges(): ?array
-    {
-        return $this->knowledges;
-    }
-
-    public function setKnowledges(?array $knowledges): self
-    {
-        $this->knowledges = $knowledges;
-
-        return $this;
-    }
-
-    public function getPreciseKnowledge(): ?array
-    {
-        return $this->preciseKnowledge;
-    }
-
-    public function setPreciseKnowledge(?array $preciseKnowledge): self
-    {
-        $this->preciseKnowledge = $preciseKnowledge;
 
         return $this;
     }
@@ -171,15 +124,15 @@ class InfosUser
     /**
      * @return Collection<int, Personnality>
      */
-    public function getPersonnalities(): Collection
+    public function getPersonnality(): Collection
     {
-        return $this->personnalities;
+        return $this->personnality;
     }
 
     public function addPersonnality(Personnality $personnality): self
     {
-        if (!$this->personnalities->contains($personnality)) {
-            $this->personnalities[] = $personnality;
+        if (!$this->personnality->contains($personnality)) {
+            $this->personnality[] = $personnality;
             $personnality->addInfosUser($this);
         }
 
@@ -188,9 +141,33 @@ class InfosUser
 
     public function removePersonnality(Personnality $personnality): self
     {
-        if ($this->personnalities->removeElement($personnality)) {
+        if ($this->personnality->removeElement($personnality)) {
             $personnality->removeInfosUser($this);
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Catalogue>
+     */
+    public function getCatalogues(): Collection
+    {
+        return $this->catalogues;
+    }
+
+    public function addCatalogue(Catalogue $catalogue): self
+    {
+        if (!$this->catalogues->contains($catalogue)) {
+            $this->catalogues[] = $catalogue;
+        }
+
+        return $this;
+    }
+
+    public function removeCatalogue(Catalogue $catalogue): self
+    {
+        $this->catalogues->removeElement($catalogue);
 
         return $this;
     }

@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Register
 {% endblock %}
@@ -8,65 +8,67 @@
 		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
 	{% endfor %}
 
+
 	<section id="inscription">
 
 		<div class="container">
 
-			<form action="" class="offset-md-3 col-md-6 col-12 formulaire">
 
-				<h2>Inscription</h2>
+			<h2>Inscription</h2>
 
-				{{ form_start(registrationForm) }}
+			{{ form_start(registrationForm,{attr:{'class':"offset-md-3 col-md-6 col-12 formulaire"}}) }}
 
-				<div class="name row col-12 justify-content-between">
-					<input class="col-lg-5 col-12 prenom" type="text" placeholder="Prénom *">
+			<div class="name row col-12 justify-content-between">
 
-					<input class="col-lg-5 col-12" type="text" placeholder="Nom *">
-				</div>
+				{{ form_widget(registrationForm.prenom, {
+					  attr: {
+						  'class': 'col-lg-5 col-12 prenom'
+					  }
+					}) }}
+				{# <input class="col-lg-5 col-12 prenom" type="text" placeholder="Prénom *"> #}
+				{{ form_widget(registrationForm.nom, {
+					  attr: {
+						  'class': 'col-lg-5 col-12'
+					  }
+					}) }}
+			</div>
+			<div class="mail">
+				{{ form_widget(registrationForm.email) }}
+			</div>
 
-				<div class="mail">
-					<input class="" type="email" placeholder="Adresse mail *">
-				</div>
+			<div>
+				{{ form_widget(registrationForm.password.first) }}
 
-				<div class="mdp">
-					<input class="" type="text" placeholder="Mot de passe *">
+				<img src="icones/mdp_hidden.svg" alt="oeilferme">
+			</div>
 
-					<img src="icones/mdp_hidden.svg" alt="oeilferme">
-				</div>
+			<div class="confmdp">
+				{{ form_widget(registrationForm.password.second, {
+					  attr: {
+						  'class': ''
+					  }
+					}) }}
+				<img src="icones/mdp_hidden.svg" alt="oeilferme">
+			</div>
 
-				<div class="confmdp">
-					<input class="" type="text" placeholder="Confirmer mot de passe *">
+			<div class="cgu d-flex">
+				{{ form_widget(registrationForm.condition) }}
+				<a href="#">J'accepte les conditions générales d'utilisation*
+				</a>
+			</div>
 
-					<img src="icones/mdp_hidden.svg" alt="oeilferme">
-				</div>
+			<div class="agemin d-flex">
+				{{ form_widget(registrationForm.agreeTerms) }}
+				<p>Je certifie avoir plus de 18 ans *</p>
+			</div>
 
-				<div class="cgu d-flex">
-					<input type="checkbox">
-					<a href="#">J'accepte les conditions générales d'utilisation*
-					</a>
-				</div>
-
-				<div class="agemin d-flex">
-					<input type="checkbox">
-					<p>Je certifie avoir plus de 18 ans *</p>
-				</div>
-
-				<div class="d-flex justify-content-between">
-					<button class="inscription" type="submit">Déjà inscrit</button>
-					<button type="button" class="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">S'inscrire</button>
-				</div>
+			<div class="d-flex justify-content-end">
+				<button type="submit" class="btn-sm submit">S'inscrire</button>
+			</div>
 
 
-				{{ form_row(registrationForm.email) }}
-				{{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-				{{ form_row(registrationForm.agreeTerms) }}
+			{{ form_end(registrationForm) }}
 
-				<button type="submit" class="btn">Register</button>
-
-				{{ form_end(registrationForm) }}
-			</form>
 		</div>
 
 	</section>

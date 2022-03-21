@@ -15,7 +15,8 @@ class ProfileController extends AbstractController
 {
     private $entityManager;
 
-    public function __construct(EntityManagerInterface $entityManager){
+    public function __construct(EntityManagerInterface $entityManager)
+    {
         $this->entityManager = $entityManager;
     }
     /**
@@ -24,22 +25,30 @@ class ProfileController extends AbstractController
 
     public function index(Request $request): Response
     {
-        $InfosUser = new InfosUser();
+        $InfosUser = $this->getUser()->getInfosUser();
+        if (!$InfosUser) {
+            $InfosUser = new InfosUser();
+        }
+
+
         $form = $this->createForm(ProfileType::class, $InfosUser);
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
 
             $InfosUser = $form->getData();
+            $this->getUser()->setInfosUser($InfosUser);
             $this->entityManager->persist($InfosUser);
             $this->entityManager->flush();
         }
 
-        return $this->render('profile/index.html.twig',
-        
-        [
-            'form' => $form->createView()
-        ]);
+        return $this->render(
+            'profile/index.html.twig',
+
+            [
+                'form' => $form->createView()
+            ]
+        );
     }
 }

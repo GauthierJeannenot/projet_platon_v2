@@ -1,0 +1,171 @@
+/* BODY */ 
+body{
+    font-family: 'Spartan';
+    font-variant-ligatures: no-common-ligatures;
+    background-color: #fbfbfb;
+}
+
+ul{
+    padding: 0; 
+    list-style: none; 
+}
+
+/* NAV */
+
+nav{
+    background-color: #25366f;
+}
+
+nav li a{
+    color: #fbfbfb;
+}
+
+nav a{
+    color: #fbfbfb;
+}
+
+nav input{
+    background-color: #fbfbfb;
+    border: none !important;
+}
+
+nav a:hover{
+    color:#E5CFA9;
+    text-decoration-line: underline;
+}
+
+
+/* MAIN */
+
+h2 {
+    font-size: 62px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: #25366F;
+}
+
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+.medaille {
+    position: absolute;
+    top: 9.5rem;
+    left: 10rem;
+}
+
+.membercard {
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: #d3d3d3 1px 1px 4px;
+    margin-bottom: 50px;
+}
+
+
+.typecours {
+    border-radius: 50px;
+    border: solid 2px;
+    border-color: #E5CFA9;
+    padding: 2px 7px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.typecours img {
+    padding-left: 5px;
+
+}
+
+.photobadge {
+    position: relative;
+}
+
+.btn {
+    color: #E5CFA9;
+    background-color: #25366F;
+    border-radius: 5px;
+    box-shadow: 1px 1px;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    color: #25366f;
+    background-color: #fbfbfb;
+    border-color: #25366f;
+}
+
+.voirprofil:hover > a > svg > path {
+    stroke : #fbfbfb;
+}
+
+
+.avismoy img {
+    padding-right: 5px;
+}
+
+.ville {
+    padding: 10px;
+    padding-top: -10px;
+}
+
+.ville img {
+    padding-right: 5px;
+}
+
+.ville p {
+    margin-bottom: 0px;
+}
+
+#profilcard article {
+    margin: 15px 1px;
+}
+
+.pagination .pagination-sm{
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.pagination ul li a{
+    color: #B3BEE6;
+}
+
+/* FOOTER */
+
+h4{
+    font-weight: bold;
+}
+
+footer{
+    padding: 50px 0px 50px 0px;
+    color: white;
+    background-color: #25366F;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #E5CFA9;
+}
+
+
+footer .RS{
+    margin-top: 25px;
+    display: flex;
+}
+footer .RS img{
+    margin-right: 40px;
+}

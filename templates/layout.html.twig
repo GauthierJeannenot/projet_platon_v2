@@ -28,14 +28,66 @@
 
 	<footer>
 
-		<a href="{{ path('platon_quisommesnous')}}">Qui sommes nous?</a>
-		<a href="{{ path('platon_mentionslegales')}}">Mentions légales</a>
-		<a href="{{ path('platon_cgu')}}">CGU</a>
-		<a href="{{ path('platon_contact')}}">Contact</a>
-		<a href="{{ path('platon_informationslegales')}}">Informations légales</a>
-		<a href="{{ path('platon_parametresdescookies')}}">Paramètres des cookies</a>
-		<a href="{{ path('platon_lachartedeplaton')}}">la charte de platon</a>
-		#}
 
-	</footer>
-{% endblock %}
+		<div class="container">
+			<div class="row">
+				<div class="col-3">
+					<ul>
+						<li>
+							<h4>À propos</h4>
+						</li>
+						<li>
+							<a href="{{ path('platon_quisommesnous')}}">Qui sommes nous ?</a>
+						</li>
+						<li>
+							<a href="{{ path('platon_mentionslegales')}}">Mention légales</a>
+						</li>
+						<li>
+							<a href="{{ path('platon_cgu')}}">CGU</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-3">
+					<ul>
+						<li>
+							<h4>Contact</h4>
+						</li>
+						<li>
+							<a href="{{ path('platon_contact')}}">Contactez-nous</a>
+						</li>
+						<li>
+							<a href="{{ path('platon_informationslegales')}}">Informations légales</a>
+						</li>
+						<li>
+							<a href="{{ path('platon_parametresdescookies')}}">Paramètres des cookies</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-3">
+					<ul>
+						<li>
+							<h4>Platon</h4>
+						</li>
+						<li>
+							<a href="{{ path('app_how_to')}}">Comment ça marche ?</a>
+						</li>
+						<li>
+							<a href="{{ path('platon_lachartedeplaton')}}">La charte de Platon</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-3">
+					<img src="logo/platon_jaune.svg" alt="Logo Platon">
+					<div class="RS">
+						<a href="#"><img src="icones/facebook.png" alt="Logo Facebook"></a>
+						<a href="#"><img src="icones/instagram.png" alt="Logo Instagram"></a>
+					</div>
+				</div>
+			</div>
+
+
+		</footer>
+	{% endblock %}
