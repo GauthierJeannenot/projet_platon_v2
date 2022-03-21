@@ -5,9 +5,31 @@
 
 {% endblock %}
 
-{% block body %}
-<h1>bonjour</h1>
-<div id='root'></div>
+{% block innerContent %}
+{# <h1>bonjour</h1>
+<div id='root'></div> #}
+
+
+<header>
+
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="titre text-center text-white">
+            <h1>Échangez vos savoirs</h1>
+            <h2>On a tous quelque chose à transmettre !</h2>
+            <a class="btn shadow" href="{{ path('app_register')}}">Inscription</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-1.99998 142.507L960.955 0L1920 142.507H-1.99998Z" fill="#FBFBFB"/>
+    </svg>
+      
+    
+  </header>
 {% endblock %}
 
 
