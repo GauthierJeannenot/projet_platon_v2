@@ -1,0 +1,69 @@
+nav {
+  --bleu-platon : #25366F;
+  --blanc-statue : #FBFBFB ;
+  --sable-grec :#E5CFA9 ; 
+  --black-swan : #09101F;
+}
+
+.blog{
+  padding-top: 1vh;
+}
+nav {
+  padding: 1rem;
+  font-family: 'Spartan';
+  position: relative;
+}
+nav a{
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color:var(--black-swan);
+}
+
+nav svg {
+ margin-left: 1rem;
+}
+
+nav input {
+  height: 2.2rem;
+  padding: 1.2rem 1.5rem 1.2rem 1rem;
+  background: url(Vectorloupe.svg) no-repeat;
+  background-position: 95%;
+  border: solid 1.5px var(--bleu-platon);
+  border-radius: 0.4rem;
+  width: 20rem;
+}
+nav input::placeholder {
+  color:#B3BEE6;
+  font-weight: 400;
+}
+
+nav button {
+  font-weight: 600;
+  background-color: #FBFBFB;
+  border: 2px solid var(--bleu-platon);
+  border-radius: 0.4rem;
+  padding: 0.7rem 1rem 0.7rem 1rem;
+  color: var(--bleu-platon);
+
+  margin-right: 4rem;
+}
+
+nav li, nav input, nav+a {
+  margin-right: 2rem;
+}
+
+/*------------ SUB NAV --------------*/
+.hidden{
+  display: none;
+}
+.seen{
+  display: block;
+  height: 40vh;
+  position: absolute;
+  top: 100px;
+  left: 0px;
+
+  background:#25366F;
+  color: #E5CFA9;
+}

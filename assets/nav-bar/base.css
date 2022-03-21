@@ -1,0 +1,37 @@
+/* BODY */ 
+
+ul{
+    padding: 0; 
+    list-style: none; 
+}
+
+/* NAV */
+
+
+
+
+
+
+
+/* HEADER */
+
+
+
+/* FOOTER */
+
+footer{
+    padding: 50px 0px 50px 0px;
+    color: white;
+    background-color: #25366F;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+}
+footer .RS{
+    margin-top: 25px;
+    display: flex;
+}
+footer .RS img{
+    margin-right: 40px;
+}

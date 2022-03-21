@@ -72,7 +72,7 @@ import React from 'react';
         <div className="App">
           <header className="App-header">
 
-          <label htmlFor="city">Quelle ville</label>        
+          <label htmlFor="city">Catalogue</label>        
           <input type="text" id="city" value={this.state.city} onChange={ this.onChangeInput }/>
 
           <p>{this.state.suggestion}</p>

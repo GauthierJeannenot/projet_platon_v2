@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Catalogue;
+use App\Entity\SubCategories;
 use App\Entity\InfosUser;
 use App\Entity\Personnality;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -47,12 +48,12 @@ class ProfileType extends AbstractType
                 'choice_label' => 'name'
             ])
 
-            // ->add('SubCategories', EntityType::class, [
-            //     'class' => SubCategories::class,
-            //     'multiple' => true,
-            //     'by_reference' => false,
-            //     'choice_label' => 'name'
-            // ])
+             ->add('subCategories', EntityType::class, [
+                 'class' => SubCategories::class,
+                 'multiple' => true,
+                 'by_reference' => false,
+                 'choice_label' => 'name'
+             ])
 
 
 
