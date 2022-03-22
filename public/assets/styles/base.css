@@ -1,6 +1,7 @@
 /* BODY */ 
 body{
     font-family: 'Spartan';
+    background-color: #fbfbfb;
     font-variant-ligatures: no-common-ligatures;
 }
 
@@ -9,44 +10,6 @@ ul{
     list-style: none; 
 }
 
-
-/* NAV */
-
-#modale .categorie{
-    color: #E5CFA9;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.marge{
-    margin-top: 40px;
-}
-
-.marge_between{
-    margin-top: 20px;
-}
-
-#modale{
-    color: #f3f3f3;
-    margin-bottom: 7px;
-}
-
-#modale .administratif{
-    margin: 20px 0px;
-}
-
-#modale a{
-    color: #f3f3f3;
-    font-weight: 400;
-}
-
-#modale a:hover{
-    color: #E5CFA9;
-}
-
-#modale li{
-    margin-top: 10px;
-}
 
 /* FOOTER */
 

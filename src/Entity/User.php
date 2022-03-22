@@ -49,11 +49,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $nom;
 
-    /**
-     * @ORM\OneToOne(targetEntity=InfosUser::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $infosUser;
+
 
     /**
      * @ORM\OneToMany(targetEntity=Ticket::class, mappedBy="sender")
@@ -69,6 +65,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+
+    /**
+     * @ORM\OneToOne(targetEntity=InfosUser::class, inversedBy="user", cascade={"persist", "remove"})
+     */
+    private $infosUser;
 
     public function __construct()
     {
@@ -189,18 +190,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getInfosUser(): ?InfosUser
-    {
-        return $this->infosUser;
-    }
-
-    public function setInfosUser(?InfosUser $infosUser): self
-    {
-        $this->infosUser = $infosUser;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Ticket>
      */
@@ -269,6 +258,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getInfosUser(): ?InfosUser
+    {
+        return $this->infosUser;
+    }
+
+    public function setInfosUser(?InfosUser $infosUser): self
+    {
+        $this->infosUser = $infosUser;
 
         return $this;
     }

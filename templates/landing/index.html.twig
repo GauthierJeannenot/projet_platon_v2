@@ -20,22 +20,23 @@
     <div class="container-fluid">
       <div class="container">
         <div class="row">
+
           <div class="titre text-center text-white">
             <h1>Échangez vos savoirs</h1>
             <h2>On a tous quelque chose à transmettre !</h2>
-            <a class="btn shadow" href="{{ path('app_register')}}">Inscription</a>
+			<a class="btn shadow" href="{{ path('app_register')}}">Inscription</a>
+            
           </div>
         </div>
       </div>
     </div>
-    
-    <svg fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M-1.99998 142.507L960.955 0L1920 142.507H-1.99998Z" fill="#FBFBFB"/>
-    </svg>
-      
-    
-  </header>
 
+
+    <svg viewBox="0 0 1920 146" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M960 0C960 0 375.667 88.8169 0 146H1920L960 0Z" fill="#FBFBFB" />
+    </svg>
+
+  </header>
 
 <section id="quoi">
 
@@ -44,17 +45,17 @@
           <h2>C'est quoi Platon ?</h2>
 
           <div class="col-12 col-md-3 plateforme">
-            <img src="illustrations/billets.svg" alt="Billets">
+            <img src="{{asset('assets/illustrations/billets.svg')}}" alt="Billets">
             <h3>Une plateforme gratuite</h3>
           </div>
 
           <div class="col-12 col-md-3 qualite">
-            <img src="illustrations/savoirs.svg" alt="savoirs">
+            <img src="{{asset('assets/illustrations/savoirs.svg')}}" alt="savoirs">
             <h3>Des savoirs variés </br>et de qualité</h3>
           </div>
 
           <div class="col-12 col-md-3 communaute">
-            <img src="illustrations/communaute.svg" alt="Communauté">
+            <img src="{{asset('assets/illustrations/communaute.svg')}}" alt="Communauté">
             <h3>Une communauté active</h3>
           </div>
 
@@ -81,19 +82,19 @@
 
           <div class="col-12 col-md-3">
             <div class="langues">
-              <img src="illustrations/planete_bleue.svg" alt="Anglais">
+              <img src="{{asset('assets/illustrations/planete_bleue.svg')}}" alt="Anglais">
             </div>
             <p class="text-white">Anglais</p>
           </div>
 
           <div class="col-12 col-md-3">
-            <div class="gastronomie"><img src="illustrations/gastronomie_bleu.svg" alt="Gastronomie">
+            <div class="gastronomie"><img src="{{asset('assets/illustrations/gastronomie_bleu.svg')}}" alt="Gastronomie">
             </div>
             <p class="text-white">Gastronomie</p>
           </div>
 
           <div class="col-12 col-md-3">
-            <div class="art"><img src="illustrations/art_bleu.svg" alt="Art">
+            <div class="art"><img src="{{asset('assets/illustrations/art_bleu.svg')}}" alt="Art">
             </div>
             <p class="text-white">
               </pclass>Art</p>
@@ -132,7 +133,7 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
-                <img src="img/theo.png" class="d-block w-3" alt="Théo">
+                <img src="{{asset('assets/img/theo.png')}}" class="d-block w-3" alt="Théo">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>“Grâce à Platon, j’apprends à cuisiner avec Zoé. Les lasagnes n’ont plus de secret pour moi ! Et
                     j’adore donner des cours de guitare !”</h5>
@@ -148,7 +149,7 @@
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="2000">
-                <img src="img/louise.png" class="d-block w-3" alt="Louise">
+                <img src="{{asset('assets/img/louise.png')}}" class="d-block w-3" alt="Louise">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>"Je remercie Platon pour m'avoir fait découvrir une multitude de savoirs. J'ai également rencontré des gens géniaux !"</h5>
                   <p>Louise, pianiste</p>

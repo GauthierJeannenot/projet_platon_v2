@@ -1,26 +1,30 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}SubCategories{% endblock %}
 
-{% block body %}
-    <h1>SubCategories</h1>
+{% block innerContent %}
+    <h1>{{ sub_category.name }}</h1>
+
+
+
+    {% for users in sub_category.infosUsers %}
+            <h3>{{ users.user.prenom }} {{users.user.nom}}</h3>
+            <h3>{{ users.opinion }} / 5</h3>
+                {% for classTypes in users.classType %}
+                    <h3>{{ classTypes }}</h3>
+                {% endfor %}
+            <a href="{{ path('platon_user_show', {'id': users.user.id})}}">Voir mon profil</a>
+    {% endfor %}
+    
+    
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ sub_category.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ sub_category.name }}</td>
+                <td>
+
+                </td>
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('app_sub_categories_index') }}">back to list</a>
-
-    <a href="{{ path('app_sub_categories_edit', {'id': sub_category.id}) }}">edit</a>
-
-    {{ include('sub_categories/_delete_form.html.twig') }}
 {% endblock %}

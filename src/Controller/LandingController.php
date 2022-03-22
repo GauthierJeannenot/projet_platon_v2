@@ -2,9 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\InfosUser;
+use App\Entity\Ticket;
+use App\Repository\InfosUserRepository;
+use App\Repository\TicketRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+
 
 class LandingController extends AbstractController
 {
@@ -15,10 +19,18 @@ class LandingController extends AbstractController
         ]);
     }
 
-    public function home(): Response
+    public function home(TicketRepository $ticketRepository,    InfosUserRepository $infosUserRepository): Response
     {
+        $user = $this->getUser();
+
+        // ajouter les knowledges de la table InfosUser du User concerné
+        // récupérer l'avis des users ayant envoyés un ticket à notre user connecté
+        $infosUser = $infosUserRepository->findAll();
+        //dd($infosUser);
+        $tickets = $ticketRepository->findBy(['receiver' => $user->getId()]);
         return $this->render('main/home.html.twig', [
-            'controller_name' => 'LandingController',
+            'tickets' => $tickets,
+            'infosUser' => $infosUser
         ]);
     }
 }

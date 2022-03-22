@@ -1,5 +1,8 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('assets/styles/base.css')}}">
+{% endblock %}
 
 {% block innerContent %}
 
@@ -33,7 +36,7 @@
 			<div>
 				{{ form_widget(registrationForm.password.first) }}
 
-				<img src="assets/icones/mdp_hidden.svg" alt="oeilferme">
+				<img src="{{asset('assets/icones/mdp_hidden.svg')}}" alt="oeilferme">
 			</div>
 
 			<div class="confmdp">
@@ -43,7 +46,7 @@
 					  }
 					}) }}
 					
-				<img src="assets/icones/mdp_hidden.svg" alt="oeilferme">
+				<img src="{{asset('assets/icones/mdp_hidden.svg')}}" alt="oeilferme">
 			</div>
 
 			<div class="cgu d-flex">

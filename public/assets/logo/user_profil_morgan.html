@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!--Google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <title>Platon, donner pour apprendre</title>
+
+  <link rel="stylesheet" href="css/user_profil.css">
+
+</head>
+
+<body>
+
+  <!--------------- DEBUT DE LA NAV --------------->
+  <nav>
+
+    <img src="logo/platon_bleu.svg" alt="Logo Platon">
+    <ul>
+      <li> <a href="#">Comment ça marche ?</a></li>
+      <li><a href="#">Catalogue des savoirs</a></li>
+    </ul>
+
+    <div class="input-group rounded">
+      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+        aria-describedby="search-addon" />
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
+    </div>
+
+    <ul>
+      <li><a href="#">Blog</a></li>
+    </ul>
+
+    <button>Connexion</button>
+
+  </nav>
+  <!--------------- FIN DE LA NAV --------------->
+
+  <!--------------- DEBUT DU HEADER --------------->
+
+  <header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <img src="img/bandeau_profil.png" alt="Bandeau">
+      </div>
+    </div>
+
+  </header>
+
+  <!--------------- FIN DU HEADER --------------->
+
+
+
+  <!--------------- DEBUT DU MAIN --------------->
+  <main>
+
+    <section>
+      <div class="container">
+
+        <!-- DEBUT DE LA PREMIERE PARTIE-->
+
+        <article class="row">
+
+          <div class="col-2 photo">
+            <img src="img/lucile2.png" alt="lucile">
+            <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
+            <p class="name">Lucile D.</p>
+          </div>
+
+          <div class="d-flex flex-column justify-content-between col-4 offset-6">
+            <div class="d-flex justify-content-between">
+              <a class="btn shadow btn-favoris" href="#">Ajouter en favoris</a>
+              <a class="btn shadow btn-cours" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Prendre un
+                cours</a>
+            </div>
+
+            <div class="d-flex personalite justify-content-between">
+              <p class="tag">Extravertie</p>
+              <p class="tag">Enthousiaste</p>
+              <p class="tag">Curieuse</p>
+            </div>
+          </div>
+
+
+        </article>
+
+        <!-- FIN DE LA PREMIERE PARTIE-->
+
+
+
+        <!-- Vertically centered modal -->
+
+        <section id="modale">
+
+          <div div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header d-flex align-items-center cours">
+                  <label for="cours">Choix du cours :</label>
+                  <select class="col-lg-6" name="interest" id="interest">
+                    <option value="anglais">Anglais</option>
+                    <option value="sport">Sport</option>
+                  </select>
+                </div>
+                <div class="modal-body">
+
+                  <div>
+                    <textarea class="col-lg-12" name="message" id="message">Écrivez votre message ici</textarea>
+                  </div>
+                </div>
+
+                <div class="modal-footer justify-content-between">
+                  <a class="btn-return" href="user_profil.html">Annuler</a>
+                  <a class="btn shadow" href="user_profil.html">Envoyer</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- DEBUT DE LA DEUXIEME PARTIE-->
+
+        <article class="row">
+
+          <div class="col-5 localisation">
+            <div class="d-flex align-items-center">
+              <img src="icones/localisation.svg" alt="Localisation">
+              <p class="bold">Paris</p>
+            </div>
+
+            <div class="row">
+              <div class="d-flex align-items-center">
+                <div class="d-flex col-4 cours align-items-start">
+                  <img src="icones/livre.svg" alt="Livre">
+                  <p class="bold">Type de cours</p>
+                </div>
+
+                <div class="d-flex offset-2 col-6 align-items-center">
+                  <p class="tag">Présentiel <img src="icones/valide_bleu.svg" alt="Valide"></p>
+                  <p class="tag">Visio <img src="icones/valide_bleu.svg" alt="Valide"></p>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+          <div class="col-4 offset-3">
+            <p class="bold savoirs">Savoir(s) à transmettre</p>
+
+            <div class="d-flex text-center">
+              <div class="badges">
+                <img src="illustrations/badge_anglais.svg" alt="Anglais">
+                <p>Anglais</p>
+              </div>
+
+              <div class="badges">
+                <img src="illustrations/badge_sport.svg" alt="Sport">
+                <p>Sport</p>
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- FIN DE LA DEUXIEME PARTIE-->
+
+
+        <!-- DEBUT DE LA TROISIEME PARTIE-->
+
+        <article class="row">
+          <div class="col-6">
+            <p class="bold bio"> Bio</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorem vero, maiores minus placeat cumque
+              totam minima quasi fugit nostrum consectetur sunt nesciunt itaque quos quia adipisci atque repudiandae
+              rerum.</p>
+          </div>
+
+          <div class="col-4 offset-2">
+            <p class="bold">Précisez vos savoirs</p>
+            <ul>
+              <li>Je suis bilingue anglais</li>
+              <li>Adepte du fitness</li>
+            </ul>
+          </div>
+        </article>
+
+
+        <section id="slideavis">
+
+
+          <div class="temoignages">
+            <p class="bold">Nos membres en parlent</p>
+            <p>22 avis</p>
+          </div>
+
+
+          <article class="row">
+
+
+
+            <div class="card d-flex col-lg-5 col-12">
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="d-flex align-items-center justify-content-between col-lg-12">
+                    <div class="d-flex align-items-center">
+                      <img src="img/zoe.png" class="photoprofil" alt="Zoé">
+                      <h5 class="card-title">Zoé L.</h5>
+                    </div>
+
+
+                    <div class="d-flex align-items-center starnote">
+                      <p>Note :</p>
+                      <div>
+                        <img src="icones/etoile_full.svg" alt="star">
+                        <img src="icones/etoile_full.svg" alt="star">
+                        <img src="icones/etoile_full.svg" alt="star">
+                        <img src="icones/etoile_full.svg" alt="star">
+                        <img src="icones/etoile_full.svg" alt="star">
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="card-text">
+                  <p>This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="card d-flex offset-lg-1 col-lg-5 col-12">
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="d-flex align-items-center justify-content-between col-lg-12">
+                    <div class="d-flex align-items-center">
+                      <img src="img/diego.png" class="photoprofil" alt="Zoé">
+                      <h5 class="card-title">Diego S.</h5>
+                    </div>
+
+                    <div class="d-flex align-items-center starnote">
+                      <p>Note :</p>
+                      <img src="icones/etoile_full.svg" alt="star">
+                      <img src="icones/etoile_full.svg" alt="star">
+                      <img src="icones/etoile_full.svg" alt="star">
+                      <img src="icones/etoile_full.svg" alt="star">
+                      <img src="icones/etoile_full.svg" alt="star">
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="card-text">
+                  <p>This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                </div>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+            <div class=" col-1 d-flex justify-content-end align-items-center">
+              <svg width="14.5" height="27.5" viewBox="0 0 29 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2L27 27L2 52" stroke="#25366F" stroke-width="4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+
+
+          </article>
+
+
+
+
+        </section>
+
+        <!-- FIN DE LA TROISIEME PARTIE-->
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+  </main>
+  <!--------------- FIN DU MAIN --------------->
+
+
+  <!--------------- DEBUT DU FOOTER --------------->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <ul>
+            <li>
+              <h3>À propos</h3>
+            </li>
+            <li><a href="#">Qui sommes nous ?</a></li>
+            <li><a href="#">Mention légales</a></li>
+            <li><a href="#">CGU</a></li>
+          </ul>
+        </div>
+
+        <div class="col-3">
+          <ul>
+            <li>
+              <h3>Contact</h3>
+            </li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Informations légales</a></li>
+            <li><a href="#">Paramètres des cookies</a></li>
+          </ul>
+        </div>
+
+        <div class="col-3">
+          <ul>
+            <li>
+              <h3>Platon</h3>
+            </li>
+            <li><a href="#">Comment ça marche ?</a></li>
+            <li><a href="#">La charte de Platon</a></li>
+          </ul>
+        </div>
+
+        <div class="col-3">
+          <img src="logo/platon_jaune.svg" alt="Logo Platon">
+          <div class="RS">
+            <a href="#"><img src="icones/facebook.png" alt="Logo Facebook"></a>
+            <a href="#"><img src="icones/instagram.png" alt="Logo Instagram"></a>
+          </div>
+        </div>
+      </div>
+
+  </footer>
+  <!--------------- FIN DU FOOTER --------------->
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

@@ -19,7 +19,7 @@ class CatalogueController extends AbstractController
     /**
      * @Route("/", name="app_catalogue_index", methods={"GET"})
      */
-    public function index(CatalogueRepository $catalogueRepository, SubCategoriesRepository $subCategoriesRepository): Response
+    public function index(CatalogueRepository $catalogueRepository): Response
     {
       
         return $this->render('catalogue/index.html.twig', [
