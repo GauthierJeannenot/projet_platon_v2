@@ -20,9 +20,8 @@ class LandingController extends AbstractController
         ]);
     }
 
-    public function home(TicketRepository $ticketRepository, InfosUserRepository $infosUserRepository, Ticket $ticket, EntityManager $em): Response
+    public function home(TicketRepository $ticketRepository, InfosUserRepository $infosUserRepository): Response
     {
-        
         $user = $this->getUser();
         // récupérer l'avis des users ayant envoyés un ticket à notre user connecté
         $infosUser = $infosUserRepository->findAll();
@@ -33,4 +32,11 @@ class LandingController extends AbstractController
             'infosUser' => $infosUser
         ]);
     }
+
+    public function deleteTicket(Ticket $ticket, EntityManager $em): Response
+    {
+        $em->remove($ticket);
+        return $this->redirect('main/home.html.twig');
+    }
+
 }
