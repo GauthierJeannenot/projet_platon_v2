@@ -51,6 +51,8 @@ class UserController extends AbstractController
      */
     public function show(User $user): Response
     {
+        // checking des informations contenues dans user
+        // dd($user);
         return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);
