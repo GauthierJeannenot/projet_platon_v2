@@ -1,25 +1,39 @@
 {% extends 'layout.html.twig' %}
 
+
         {% block innerContent %}
         <h1>Bonjour {{app.user.prenom}}</h1>
 		<h1>Cours prévu à donner</h1>
         <div>
-            {% for ticket in app.user.tickets %}
-                {% if ticket.status is same as(0) %}
-                    {{ticket.receiver.prenom}} <br>
-                    {{ticket.content}} <br>
-                    {{ticket.status}}
-                {% endif %}
-            {% endfor %}
+        {% for ticket in tickets %}
+            {% if ticket.status is same as(0) %}
+                {{ticket.sender.prenom}} <br>
+                {# ajouter les knowledges de la table InfosUser du User concerné #}
+
+
+                {# recherche des données présentes dans tickets #}
+                {# <pre>
+                    {{ dump(ticket) }}
+                </pre> #}
+
+                
+                Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
+                {{ticket.content}} <br>
+                {{ticket.status}}
+            {% endif %}
+        {% endfor %}
         </div>
 		<h1>cours prévus à recevoir</h1>
         <div>
+            
             {% for ticket in app.user.tickets %}
                 {% if ticket.status is same as(0) %}
 					<p>Vous avez cours avec :</p>
+                    {{ticket.status}} <br>
                     {{ticket.receiver.prenom}} <br>
+                    {# ajouter les knowledges de la table InfosUser du User concerné #}
+                    Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
                     {{ticket.content}} <br>
-                    {{ticket.status}}
                 {% endif %}
             {% endfor %}
         </div>
@@ -28,9 +42,28 @@
             {% for ticket in app.user.tickets %}
                 {% if ticket.status is same as(3) %}
                     {{ticket.receiver.prenom}} <br>
+                    {# ajouter les knowledges de la table InfosUser du User concerné #}
+                    Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
                     {{ticket.content}} <br>
-                    {{ticket.status}}
+                    {{ticket.status}} <br>
+                    Temps donné : 1 Heure <br>
+                    Note : {{ticket.sender.infosUser.opinion}}/5<br>
                 {% endif %}
+            {% endfor %}
+        </div>
+        <div>
+            {% for userTicket in tickets %}
+                
+                {% if userTicket.status is same as(3) %}
+                    {{userTicket.sender.prenom}} <br>
+                    {# ajouter les knowledges de la table InfosUser du User concerné #}
+                    Avis : {{userTicket.sender.infosUser.opinion}}/5 <br> 
+                    {{userTicket.content}} <br>
+                    {{userTicket.status}} <br>
+                    Temps donné : 1 Heure<br>
+                    Note : {{userTicket.sender.infosUser.opinion}}/5<br>
+                {% endif %}
+                    
             {% endfor %}
         </div>
         {% endblock %}
