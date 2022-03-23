@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Ticket;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,6 +17,14 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class UserController extends AbstractController
 {
+
+    private $doctrine;
+
+    public function __construct(ManagerRegistry $doctrine){
+        $this->doctrine = $doctrine;
+    }
+
+
     /**
      * @Route("/", name="app_user_index", methods={"GET"})
      */
@@ -51,11 +61,30 @@ class UserController extends AbstractController
      */
     public function show(User $user): Response
     {
+        //dd($user);
         // checking des informations contenues dans user
-        // dd($user);
         return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);
+    }
+
+    public function newTicket(User $user): Response
+    {
+        // encore une fois on regarde les informations stockées dans le user
+        //dd($user);
+
+        
+
+        $ticket = new Ticket();
+        $ticket->setReceiver($user);
+        $ticket->setSender($this->getUser());
+        $ticket->setStatus(0);
+
+        $em = $this->doctrine->getManager();
+        $em->persist($ticket);
+        $em->flush();
+
+        return $this->redirectToRoute('platon_main_home');
     }
 
     /**

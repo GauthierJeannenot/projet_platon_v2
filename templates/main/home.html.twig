@@ -19,7 +19,9 @@
                 
                 Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
                 {{ticket.content}} <br>
-                {{ticket.status}}
+                {{ticket.status}} <br>
+                <a href="{{ path("platon_ticket_remove", {idTicket: ticket.id}) }}">Annuler</a>
+                <a href="{{ path("platon_ticket_update", {idTicket: ticket.id}) }}">Terminer</a> <br>
             {% endif %}
         {% endfor %}
         </div>

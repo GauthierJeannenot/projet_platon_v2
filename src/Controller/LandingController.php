@@ -2,17 +2,26 @@
 
 namespace App\Controller;
 
-use App\Entity\InfosUser;
+
 use App\Entity\Ticket;
 use App\Repository\InfosUserRepository;
 use App\Repository\TicketRepository;
-use Doctrine\ORM\EntityManager;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
 
 class LandingController extends AbstractController
 {
+
+    private $doctrine;
+
+    public function __construct(ManagerRegistry $doctrine){
+        $this->doctrine = $doctrine;
+    }
+
+
+
     public function index(): Response
     {
         return $this->render('landing/index.html.twig', [
@@ -33,10 +42,26 @@ class LandingController extends AbstractController
         ]);
     }
 
-    public function deleteTicket(Ticket $ticket, EntityManager $em): Response
-    {
+    public function removeTicket($idTicket){
+        $ticketRepo = $this->doctrine->getRepository(Ticket::class);
+        $ticket = $ticketRepo->find($idTicket);
+
+        $em=$this->doctrine->getManager();
         $em->remove($ticket);
-        return $this->redirect('main/home.html.twig');
+        $em->flush();
+
+        return $this->redirectToRoute('platon_main_home');
+    }
+
+    public function finishClass($idTicket){
+        $ticketRepo = $this->doctrine->getRepository(Ticket::class);
+        $ticket = $ticketRepo->find($idTicket);
+
+        $ticket->setStatus('3');
+
+        $em=$this->doctrine->getManager();
+        $em->flush();
+        return $this->redirectToRoute('platon_main_home');
     }
 
 }
