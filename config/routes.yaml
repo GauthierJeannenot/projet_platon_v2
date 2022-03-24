@@ -9,8 +9,6 @@ platon_main_home:
     controller: App\Controller\LandingController::home
 
 
-
-
     # /*********************** Log ********************/
 platon_login:
     path: /login
@@ -56,11 +54,16 @@ platon_catalogue_delete:
     controller : App\Controller\CatalogueController::delete
 
 
+ # /*********************** Subcategorie ********************/
+
+platon_subcategories_show:
+    path : /sub/categories/{id}
+    controller : App\Controller\SubCategoriesController::show
 
 
 
 
-    # /*********************** User ********************/
+# /*********************** User ********************/
 
 platon_user_index:
     path : /user

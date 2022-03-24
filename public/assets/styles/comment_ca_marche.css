@@ -1,0 +1,217 @@
+body {
+  font-family: 'Spartan';
+  background-color: #fbfbfb;
+  font-variant-ligatures: no-common-ligatures;
+}
+
+input::placeholder {
+  font-variant-ligatures: no-common-ligatures;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+nav a:hover {
+  color: #E5CFA9;
+  text-decoration-line: underline;
+}
+
+
+/* NAV */
+
+nav {
+  background-color: #25366f;
+}
+
+nav li a {
+  color: #fbfbfb;
+}
+
+nav a {
+  color: #fbfbfb;
+}
+
+nav input {
+  background-color: #fbfbfb;
+  border: none !important;
+}
+
+
+/* HEADER */
+
+
+/* HEADER */
+
+header{
+  background-color: #25366F;
+  position: relative;
+}
+
+header .container-fluid{
+  background-image: url('../img/header_background_jaune.png');
+  background-position: center;
+  background-size: cover;
+}
+
+
+header h1 {
+  color: #25366F;
+  font-weight: bold;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+} 
+
+
+/* MAIN */
+
+h2 {
+  font-size: 60px;
+  color: #25366F;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #25366F;
+  white-space: nowrap;
+  margin-bottom: 0px;
+  padding-left: 20px;
+}
+
+.concept1 {
+  position: relative;
+  margin-top: 30px;
+}
+
+.concept1 h3 {
+  padding-left: 40px;
+}
+
+.concept2 {
+  position: relative;
+  margin-top: 450px;
+}
+
+.concept3 {
+  position: relative;
+  margin-top: 450px;
+}
+
+.concept4 {
+  margin-top: 450px;
+}
+
+
+.fleche1 {
+  position: absolute;
+  left: 300px;
+}
+
+.fleche2 {
+  position: absolute;
+  right: 270px;
+}
+
+.fleche3 {
+  position: absolute;
+  left: 230px;
+}
+
+#etape p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  padding-left: 88px;
+}
+
+#moncompte {
+  width: 416px;
+  height: 326px;
+}
+
+#choses {
+  width: 416px;
+  height: 326px;
+}
+
+#connaissances {
+  width: 416px;
+  height: 326px;
+}
+
+.endsection {
+  margin-top: 150px;
+  background-color: #E0E5F5;
+  width: 100%;
+  padding-top: 150px;
+padding-bottom: 150px;  
+}
+
+.endsection p {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.supermentor h3 {
+  padding-left: 0px;
+}
+
+.endsection img {
+  width: 98px;
+  height: 134px;
+}
+
+.textebold {
+font-weight: bold;}
+
+
+.boutonensavoirplus {
+  background-color: #E5CFA9;
+  color: #25366F;
+  padding: 7px 20px;
+  font-family: 'Spartan';
+  font-size: medium;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+.boutonensavoirplus:hover {
+  color: #E5CFA9;
+  background-color: #25366F;
+}
+
+
+/* FOOTER */
+
+footer h4 {
+  font-weight: bold;
+}
+
+footer {
+  padding: 50px 0px 50px 0px;
+  color: white;
+  background-color: #25366F;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #E5CFA9;
+}
+
+footer .RS {
+  margin-top: 25px;
+  display: flex;
+}
+
+footer .RS img {
+  margin-right: 40px;
+}

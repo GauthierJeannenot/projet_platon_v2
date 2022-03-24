@@ -3,15 +3,15 @@
 {% block title %}Hello LandingController!
 
 {% block stylesheets %}
-
+<link rel="stylesheet" href="{{asset('assets/styles/index.css')}}">
 {% endblock %}
 
 {% endblock %}
+
 
 {% block innerContent %}
-{# <h1>bonjour</h1>
-<div id='root'></div> #}
-
+ {# <h1>bonjour</h1>
+<div id='root'></div>  #}
 
 
 
@@ -116,7 +116,7 @@
 
     <!--DEBUT DE LA TROISIEME SECTION-->
 
-    <section id="temoignages">
+<section id="temoignages">
 
       <div class="container">
         <div class="row">
@@ -132,52 +132,73 @@
                 aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <img src="{{asset('assets/img/theo.png')}}" class="d-block w-3" alt="Théo">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>“Grâce à Platon, j’apprends à cuisiner avec Zoé. Les lasagnes n’ont plus de secret pour moi ! Et
-                    j’adore donner des cours de guitare !”</h5>
-                  <p>Théo, guitariste.</p>
+
+              <div class="carousel-item platon-carousel-item active" data-bs-interval="10000">
+                <div class="d-flex flex-column align-items-center">
+                  <div>
+                    <img src="{{asset('assets/img/theo.png')}}" class="d-block" alt="Théo">
+                  </div>
+                  <div class="carousel-caption d-md-block">
+                    <h5>“Grâce à Platon, j’apprends à cuisiner avec Zoé. Les lasagnes n’ont plus de secret pour moi !
+                      J’adore donner des cours de guitare !”</h5>
+                    <p>Théo, guitariste</p>
+                  </div>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="img/anna.png" class="d-block w-3" alt="Anna">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>"Je suis très satistaite de la plateforme Platon ! J'ai enfin appris à dessiner comme un pro en
-                    échange de mes cours de cuisine.</h5>
-                  <p>Anna, spécialiste en cuisine du monde</p>
+
+              <div class="carousel-item platon-carousel-item" data-bs-interval="20000">
+                <div class="d-flex flex-column align-items-center">
+                  <div>
+                    <img src="{{asset('assets/img/anna.png')}}" class="d-block w-3" alt="Anna">
+                  </div>
+                  <div class="carousel-caption d-md-block">
+                    <h5>"Je suis très satisfaite de la plateforme Platon ! J'ai enfin appris à dessiner comme une pro en
+                      échange de mes cours de cuisine.</h5>
+                    <p>Anna, spécialiste en cuisine du monde</p>
+                  </div>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="{{asset('assets/img/louise.png')}}" class="d-block w-3" alt="Louise">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>"Je remercie Platon pour m'avoir fait découvrir une multitude de savoirs. J'ai également rencontré des gens géniaux !"</h5>
-                  <p>Louise, pianiste</p>
+
+              <div class="carousel-item platon-carousel-item" data-bs-interval="20000">
+                <div class="d-flex flex-column align-items-center">
+                  <div>
+                    <img src="{{asset('assets/img/louise.png')}}" class="d-block w-3" alt="Louise">
+                  </div>
+                  <div class="carousel-caption d-md-block">
+                    <h5>"Je remercie Platon pour m'avoir fait découvrir une multitude de savoirs. J'ai également
+                      rencontré
+                      des gens géniaux !"</h5>
+                    <p>Louise, pianiste</p>
+                  </div>
                 </div>
               </div>
+
+
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+
           </div>
-
-
+          <div class="text-center"><a class="btn shadow" href="#">Rejoindre la communauté !</a></div>
         </div>
-        <div class="text-center"><a class="btn shadow" href="#">Rejoindre la communauté !</a></div>
-      </div>
 
     </section>
+
+
 
     <!--FIN DE LA TROISIEME SECTION-->
 
   </main>
+
+ 
 
 
   

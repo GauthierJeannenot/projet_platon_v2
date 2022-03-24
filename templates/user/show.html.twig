@@ -4,13 +4,13 @@
 
 {% block body %}
     <h1>User</h1>
+    {# On check les informations contenues dans User coté Twigg cette fois-ci
+    <pre>
+        {{ dump(user) }}
+    </pre> #}
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
-            </tr>
             <tr>
                 <th>Prenom</th>
                 <td>{{ user.prenom }}</td>
@@ -20,10 +20,48 @@
                 <td>{{ user.nom }}</td>
             </tr>
             <tr>
-                <th></th>
+                <th>Type de cours</th>
+                <td>
+                    {# classType étant stocker dans un array il faut itérer dedans pour en sortir les données #}
+                    {% for classTypes in user.infosUser.classType %}
+                        {{classTypes}}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>Bio</th>
+                <td>{{ user.infosUser.bio }}</td>
+            </tr>
+            <tr>
+                <th>Nos membres en parlent</th>
+                <td>{{ user.infosUser.opinion }}/5</td>
+            </tr>
+            <tr>
+                <th>
+                    personnalitée
+                </th>
+                <td>
+                {# comme le User est connécter à plusieurs champs de la table personnality il faut itérer dedans pour sortir les strings #}
+                {% for personnalitys in user.infosUser.personnality %}
+                    {{personnalitys.name}}
+                {% endfor %}
+                </td>
+            </tr>
+                <th>savoir à transmettre</th>
+                <td>
+                    {% for subCategorie in user.infosUser.subCategories %}
+                        {{subCategorie.name}}
+                    {% endfor %}
+                </td>
+            <tr>
+            <tr>
+                <th>Membres favoris</th>
                 <td></td>
+            </tr>
+
         </tbody>
     </table>
+
 
     <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
 {% endblock %}

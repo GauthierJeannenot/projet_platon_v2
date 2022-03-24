@@ -15,29 +15,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-		<link rel="stylesheet" href="{{asset('assets/styles/nav.css')}}"> 
-		<link rel="stylesheet" href="{{asset('assets/styles/connexion.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/styles/inscription.css')}}">
-		{# <link rel="stylesheet" href="{{asset('../../assets/styles/inscription.css')}}">		 #}
-		<link rel="stylesheet" href="{{asset('assets/styles/catalogue.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/styles/base.css')}}"> 
-		<link rel="stylesheet" href="{{asset('assets/styles/inscription.css')}}"> 
-		<link rel="stylesheet" href="{{asset('assets/styles/index.css')}}"> 
+
+  <title>Platon, donner pour apprendre</title>
+
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/base.css">
+
+  <link rel="stylesheet" href="{{asset('assets/styles/nav.css')}}">     
+  {# <link rel="stylesheet" href="{{asset('assets/styles/connexion.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/styles/inscription.css')}}">
+  <link rel="stylesheet" href="{{asset('../../assets/styles/inscription.css')}}">		 
+  <link rel="stylesheet" href="{{asset('assets/styles/catalogue.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/styles/base.css')}}"> 
+  <link rel="stylesheet" href="{{asset('assets/styles/index.css')}}">    #}
+  {# <link rel="stylesheet" href="{{asset('assets/styles/inscription.css')}}">  #}
 
   <link rel="icon" type="{{asset('assets/image/png')}}" href="{{asset('assets/icones/favicon.png')}}" />
 
+</head>
 
+			{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+			{% block stylesheets %}
+	{{ encore_entry_link_tags('app') }}
+			{% endblock %}
 
-		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-		{{ encore_entry_link_tags('app') }}{% block stylesheets %}
-
+				{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 
-			{% block javascripts %}
-		{{ encore_entry_script_tags('app') }}
-	{% endblock %}
-	</head>
-		<body>{% block body %}
+		</head>
 
-	{% endblock %}
-</body></html>
+		<body>
+
+		{% block body %}
+
+		{% endblock %}
+		
+	    </body>
+	</html>

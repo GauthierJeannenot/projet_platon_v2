@@ -42,3 +42,25 @@ footer .RS img{
 }
 
 
+/*******************************
+CSS MEDIA QURIES
+*******************************/
+/*Mobile*/
+@media (max-width: 768px){
+    /*******************************
+    CSS FOOTER
+    *******************************/
+footer .container{
+    display: flex;
+    text-align: center;
+}
+
+footer div .col-12{
+    margin-top: 20px;
+}
+
+footer .RS .facebook{
+    display: flex;
+    margin-left: 130px;
+}
+}

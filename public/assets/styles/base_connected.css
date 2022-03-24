@@ -1,0 +1,118 @@
+/* BODY */ 
+body{
+    font-family: 'Spartan';
+    font-variant-ligatures: no-common-ligatures;
+    background-color: #f3f3f3;
+}
+
+ul{
+    padding: 0; 
+    list-style: none; 
+}
+
+
+/* NAV */
+
+/* DROPDOWN */
+
+.dropdown .btn-secondary{
+    color: #25366F;
+    background-color: #fbfbfb;
+    border-color: #25366F;
+}
+
+.dropdown-menu a{
+    margin: 11px;
+    font-size: 1rem;
+}
+
+.dropdown-menu img{
+    margin-right: 21px;
+}
+
+.connecte{
+    margin-right: 10px;
+}
+
+.chrono {
+    margin-right: 3px;
+    margin-bottom: 6px;
+}
+
+.dropdown span{
+    color: #09101F;
+    font-weight: bold;
+}
+
+.temps{
+    margin-top: 10px;
+}
+
+.dropdown-item{
+    color: #B3BEE6;
+    
+}
+
+.dropdown-item:hover{
+    color: #25366F;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown li img{
+    color: #B3BEE6;
+}
+
+li .deconnexion{
+    color: #F87060;
+    margin-top: 18px;
+}
+
+li .deconnexion:hover{
+    color: #F87060;
+    font-weight: bold;
+}
+
+li .deconnexion::before{
+    content: "";
+    display: block;
+    width: 200px;
+    height: 1px;
+    background-color: #25366F;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+/* FOOTER */
+
+h4{
+    font-weight: bold;
+}
+
+footer{
+    padding: 50px 0px 50px 0px;
+    color: white;
+    background-color: #25366F;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #E5CFA9;
+}
+
+footer .RS{
+    margin-top: 25px;
+    display: flex;
+}
+
+footer .RS img{
+    margin-right: 40px;
+}
+
+

@@ -6,6 +6,7 @@ use App\Entity\InfosUser;
 use App\Entity\Ticket;
 use App\Repository\InfosUserRepository;
 use App\Repository\TicketRepository;
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -19,11 +20,9 @@ class LandingController extends AbstractController
         ]);
     }
 
-    public function home(TicketRepository $ticketRepository,    InfosUserRepository $infosUserRepository): Response
+    public function home(TicketRepository $ticketRepository, InfosUserRepository $infosUserRepository): Response
     {
         $user = $this->getUser();
-
-        // ajouter les knowledges de la table InfosUser du User concerné
         // récupérer l'avis des users ayant envoyés un ticket à notre user connecté
         $infosUser = $infosUserRepository->findAll();
         //dd($infosUser);
@@ -33,4 +32,11 @@ class LandingController extends AbstractController
             'infosUser' => $infosUser
         ]);
     }
+
+    public function deleteTicket(Ticket $ticket, EntityManager $em): Response
+    {
+        $em->remove($ticket);
+        return $this->redirect('main/home.html.twig');
+    }
+
 }

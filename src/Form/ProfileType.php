@@ -24,6 +24,7 @@ class ProfileType extends AbstractType
                     'visio' => 'visio'
 
                 ],
+                
                 'multiple' => true,
                 'expanded' => true,
             ])
@@ -41,12 +42,12 @@ class ProfileType extends AbstractType
 
             ])
 
-            ->add('catalogues', EntityType::class, [
-                'class' => Catalogue::class,
-                'multiple' => true,
-                'by_reference' => false,
-                'choice_label' => 'name'
-            ])
+            // ->add('catalogues', EntityType::class, [
+            //     'class' => Catalogue::class,
+            //     'multiple' => true,
+            //     'by_reference' => false,
+            //     'choice_label' => 'name'
+            // ])
 
              ->add('subCategories', EntityType::class, [
                  'class' => SubCategories::class,
