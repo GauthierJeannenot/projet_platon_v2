@@ -161,9 +161,6 @@ platon_lachartedeplaton:
         template: 'statique/lachartedeplaton.html.twig'
 
 
-
-
-
 api_data:
     path: /api_data
     controller: App\Controller\Api©ontroller::getData

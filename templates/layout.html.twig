@@ -20,11 +20,11 @@
 			{% if is_granted('ROLE_USER') %}
 
 
-
+{# 
 
 				<p>Bonjour
 					{{app.user.prenom}}
-        </p>
+        </p> #}
 
 {# <a href="{{ path('app_logout') }}">Déconnexion</a> #}
 {# <a href="{{ path('app_login')}}">Connexion</a> #}
@@ -177,7 +177,7 @@
                   <p class="categorie">Langues</p>
                   <ul>
                     <li><a href="#">Allemand</a></li>
-                    {# <li><a href="{{path('sub/categories')}}">Anglais</a></li> #}
+                    {# <li><a href="{{ path ('platon_subcategories_show',{id: subCategories.id}) }}">Anglais</a></li>  #}
                     <li><a href="#">Arabe</a></li>
                     <li><a href="#">Chinois</a></li>
                     <li><a href="#">Espagnol</a></li>

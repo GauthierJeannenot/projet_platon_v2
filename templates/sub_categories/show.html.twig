@@ -3,34 +3,33 @@
 {% block title %}SubCategories{% endblock %}
 
 {% block innerContent %}
-    <h1>{{ sub_category.name }}</h1>
+
+     <h1>{{ sub_category.name }}</h1> 
 
 
 
     {% for users in sub_category.infosUsers %}
             <h3>{{ users.user.prenom }} {{users.user.nom}}</h3>
             <h3>{{ users.opinion }} / 5</h3>
+
                 {% for classTypes in users.classType %}
+          
                     <h3>{{ classTypes }}</h3>
+
                 {% endfor %}
+
+
             <a href="{{ path('platon_user_show', {'id': users.user.id})}}">Voir mon profil</a>
-    {% endfor %}
-    
+    {% endfor %} 
+
+     {% endblock %}
 {#     
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <td>
-
-                </td>
-            </tr>
-        </tbody>
-    </table> #}
-
-
-
 <main>
+
+ <h1>{{ sub_category.name }}</h1>
+
+{% for users in sub_category.infosUsers %}
 
     <section id="profilcard">
 
@@ -41,30 +40,36 @@
           <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
 
             <div class="d-flex photobadge">
-              <img src="img/lucile2.png" alt="photoprofil">
-              <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
+              <img src="{{asset('assets/img/lucile2.png')}}" alt="photoprofil">
+              <img class="medaille" src="{{asset('assets/icones/medaille_bleu.svg')}}" alt="badge">
             </div>
 
-            <h3>Lucile D.</h3>
+              <h3>{{ users.user.prenom }}</h3>  
 
             <div class="d-flex align-items-start avismoy">
-              <img src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles">
+              <img src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles"><img src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles"><img
+                src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles"><img src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles"><img
+                src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles">
               <p>22 avis</p>
+             
             </div>
 
             <div class="d-flex">
-              <div class="typecours d-flex align-items-center">Présentiel<img src="icones/valide_bleu.svg" alt="check">
+              <div class="typecours d-flex align-items-center">Présentiel<img src="{{asset('assets/icones/valide_bleu.svg')}}" alt="check">
               </div>
-              <div class="typecours d-flex align-items-center">Visio<img src="icones/valide_bleu.svg" alt="check"></div>
+              <div class="typecours d-flex align-items-center">Visio<img src="{{asset('assets/icones/valide_bleu.svg')}}" alt="check"></div>
             </div>
 
             <div class="d-flex align-items-end ville">
-              <img src="icones/localisation.svg" alt="localisation">
+              <img src="{{asset('assets/icones/localisation.svg')}}" alt="localisation">
               <p>Paris & Ile-de-France</>
             </div>
 
+            {% endfor %}
+
+         
+      
+    
             <div class="d-flex align-items-center voirprofil">
               <a class="btn shadow" href="#">Voir profil</a>
             </div>
@@ -72,9 +77,14 @@
 
           <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
             <div class="d-flex photobadge">
-              <img src="img/diego.png" alt="photoprofil">
+              <img src="{{ asset('assets/img/diego.png')}}" alt="photoprofil">
               <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
             </div>
+
+               <a href="{{ path('platon_user_show', {'id': users.user.id})}}">Voir mon profil</a>
+
+             {% endfor %}
+
 
             <h3>Diego S.</h3>
 
@@ -331,11 +341,13 @@
 
       </div>
     </section>
-  </main>
+
+    {% endblock %}
+  </main> #}
+
+
+ 
 
 
 
 
-
-
-{% endblock %}
