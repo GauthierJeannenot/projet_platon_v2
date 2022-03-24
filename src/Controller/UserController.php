@@ -4,8 +4,12 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\Ticket;
+use App\Entity\Favoris;
 use App\Form\UserType;
+use App\Repository\FavorisRepository;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
@@ -63,6 +67,39 @@ class UserController extends AbstractController
     {
         //dd($user);
         // checking des informations contenues dans user
+        return $this->render('user/show.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
+    public function addFavorite(EntityManagerInterface $em, FavorisRepository $favorisRepository, User $user){
+        // On vas chercher le FavorisRepository afin d'obtenir la méthode FindOneBy qui nous permettra de récupérer le user concerner par la page et on stock le user dans une variable $favorite
+        $favorite = $favorisRepository->findOneBy([
+            'added' => $user,
+            'adder' => $this->getUser()]);
+        //dd($favorite);
+
+
+        // On vérifis que le User concerné n'est pas déjà inscrit dans nos favoris
+        if(!$favorite) {
+        // On instancie un nouvel objet Favoris dans notre variable $favorite
+            $favorite = new Favoris();
+        // On ajoute le User concerné à notre entité Favoris
+            $favorite->setAdded($user);
+        // On ajoute le User connecté à notre entité Favoris
+            $favorite->setAdder($this->getUser());
+        //On vérifis que les bonnes informations sont stockées dans notre variable
+        //dd($favorite);
+            
+            $em->persist($favorite);
+        // Si le User est déja dans nos favoris le bouton servira à l'en supprimer
+        } else {
+            $em->remove($favorite);
+        }
+        // On flush le résultat du lien
+        $em->flush();
+
+
         return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);

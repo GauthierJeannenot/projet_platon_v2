@@ -97,6 +97,14 @@ platon_ticket_create:
     controller : App\Controller\UserController::newTicket
 
 
+    # /*********************** User ********************/
+platon_favoris:
+    path: /favoris/{user}
+    controller : App\Controller\UserController::addFavorite
+
+
+
+
     # /*********************** registration ********************/
 
 platon_register:

@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class LandingController extends AbstractController
 {
-
+    // On stock le Manager Registry dans une variable $doctrine afin de pouvoir faire appel aux méthodes contenues dedans notemment getRepository() (afin de récupérer le Repository de la classe voulue) et getManager() (afin d'avoir accés aux méthodes persist() et flush())
     private $doctrine;
 
     public function __construct(ManagerRegistry $doctrine){
@@ -41,22 +41,23 @@ class LandingController extends AbstractController
             'infosUser' => $infosUser
         ]);
     }
-
+    // On crée une fonction qui permet de supprimer un ticket en fonction de son Id en utilisant la méthode find héritée du TicketRepository
     public function removeTicket($idTicket){
         $ticketRepo = $this->doctrine->getRepository(Ticket::class);
         $ticket = $ticketRepo->find($idTicket);
 
         $em=$this->doctrine->getManager();
+    // l'action principale de cette fonction est de supprimer le ticket grâce à la méthode remove héritée du TicketRepository, la suppression du Ticket annule le cours
         $em->remove($ticket);
         $em->flush();
 
         return $this->redirectToRoute('platon_main_home');
     }
-
+    // On crée une fonction qui permet de update un ticket en fonction de son id en utilisant la méthode find() héritée du TicketRepository
     public function finishClass($idTicket){
         $ticketRepo = $this->doctrine->getRepository(Ticket::class);
         $ticket = $ticketRepo->find($idTicket);
-
+    // l'action principale de cette fonction est de mettre à jour le status du ticket grâce au setter prévu dans l'entité Ticket, indiquant ainsi que le cours à été donner et clos, le déplaçant par la suite dans l'historique des cours finis de l'utilisateur connecté
         $ticket->setStatus('3');
 
         $em=$this->doctrine->getManager();
