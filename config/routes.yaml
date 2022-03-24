@@ -57,10 +57,12 @@ platon_catalogue_delete:
  # /*********************** Subcategorie ********************/
 
 platon_subcategories_show:
-    path : /sub/categories/{id}
+    path : /sub/categories/{subCategories}
     controller : App\Controller\SubCategoriesController::show
 
-
+platon_navigation:
+    path: /sub/categories/{subCategories}
+    controller : App\Controller\LandingController::navigation
 
 
 # /*********************** User ********************/

@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
-
+use App\Entity\SubCategories;
 use App\Entity\Ticket;
+use App\Repository\CatalogueRepository;
 use App\Repository\InfosUserRepository;
+use App\Repository\SubCategoriesRepository;
 use App\Repository\TicketRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,7 +22,13 @@ class LandingController extends AbstractController
         $this->doctrine = $doctrine;
     }
 
+    public function navigation(SubCategoriesRepository $subCategoriesRepository, CatalogueRepository $catalogueRepository){
 
+        return $this->render('landing/index.html.twig', [
+            'catalogue' => $catalogueRepository->findAll(),
+            'subCategories' => $subCategoriesRepository->findAll()
+        ]);
+    }
 
     public function index(): Response
     {
