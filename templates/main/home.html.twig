@@ -1,21 +1,71 @@
 {% extends 'layout.html.twig' %}
 
 
-{% block title %}Welcome!
-{% endblock %}
-
-{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-{% block stylesheets %}
-	{# {{ encore_entry_link_tags('app') }} #}
-{% endblock %}
-
-{% block javascripts %}
-	{# {{ encore_entry_script_tags('app') }} #}
-{% endblock %}
-
-{% block body %}
-	<h1>Bonjour
-		{{app.user.prenom}}</h1>
+        {% block innerContent %}
+        <h1>Bonjour {{app.user.prenom}}</h1>
+		<h1>Cours prévu à donner</h1>
+        <div>
+        {% for ticket in tickets %}
+            {% if ticket.status is same as(0) %}
+                {{ticket.sender.prenom}} <br>
+                {# ajouter les knowledges de la table InfosUser du User concerné #}
 
 
-{% endblock %}
+                {# recherche des données présentes dans tickets #}
+                {# <pre>
+                    {{ dump(ticket) }}
+                </pre> #}
+
+                
+                Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
+                {{ticket.content}} <br>
+                {{ticket.status}} <br>
+                <a href="{{ path("platon_ticket_remove", {idTicket: ticket.id}) }}">Annuler</a>
+                <a href="{{ path("platon_ticket_update", {idTicket: ticket.id}) }}">Terminer</a> <br>
+            {% endif %}
+        {% endfor %}
+        </div>
+		<h1>cours prévus à recevoir</h1>
+        <div>
+            {# On itére dans l'entité ticket afin de ne montrer que les tickets dont le user connecter (grace à app.user pas besoin de filtrer on ne sortira que les données du user connecté) #}
+            {% for ticket in app.user.tickets %}
+                {% if ticket.status is same as(0) %}
+					<p>Vous avez cours avec :</p>
+                    {{ticket.status}} <br>
+                    {{ticket.receiver.prenom}} <br>
+                    {# ajouter les knowledges de la table InfosUser du User concerné #}
+                    Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
+                    {{ticket.content}} <br>
+                {% endif %}
+            {% endfor %}
+        </div>
+		<h1>Cours passés</h1>
+		<div>
+            {% for ticket in app.user.tickets %}
+                {% if ticket.status is same as(3) %}
+                    {{ticket.receiver.prenom}} <br>
+                    {# ajouter les knowledges de la table InfosUser du User concerné #}
+                    Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
+                    {{ticket.content}} <br>
+                    {{ticket.status}} <br>
+                    Temps donné : 1 Heure <br>
+                    Note : {{ticket.sender.infosUser.opinion}}/5<br>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div>
+        
+            {% for userTicket in tickets %}
+                {% if userTicket.status is same as(3) %}
+                    {{userTicket.sender.prenom}} <br>
+                    {# ajouter les knowledges de la table InfosUser du User concerné #}
+                    Avis : {{userTicket.sender.infosUser.opinion}}/5 <br> 
+                    {{userTicket.content}} <br>
+                    {{userTicket.status}} <br>
+                    Temps donné : 1 Heure<br>
+                    Note : {{userTicket.sender.infosUser.opinion}}/5<br>
+                {% endif %}
+                    
+            {% endfor %}
+        </div>
+        {% endblock %}

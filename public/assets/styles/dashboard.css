@@ -1,0 +1,571 @@
+/* BODY */ 
+body{
+    font-family: 'Spartan';
+    font-variant-ligatures: no-common-ligatures;
+    background-color: #fbfbfb;
+}
+
+ul{
+    padding: 0; 
+    list-style: none; 
+}
+
+/* NAV */
+
+nav{
+    background-color: #25366f;
+}
+
+nav li a{
+    color: #fbfbfb;
+}
+
+nav a{
+    color: #fbfbfb;
+}
+
+nav input{
+    background-color: #fbfbfb;
+    border: none !important;
+}
+
+nav a:hover{
+    color:#E5CFA9;
+    text-decoration-line: underline;
+}
+
+.modale{
+    z-index: 3;
+}
+
+
+
+/* DROPDOWN */
+
+.dropdown .btn-secondary{
+    color: #25366F;
+    background-color: #fbfbfb;
+    border-color: #25366F;
+}
+
+.dropdown .btn-secondary:hover{
+    color: #25366f;
+    background-color: #fbfbfb;
+}
+
+.dropdown-menu a{
+    margin: 11px;
+    font-size: 1rem;
+}
+
+.dropdown-menu img{
+    margin-right: 21px;
+}
+
+.connecte{
+    margin-right: 10px;
+}
+
+.chrono {
+    margin-right: 3px;
+    margin-bottom: 6px;
+}
+
+.dropdown span{
+    color: #09101F;
+    font-weight: bold;
+}
+
+.temps{
+    margin-top: 10px;
+}
+
+
+.dropdown-item{
+    color: #B3BEE6;
+    
+}
+
+.dropdown-item:hover{
+    color: #25366F;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown li img{
+    color: #B3BEE6;
+}
+
+li .deconnexion{
+    color: #F87060;
+    margin-top: 18px;
+}
+
+li .deconnexion:hover{
+    color: #F87060;
+    font-weight: bold;
+}
+
+li .deconnexion::before{
+    content: "";
+    display: block;
+    width: 200px;
+    height: 1px;
+    background-color: #25366F;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+
+/* MAIN */
+
+/* PREMIERE SECTION */
+
+.section1{
+        margin-top: 3%;
+}
+
+.bonjour {
+    background-image: url('../img/header_background.png');
+    color: #fbfbfb;
+    padding: 3%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px #D3D3D3;
+}
+
+.temps {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.bonjour h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.bonjour h3 {
+    text-transform: uppercase;
+    padding-left: 10px;
+    margin: 0px;
+    font-size: 1.5rem;
+}
+
+.temps span {
+    color: #E5CFA9;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.temps #heure {
+    text-transform: none;
+    color: #E5CFA9;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+.jauge {
+    background-color:#fbfbfb;
+    color: #09101F;
+    border-radius: 20px;
+    border: solid #E5CFA9 1px;
+    box-shadow: 1px 1px 3px #D3D3D3;
+    margin-left: 2%;
+    white-space: nowrap;
+}
+
+.jauge img {
+    width: 180px;
+    height: 180px;
+    margin-left: 5%;
+
+}
+
+.jauge h1,p {
+    padding-left : 15%;
+}
+
+.jauge h1 {
+    font-weight : bold;
+    font-size: 2rem;
+}
+.jauge p{
+    font-size: 	1.5rem;
+    font-weight: 500;
+}
+
+
+#troisheures {
+    color: #25366F;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#neufheures {
+    color: #E5CFA9;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+/* DEUXIEME SECTION */
+
+.titresection{
+ margin-top:1%;
+ padding-top: 2%;
+}
+
+/* Card Blanche Demande de cours */
+.demandecours {
+    background-color: #fbfbfb;
+    color: #09101F;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #D3D3D3;
+    white-space: nowrap;
+    margin-top: 5%;
+}
+
+.photobadge {
+    position: relative;
+    margin: 4%;
+}
+
+.photobadge .portrait {
+    width: 120px;
+    height: 120px;
+}
+
+.medaille {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 5rem;
+    left: 5rem;
+    
+}
+
+.informations p {
+    font-size: 0.9rem;
+    padding: 0px;
+}
+
+.nom {
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.note {
+    color: #E5CFA9;
+    font-weight: 500;
+    margin-left: 4px;
+
+}
+
+.etoile {
+    margin-left: 4px;
+    margin-right: 2px;
+    margin-top:-5px;
+}
+
+.progression {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.progression p{
+    font-weight: bold;
+    font-size: 0.7rem;
+
+}
+
+.ligne {
+    border: 1px solid #25366F;
+    position: static;
+    width: 90px;
+    height: 0px;
+    margin-bottom: 30px;
+    margin-left: -10px;
+    margin-right: -10px;
+    
+}
+.ligneclaire {
+    border: 1px solid #B3BEE6;
+    position: static;
+    width: 90px;
+    height: 0px;
+    margin-bottom: 30px;
+    margin-left: -10px;
+    margin-right: -10px;
+    
+}
+
+.actiondemande {
+margin-top: 10%;
+padding-bottom: 15%;
+}
+
+.annuler {
+    color: #F87060;
+    background-color: #fbfbfb;
+    text-decoration: underline;
+    margin-top: 10px;
+    margin-right: 10%;
+    border: none;
+    padding: 10px 15px;
+}
+
+.annuler:hover {
+    color: #fbfbfb;
+    background-color: #F87060;
+    border-radius: 5px;
+    border-color: #F87060;
+    margin-right: 10%;
+    padding: 10px 15px;
+    
+}
+.terminer {
+    color: #E5CFA9;
+    background-color: #25366F;
+    border-radius: 5px;
+    box-shadow: 1px 1px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 10%;
+    padding: 10px 15px;
+    border: none;
+
+}
+
+.terminer:hover {
+    color: #fbfbfb;
+    background-color: #E5CFA9;
+    border-color: #E5CFA9;
+    margin-top: 10px;
+    margin-left: 10%;
+    padding: 10px 15px;
+
+}
+
+
+/* MODALE */
+
+.modal-content {
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Spartan";
+    color: #25366F;
+    text-align: center;
+}
+
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-body {
+    font-weight: 500;
+    font-size: 16px;
+    font-family: "Spartan";
+    color: #25366F;
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.btn{
+    color: #F87060;
+    background-color: #fbfbfb;
+    border: solid 1px #F87060;
+    padding: 10px 10px 10px 10px;
+}
+
+.btn:hover {
+    color: #fbfbfb;
+    background-color: #F87060;
+}
+
+.return {
+    color: #25366f;
+}
+
+/* MODALE AVIS NOTE */
+ 
+ 
+#titremodale {
+    font-size: 40px;
+    font-weight: bold;
+    color: #25366F;
+ }
+  
+ .modal-content {
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #fbfbfb;
+ }
+  
+  
+ .modal-content p {
+   padding-left: 0px;
+   margin-top: 10px;
+ }
+  
+ .modal-title {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Spartan";
+    color: #25366F;
+ }
+  
+  
+ .modal-header {
+    border-bottom: none;
+    padding: 0px;
+ }
+  
+  
+ .modal-body {
+    margin-top: 10px;
+    padding: 0px;
+ }
+  
+  
+ .modal-body textarea {
+    font-family: "Spartan";
+    color: #B3BEE6;
+    border-bottom: none;
+    width: 100%;
+ }
+  
+  
+ .modal-footer {
+    border-top: none;
+    padding: 0px;
+ }
+  
+ .modal-footer .btn{
+    color: #25366F;
+    background-color: #E5CFA9;
+    padding: 10px 10px 10px 10px;
+    border: none;
+
+ }
+  
+  
+ .return {
+    color: #25366f;
+ }
+  
+  
+ /* FIN MODALE AVIS NOTE */
+ 
+
+    /* Card Bleue Vous avez cours */
+.coursprevu {
+    background-color: #25366F;
+    color: #fbfbfb;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #D3D3D3;
+    white-space: nowrap;
+    margin-top: 5%;
+    padding-bottom: 78px;
+}
+
+.coursprevu .nom {
+    padding-top: 30px;
+    margin-top: 0px;
+}
+
+.phrase {
+    padding-top: 8%;
+
+}
+
+/* TROISIEME SECTION */
+#section3 {
+    background-color: #25366F;
+}
+
+#section3 .titresection {
+    margin-top:5%;
+    padding-top: 2%;
+    color: #fbfbfb;
+}
+
+.courspasse {
+    box-shadow: 3px 3px 1px #25366F;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    white-space: nowrap;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.courspasse .ligne {
+    border: 1px solid #E5CFA9;
+    position: static;
+    width: 90px;
+    height: 0px;
+    margin-bottom: 30px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.valider {
+    padding-left: 5%;
+}
+
+.valider p {
+    color: #25366F;
+}
+
+.valider p span {
+    color: #09101F;
+    font-weight: bold;
+
+}
+
+#session4 {
+    margin-bottom: 5%;
+}
+
+/* FOOTER */
+
+h4{
+    font-weight: bold;
+}
+
+footer{
+    padding: 50px 0px 50px 0px;
+    color: white;
+    background-color: #25366F;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #E5CFA9;
+}
+
+
+footer .RS{
+    margin-top: 25px;
+    display: flex;
+}
+footer .RS img{
+    margin-right: 40px;
+}

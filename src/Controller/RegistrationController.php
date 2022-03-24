@@ -44,7 +44,10 @@ class RegistrationController extends AbstractController
                     $form->get('password')->getData()
                 )
             );
+
             $user->setIsVerified(true);
+    
+    
             $entityManager->persist($user);
             $entityManager->flush();
 

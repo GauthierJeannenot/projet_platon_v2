@@ -9,8 +9,6 @@ platon_main_home:
     controller: App\Controller\LandingController::home
 
 
-
-
     # /*********************** Log ********************/
 platon_login:
     path: /login
@@ -56,11 +54,16 @@ platon_catalogue_delete:
     controller : App\Controller\CatalogueController::delete
 
 
+ # /*********************** Subcategorie ********************/
+
+platon_subcategories_show:
+    path : /sub/categories/{id}
+    controller : App\Controller\SubCategoriesController::show
 
 
 
 
-    # /*********************** User ********************/
+# /*********************** User ********************/
 
 platon_user_index:
     path : /user
@@ -81,6 +84,28 @@ platon_user_edit:
 platon_user_delete:
     path : /user/{id}/delete
     controller : App\Controller\UserController::delete
+
+    # /*********************** Ticket ********************/
+platon_ticket_remove:
+    path: /ticket/remove/{idTicket}
+    controller: App\Controller\LandingController::removeTicket
+
+platon_ticket_update:
+    path: /ticket/update/{idTicket}
+    controller: App\Controller\LandingController::finishClass
+
+# On transmet l'id du User dans l'url afin de le récupérer en tant que receiver dans le ticket
+platon_ticket_create:
+    path : /ticket/new/{user}
+    controller : App\Controller\UserController::newTicket
+
+
+    # /*********************** User ********************/
+platon_favoris:
+    path: /favoris/{user}
+    controller : App\Controller\UserController::addFavorite
+
+
 
 
     # /*********************** registration ********************/
@@ -134,9 +159,6 @@ platon_lachartedeplaton:
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
     defaults:
         template: 'statique/lachartedeplaton.html.twig'
-
-
-
 
 
 api_data:

@@ -12,7 +12,6 @@ ul{
 
 /* NAV */
 
-
 nav{
     background-color: #25366f;
 }
@@ -33,8 +32,7 @@ nav input{
 nav a:hover{
     color:#E5CFA9;
     text-decoration-line: underline;
-}
-
+} 
 
 /* MAIN */
 

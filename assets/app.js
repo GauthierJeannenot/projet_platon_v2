@@ -7,12 +7,21 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 
+// import './styles/nav.css';
+// import './styles/connexion.css';
+// import './styles/inscription.css';
+// import './styles/index.css';
+// import './styles/base.css';
+// import './styles/catalogue.css';
 
+<<<<<<< HEAD
 import './styles/connexion.css';
 import './styles/inscription.css';
 import './styles/nav.css';
 import './styles/index.css';
 
+=======
+>>>>>>> d983385b7ca8db90d9eef8fbd43c6885779cec42
 
 
 import React from 'react';

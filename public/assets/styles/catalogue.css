@@ -12,6 +12,8 @@ ul{
 
 /* NAV */
 
+/* TRANSFORMATION DE LA NAV EN BLEUE */
+
 nav{
     background-color: #25366f;
 }
@@ -33,6 +35,7 @@ nav a:hover{
     color:#E5CFA9;
     text-decoration-line: underline;
 }
+
 
 
 /* MAIN */

@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Catalogue;
 use App\Entity\SubCategories;
+use App\Entity\User;
 use App\Form\SubCategoriesType;
 use App\Repository\SubCategoriesRepository;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

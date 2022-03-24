@@ -49,6 +49,16 @@ class InfosUser
      */
     private $catalogues;
 
+    /**
+     * @ORM\OneToOne(targetEntity=User::class, mappedBy="infosUser", cascade={"persist", "remove"})
+     */
+    private $user;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $knowledge;
+
     public function __construct()
     {
         $this->subCategories = new ArrayCollection();
@@ -168,6 +178,40 @@ class InfosUser
     public function removeCatalogue(Catalogue $catalogue): self
     {
         $this->catalogues->removeElement($catalogue);
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($user === null && $this->user !== null) {
+            $this->user->setInfosUser(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($user !== null && $user->getInfosUser() !== $this) {
+            $user->setInfosUser($this);
+        }
+
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getKnowledge(): ?int
+    {
+        return $this->knowledge;
+    }
+
+    public function setKnowledge(?int $knowledge): self
+    {
+        $this->knowledge = $knowledge;
 
         return $this;
     }

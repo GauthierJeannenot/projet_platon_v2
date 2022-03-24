@@ -1,5 +1,3 @@
-/* IMPORT DE POLICES */
-
 body {
     font-family: 'spartan';
     background-color: #fbfbfb;
@@ -38,7 +36,6 @@ nav input{
     background-color: #fbfbfb;
     border: none !important;
 }
-
 
 /* MAIN */
 
@@ -145,7 +142,7 @@ form input {
 }
 
 
-/* MODALE */
+/* POP-UP */
 
 #titremodale {
     font-size: 40px;
@@ -180,6 +177,7 @@ form input {
 .modal-footer {
     border-top: none;
 }
+
 
 .btn{
     color: #E5CFA9;

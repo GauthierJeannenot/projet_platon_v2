@@ -1,28 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}User{% endblock %}
 
 {% block body %}
     <h1>User</h1>
+    {# On check les informations contenues dans User coté Twigg cette fois-ci
+    <pre>
+        {{ dump(user) }}
+    </pre> #}
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <th>Roles</th>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr>
             <tr>
                 <th>Prenom</th>
                 <td>{{ user.prenom }}</td>
@@ -31,12 +19,53 @@
                 <th>Nom</th>
                 <td>{{ user.nom }}</td>
             </tr>
+            <tr>
+                <th>Type de cours</th>
+                <td>
+                    {# classType étant stocker dans un array il faut itérer dedans pour en sortir les données #}
+                    {% for classTypes in user.infosUser.classType %}
+                        {{classTypes}}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>Bio</th>
+                <td>{{ user.infosUser.bio }}</td>
+            </tr>
+            <tr>
+                <th>Nos membres en parlent</th>
+                <td>{{ user.infosUser.opinion }}/5</td>
+            </tr>
+            <tr>
+                <th>
+                    personnalitée
+                </th>
+                <td>
+                {# comme le User est connécter à plusieurs champs de la table personnality il faut itérer dedans pour sortir les strings #}
+                {% for personnalitys in user.infosUser.personnality %}
+                    {{personnalitys.name}}
+                {% endfor %}
+                </td>
+            </tr>
+                <th>savoir à transmettre</th>
+                <td>
+                    {% for subCategorie in user.infosUser.subCategories %}
+                        {{subCategorie.name}}
+                    {% endfor %}
+                </td>
+            <tr>
+            <tr>
+                <th>Prendre un cours</th>
+                {# Ici on transmet l'Id du User en cours dans l'url afin de placer l'Id du receiver dans le ticket au travers du bouton #}
+                <td><a href="{{ path('platon_ticket_create', {user: user.id}) }}">Prendre un cours</a></td>
+            </tr>
+            <tr>
+                <th>Ajouter aux favoris</th>
+                <td><a href="{{ path('platon_favoris', {'user': user.id})}}">Favoris</a></td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_user_index') }}">back to list</a>
 
     <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-
-    {{ include('user/_delete_form.html.twig') }}
 {% endblock %}

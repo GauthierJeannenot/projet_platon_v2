@@ -49,11 +49,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $nom;
 
-    /**
-     * @ORM\OneToOne(targetEntity=InfosUser::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $infosUser;
+
 
     /**
      * @ORM\OneToMany(targetEntity=Ticket::class, mappedBy="sender")
@@ -70,10 +66,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\OneToOne(targetEntity=InfosUser::class, inversedBy="user", cascade={"persist", "remove"})
+     */
+    private $infosUser;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Favoris::class, mappedBy="adder")
+     */
+    private $added;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Favoris::class, mappedBy="adder")
+     */
+    private $favoris;
+
     public function __construct()
     {
         $this->tickets = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->added = new ArrayCollection();
+        $this->favoris = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -189,18 +202,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getInfosUser(): ?InfosUser
-    {
-        return $this->infosUser;
-    }
-
-    public function setInfosUser(?InfosUser $infosUser): self
-    {
-        $this->infosUser = $infosUser;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Ticket>
      */
@@ -272,4 +273,47 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getInfosUser(): ?InfosUser
+    {
+        return $this->infosUser;
+    }
+
+    public function setInfosUser(?InfosUser $infosUser): self
+    {
+        $this->infosUser = $infosUser;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Favoris>
+     */
+    public function getFavoris(): Collection
+    {
+        return $this->favoris;
+    }
+
+    public function addFavori(Favoris $favori): self
+    {
+        if (!$this->favoris->contains($favori)) {
+            $this->favoris[] = $favori;
+            $favori->setAdder($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavori(Favoris $favori): self
+    {
+        if ($this->favoris->removeElement($favori)) {
+            // set the owning side to null (unless already changed)
+            if ($favori->getAdder() === $this) {
+                $favori->setAdder(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
