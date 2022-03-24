@@ -3,9 +3,15 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Ticket;
+use App\Entity\Favoris;
 use App\Form\UserType;
+use App\Repository\FavorisRepository;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,6 +21,14 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class UserController extends AbstractController
 {
+
+    private $doctrine;
+
+    public function __construct(ManagerRegistry $doctrine){
+        $this->doctrine = $doctrine;
+    }
+
+
     /**
      * @Route("/", name="app_user_index", methods={"GET"})
      */
@@ -51,11 +65,63 @@ class UserController extends AbstractController
      */
     public function show(User $user): Response
     {
+        //dd($user);
         // checking des informations contenues dans user
-        // dd($user);
         return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);
+    }
+
+    public function addFavorite(EntityManagerInterface $em, FavorisRepository $favorisRepository, User $user){
+        // On vas chercher le FavorisRepository afin d'obtenir la méthode FindOneBy qui nous permettra de récupérer le user concerner par la page et on stock le user dans une variable $favorite
+        $favorite = $favorisRepository->findOneBy([
+            'added' => $user,
+            'adder' => $this->getUser()]);
+        //dd($favorite);
+
+
+        // On vérifis que le User concerné n'est pas déjà inscrit dans nos favoris
+        if(!$favorite) {
+        // On instancie un nouvel objet Favoris dans notre variable $favorite
+            $favorite = new Favoris();
+        // On ajoute le User concerné à notre entité Favoris
+            $favorite->setAdded($user);
+        // On ajoute le User connecté à notre entité Favoris
+            $favorite->setAdder($this->getUser());
+        //On vérifis que les bonnes informations sont stockées dans notre variable
+        //dd($favorite);
+            
+            $em->persist($favorite);
+        // Si le User est déja dans nos favoris le bouton servira à l'en supprimer
+        } else {
+            $em->remove($favorite);
+        }
+        // On flush le résultat du lien
+        $em->flush();
+
+
+        return $this->render('user/show.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
+    public function newTicket(User $user): Response
+    {
+        // encore une fois on regarde les informations stockées dans le user
+        //dd($user);
+
+        
+
+        $ticket = new Ticket();
+        $ticket->setReceiver($user);
+        $ticket->setSender($this->getUser());
+        $ticket->setStatus(0);
+
+        $em = $this->doctrine->getManager();
+        $em->persist($ticket);
+        $em->flush();
+
+        return $this->redirectToRoute('platon_main_home');
     }
 
     /**

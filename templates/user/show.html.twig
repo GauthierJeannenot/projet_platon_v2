@@ -55,10 +55,14 @@
                 </td>
             <tr>
             <tr>
-                <th>Membres favoris</th>
-                <td></td>
+                <th>Prendre un cours</th>
+                {# Ici on transmet l'Id du User en cours dans l'url afin de placer l'Id du receiver dans le ticket au travers du bouton #}
+                <td><a href="{{ path('platon_ticket_create', {user: user.id}) }}">Prendre un cours</a></td>
             </tr>
-
+            <tr>
+                <th>Ajouter aux favoris</th>
+                <td><a href="{{ path('platon_favoris', {'user': user.id})}}">Favoris</a></td>
+            </tr>
         </tbody>
     </table>
 

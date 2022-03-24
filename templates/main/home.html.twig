@@ -19,13 +19,15 @@
                 
                 Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
                 {{ticket.content}} <br>
-                {{ticket.status}}
+                {{ticket.status}} <br>
+                <a href="{{ path("platon_ticket_remove", {idTicket: ticket.id}) }}">Annuler</a>
+                <a href="{{ path("platon_ticket_update", {idTicket: ticket.id}) }}">Terminer</a> <br>
             {% endif %}
         {% endfor %}
         </div>
 		<h1>cours prévus à recevoir</h1>
         <div>
-            
+            {# On itére dans l'entité ticket afin de ne montrer que les tickets dont le user connecter (grace à app.user pas besoin de filtrer on ne sortira que les données du user connecté) #}
             {% for ticket in app.user.tickets %}
                 {% if ticket.status is same as(0) %}
 					<p>Vous avez cours avec :</p>
@@ -52,8 +54,8 @@
             {% endfor %}
         </div>
         <div>
+        
             {% for userTicket in tickets %}
-                
                 {% if userTicket.status is same as(3) %}
                     {{userTicket.sender.prenom}} <br>
                     {# ajouter les knowledges de la table InfosUser du User concerné #}

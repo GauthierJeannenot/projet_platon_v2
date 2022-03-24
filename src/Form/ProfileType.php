@@ -53,7 +53,8 @@ class ProfileType extends AbstractType
                  'class' => SubCategories::class,
                  'multiple' => true,
                  'by_reference' => false,
-                 'choice_label' => 'name'
+                 'choice_label' => 'name',
+                 'expanded' => false,
              ])
 
 

@@ -71,10 +71,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $infosUser;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Favoris::class, mappedBy="adder")
+     */
+    private $added;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Favoris::class, mappedBy="adder")
+     */
+    private $favoris;
+
     public function __construct()
     {
         $this->tickets = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->added = new ArrayCollection();
+        $this->favoris = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -273,4 +285,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Favoris>
+     */
+    public function getFavoris(): Collection
+    {
+        return $this->favoris;
+    }
+
+    public function addFavori(Favoris $favori): self
+    {
+        if (!$this->favoris->contains($favori)) {
+            $this->favoris[] = $favori;
+            $favori->setAdder($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavori(Favoris $favori): self
+    {
+        if ($this->favoris->removeElement($favori)) {
+            // set the owning side to null (unless already changed)
+            if ($favori->getAdder() === $this) {
+                $favori->setAdder(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
