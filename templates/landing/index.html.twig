@@ -1,185 +1,371 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}Hello LandingController!
-
-{% block stylesheets %}
-
 {% endblock %}
 
-{% endblock %}
+{% block stylesheets %}{% endblock %}
+
 
 {% block innerContent %}
-{# <h1>bonjour</h1>
-<div id='root'></div> #}
+	{# <h1>bonjour</h1>
+								<div id='root'></div> #}
 
 
+	<nav class="container-fluid d-flex align-items-center justify-content-between">
+
+		<svg width="195" height="50" viewbox="0 0 195 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M22.1806 0H39.3003C42.2939 0 44.9787 0.517703 47.3549 1.55311C49.7498 2.58852 51.6489 4.15087 53.0521 6.24018C54.4554 8.32948 55.157 10.9642 55.157 14.1444C55.157 17.3061 54.4554 19.9871 53.0521 22.1873C51.6489 24.369 49.7498 26.0331 47.3549 27.1794C44.9787 28.3073 42.2939 28.8712 39.3003 28.8712H32.9856L32.9764 49.2378H15.8567C12.8631 49.2378 10.1782 48.7201 7.80208 47.6847C5.4072 46.6493 3.50813 45.0869 2.10488 42.9976C0.701626 40.9083 0 38.2736 0 35.0934C0 31.9317 0.701626 29.2507 2.10488 27.0505C3.50813 24.8687 5.4072 23.2047 7.80208 22.0583C10.1782 20.9305 12.8631 20.3666 15.8567 20.3666H22.1714V3.47649L22.1806 0ZM35.8202 20.3846H32.9856V8.51438H35.8202C37.1486 8.51438 38.4209 8.69003 39.637 9.04132C40.8532 9.39262 41.8448 10.0028 42.6119 10.8718C43.379 11.7223 43.7626 12.9241 43.7626 14.4772C43.7626 16.0118 43.379 17.2044 42.6119 18.0549C41.8448 18.9054 40.8532 19.5063 39.637 19.8576C38.4209 20.2089 37.1486 20.3846 35.8202 20.3846ZM19.3368 28.8532H22.1714V40.7234H19.3368C18.0084 40.7234 16.7361 40.5478 15.52 40.1965C14.3038 39.8452 13.3122 39.235 12.5451 38.366C11.778 37.5155 11.3944 36.3137 11.3944 34.7606C11.3944 33.226 11.778 32.0334 12.5451 31.1829C13.3122 30.3324 14.3038 29.7315 15.52 29.3802C16.7361 29.0289 18.0084 28.8532 19.3368 28.8532Z" fill="#25366F"/>
+			<path d="M57.3737 49.1125V1.40982H67.6175V49.1125H57.3737Z" fill="#25366F"/>
+			<path d="M84.4894 50C81.8512 50 79.4564 49.3529 77.3047 48.0586C75.1531 46.7459 73.4411 44.9524 72.1688 42.6782C70.8965 40.3855 70.2604 37.7785 70.2604 34.8572C70.2604 32.0283 70.8685 29.486 72.0846 27.2303C73.3008 24.9561 74.9753 23.1534 77.1083 21.8221C79.2412 20.4909 81.7016 19.8253 84.4894 19.8253C86.3042 19.8253 88.0256 20.1304 89.6533 20.7405C91.2998 21.3507 92.6937 22.2104 93.835 23.3198V20.7128H104.079V49.1125H93.835V46.1727C92.4879 47.43 91.0285 48.3822 89.4569 49.0293C87.9039 49.6764 86.2481 50 84.4894 50ZM87.5765 41.4302C88.8488 41.4302 89.9714 41.1528 90.9443 40.5981C91.9172 40.025 92.675 39.2484 93.2176 38.2685C93.7602 37.2885 94.0315 36.1699 94.0315 34.9126C94.0315 33.6554 93.7508 32.5367 93.1895 31.5568C92.6469 30.5769 91.8892 29.8096 90.9162 29.2549C89.9433 28.6817 88.8301 28.3951 87.5765 28.3951C86.3416 28.3951 85.2284 28.6817 84.2368 29.2549C83.2639 29.8096 82.4874 30.5769 81.9074 31.5568C81.3461 32.5367 81.0654 33.6554 81.0654 34.9126C81.0654 36.1514 81.3461 37.27 81.9074 38.2685C82.4687 39.2484 83.2358 40.025 84.2087 40.5981C85.2003 41.1528 86.3229 41.4302 87.5765 41.4302Z" fill="#25366F"/>
+			<path d="M119.551 50C116.445 50 114.023 49.0385 112.282 47.1156C110.542 45.1743 109.672 42.4656 109.672 38.9896V28.3951H105.491V20.7128H109.672V10.0629H119.916V20.7128H125.922V28.3951H119.916V38.2407C119.916 39.1282 120.094 39.8031 120.449 40.2653C120.824 40.7276 121.366 40.9587 122.077 40.9587C122.9 40.9587 123.714 40.6628 124.519 40.0712L127.073 48.1973C125.988 48.752 124.781 49.1865 123.452 49.5008C122.124 49.8336 120.824 50 119.551 50Z" fill="#25366F"/>
+			<path d="M144.034 50C140.797 50 137.878 49.3621 135.277 48.0863C132.677 46.7921 130.619 45.0171 129.103 42.7614C127.588 40.4872 126.83 37.8709 126.83 34.9126C126.83 31.9543 127.588 29.3473 129.103 27.0916C130.619 24.8174 132.677 23.0424 135.277 21.7667C137.878 20.4724 140.797 19.8253 144.034 19.8253C147.271 19.8253 150.189 20.4724 152.79 21.7667C155.391 23.0424 157.449 24.8174 158.964 27.0916C160.48 29.3473 161.238 31.9543 161.238 34.9126C161.238 37.8709 160.48 40.4872 158.964 42.7614C157.449 45.0171 155.391 46.7921 152.79 48.0863C150.189 49.3621 147.271 50 144.034 50ZM144.034 41.4024C145.231 41.4024 146.316 41.1251 147.289 40.5704C148.281 40.0157 149.067 39.2576 149.647 38.2962C150.227 37.3163 150.517 36.1884 150.517 34.9126C150.517 33.6369 150.227 32.509 149.647 31.5291C149.067 30.5491 148.281 29.7911 147.289 29.2549C146.316 28.7002 145.231 28.4228 144.034 28.4228C142.836 28.4228 141.742 28.7002 140.75 29.2549C139.777 29.7911 139.001 30.5491 138.421 31.5291C137.841 32.509 137.551 33.6369 137.551 34.9126C137.551 36.1884 137.841 37.3163 138.421 38.2962C139.001 39.2576 139.777 40.0157 140.75 40.5704C141.742 41.1251 142.836 41.4024 144.034 41.4024Z" fill="#25366F"/>
+			<path d="M163.402 49.1125V20.7128H173.646V23.5971C174.881 22.4323 176.331 21.5171 177.996 20.8514C179.661 20.1673 181.411 19.8253 183.244 19.8253C185.452 19.8253 187.407 20.306 189.11 21.2674C190.813 22.2289 192.15 23.5601 193.123 25.2612C194.115 26.9437 194.611 28.8758 194.611 31.0576V49.1125H184.367V33.2209C184.367 31.5198 183.89 30.1793 182.936 29.1994C181.982 28.201 180.691 27.7018 179.063 27.7018C177.959 27.7018 177.005 27.9236 176.2 28.3674C175.396 28.8111 174.769 29.4305 174.32 30.2256C173.871 31.0021 173.646 31.8989 173.646 32.9158V49.1125H163.402Z" fill="#25366F"/>
+		</svg>
+
+		<div class="nav-options d-flex align-items-center">
+
+			<ul class="d-flex justify-content-center mt-4">
+				<li>
+					<a href="#">
+						Comment ça marche ?</a>
+				</li>
+				<li>
+					<a id="catalogue" href="#">
+						Catalogue des savoirs</a>
+				</li>
+			</ul>
+
+			<input type="search" name="search-bar" id="search-bar" placeholder="Recherche">
+
+			<a class="blog" href="#">Blog</a>
+
+		</div>
+		<button>Connexion</button>
+
+		<div id="modale" class="hidden">
+			<div class="container">
+				<div class="row">
+
+					<div class="row marge">
+						<article class="col-3">
+							<div class="row">
+								<div class="col-2">
+									<img src="illustrations/administratif.svg" alt="Administratif">
+								</div>
+								<div class="col-8">
+									<p class="categorie">Administratif</p>
+									<ul>
+										<li><a href="#">Assistance juridique</a></li>
+										<li><a href="#">Comptabilité</a></li>
+										<li><a href="#">Dossier banque</a></li>
+										<li><a href="#">Impôts</a></li>
+										<li><a href="#">Rédaction</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
+
+						<article class="col-3">
+							<div class="row">
+								<div class="col-2">
+									<img src="illustrations/art.svg" alt="Art">
+								</div>
+								<div class="col-8">
+									<p class="categorie">Art</p>
+									<ul>
+										<li><a href="#">Cinéma</a></li>
+										<li><a href="#">Théâtre</a></li>
+										<li><a href="#">Danse</a></li>
+										<li><a href="#">Musique</a></li>
+										<li><a href="#">Peinture</a></li>
+										<li><a href="#">Photographie</a></li>
+										<li><a href="#">Street-art</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
+
+						<article class="col-3">
+							<div class="row">
+								<div class="col-2">
+									<img src="illustrations/bien_etre.svg" alt="Bien-être">
+								</div>
+								<div class="col-8">
+									<p class="categorie">Bien-être</p>
+									<ul>
+										<li><a href="#">Coiffure</a></li>
+										<li><a href="#">Développement-personnel</a></li>
+										<li><a href="#">Maquillage</a></li>
+										<li><a href="#">Massage</a></li>
+										<li><a href="#">Naturopathie</a></li>
+										<li><a href="#">Relaxation</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
 
 
-<header>
+						<article class="col-3">
+							<div class="row">
+								<div class="col-2">
+									<img src="illustrations/gastronomie.svg" alt="Gastronomie">
+								</div>
+								<div class="col-8">
+									<p class="categorie">Gastronomie</p>
+									<ul>
+										<li><a href="#">Asiatique</a></li>
+										<li><a href="#">Cuisine du monde</a></li>
+										<li><a href="#">Exotique</a></li>
+										<li><a href="#">Français</a></li>
+										<li><a href="#">Gastronomique</a></li>
+										<li><a href="#">Italien</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
 
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="titre text-center text-white">
-            <h1>Échangez vos savoirs</h1>
-            <h2>On a tous quelque chose à transmettre !</h2>
-            <a class="btn shadow" href="{{ path('app_register')}}">Inscription</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <svg fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M-1.99998 142.507L960.955 0L1920 142.507H-1.99998Z" fill="#FBFBFB"/>
-    </svg>
-      
-    
-  </header>
-
-
-<section id="quoi">
-
-      <div class="container">
-        <div class="row d-flex justify-content-around align-content-center">
-          <h2>C'est quoi Platon ?</h2>
-
-          <div class="col-12 col-md-3 plateforme">
-            <img src="illustrations/billets.svg" alt="Billets">
-            <h3>Une plateforme gratuite</h3>
-          </div>
-
-          <div class="col-12 col-md-3 qualite">
-            <img src="illustrations/savoirs.svg" alt="savoirs">
-            <h3>Des savoirs variés </br>et de qualité</h3>
-          </div>
-
-          <div class="col-12 col-md-3 communaute">
-            <img src="illustrations/communaute.svg" alt="Communauté">
-            <h3>Une communauté active</h3>
-          </div>
-
-        </div>
-
-        <div class="text-center"><a class="btn shadow" href="#">En savoir plus</a></div>
-      </div>
-
-    
-
-    </section>
-
-    <!--FIN DE LA PREMIERE SECTION-->
+					</div>
 
 
-    <!--DEBUT DE LA DEUXIEME SECTION-->
-
-    <section id="savoirs">
-
-      <div class="container">
-        <div class="row d-flex justify-content-center align-content-center">
-          <h2>Une multitude de savoirs</h2>
-          <p class="apprenez">Apprenez des uns, transmettez aux autres.</p>
-
-          <div class="col-12 col-md-3">
-            <div class="langues">
-              <img src="illustrations/planete_bleue.svg" alt="Anglais">
-            </div>
-            <p class="text-white">Anglais</p>
-          </div>
-
-          <div class="col-12 col-md-3">
-            <div class="gastronomie"><img src="illustrations/gastronomie_bleu.svg" alt="Gastronomie">
-            </div>
-            <p class="text-white">Gastronomie</p>
-          </div>
-
-          <div class="col-12 col-md-3">
-            <div class="art"><img src="illustrations/art_bleu.svg" alt="Art">
-            </div>
-            <p class="text-white">
-              </pclass>Art</p>
-          </div>
-
-          <p class="categorie">Près de <span>60 catégories</span> à explorer !</p>
-          
-          <div class="text-center">
-            <a class="btn shadow" href="#">Accéder au savoir
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!--FIN DE LA DEUXIEME SECTION-->
+					<div class="row marge_between">
+						<article class="col-3">
+							<div class="row">
+								<div class="col-2">
+									<img src="illustrations/langues.svg" alt="Langues">
+								</div>
+								<div class="col-8">
+									<p class="categorie">Langues</p>
+									<ul>
+										<li><a href="#">Allemand</a></li>
+										<li><a href="#">Anglais</a></li>
+										<li><a href="#">Arabe</a></li>
+										<li><a href="#">Chinois</a></li>
+										<li><a href="#">Espagnol</a></li>
+										<li><a href="#">Français</a></li>
+										<li><a href="#">Italien</a></li>
+										<li><a href="#">Japonais</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
 
 
-    <!--DEBUT DE LA TROISIEME SECTION-->
+						<article class="col-3">
+							<div class="row">
+								<div class="col-2">
+									<img src="illustrations/numerique.svg" alt="Numérique">
+								</div>
+								<div class="col-8">
+									<p class="categorie">Numérique</p>
+									<ul>
+										<li><a href="#">Création site web</a></li>
+										<li><a href="#">Logiciels design</a></li>
+										<li><a href="#">Logiciels Office</a></li>
+										<li><a href="#">Marketing digital</a></li>
+										<li><a href="#">Montage photo</a></li>
+										<li><a href="#">Montage vidéo</a></li>
+										<li><a href="#">Réseaux sociaux</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
 
-    <section id="temoignages">
+						<article class="col-3">
+							<div class="row">
+								<div class="col-2">
+									<img src="illustrations/sciences.svg" alt="Sciences">
+								</div>
+								<div class="col-8">
+									<p class="categorie">Sciences</p>
+									<ul>
+										<li><a href="#">Biosciences</a></li>
+										<li><a href="#">Chimie</a></li>
+										<li><a href="#">Géosciences</a></li>
+										<li><a href="#">Maths</a></li>
+										<li><a href="#">Physique</a></li>
+										<li><a href="#">Économie</a></li>
+										<li><a href="#">Sciences de l'Univers</a></li>
+										<li><a href="#">Sciences Politiques</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
 
-      <div class="container">
-        <div class="row">
-          <h2>Témoignages</h2>
+						<article class="col-3">
+							<div class="row">
+								<div class="col-2 sports">
+									<img src="illustrations/sport.svg" alt="Sports">
+								</div>
+								<div class="col-8">
+									<p class="categorie">Sports</p>
+									<ul>
+										<li>
+											<a href="#">Danse</li>
+										</li>
+										<li>
+											<a href="#">Fitness</li>
+										</li>
+										<li>
+											<a href="#">Musculation</li>
+										</li>
+										<li>
+											<a href="#">Yoga</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</article>
+					</div>
 
-          <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <img src="img/theo.png" class="d-block w-3" alt="Théo">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>“Grâce à Platon, j’apprends à cuisiner avec Zoé. Les lasagnes n’ont plus de secret pour moi ! Et
-                    j’adore donner des cours de guitare !”</h5>
-                  <p>Théo, guitariste.</p>
-                </div>
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="img/anna.png" class="d-block w-3" alt="Anna">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>"Je suis très satistaite de la plateforme Platon ! J'ai enfin appris à dessiner comme un pro en
-                    échange de mes cours de cuisine.</h5>
-                  <p>Anna, spécialiste en cuisine du monde</p>
-                </div>
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="img/louise.png" class="d-block w-3" alt="Louise">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>"Je remercie Platon pour m'avoir fait découvrir une multitude de savoirs. J'ai également rencontré des gens géniaux !"</h5>
-                  <p>Louise, pianiste</p>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+				</div>
+			</div>
+		</div>
 
-
-        </div>
-        <div class="text-center"><a class="btn shadow" href="#">Rejoindre la communauté !</a></div>
-      </div>
-
-    </section>
-
-    <!--FIN DE LA TROISIEME SECTION-->
-
-  </main>
+	</nav>
 
 
-  
-{% endblock %}
+	<header>
+
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="titre text-center text-white">
+						<h1>Échangez vos savoirs</h1>
+						<h2>On a tous quelque chose à transmettre !</h2>
+						<a class="btn shadow" href="{{ path('app_register')}}">Inscription</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<svg fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M-1.99998 142.507L960.955 0L1920 142.507H-1.99998Z" fill="#FBFBFB"/>
+		</svg>
 
 
+	</header>
+
+
+	<section id="quoi">
+
+		<div class="container">
+			<div class="row d-flex justify-content-around align-content-center">
+				<h2>C'est quoi Platon ?</h2>
+
+				<div class="col-12 col-md-3 plateforme">
+					<img src="illustrations/billets.svg" alt="Billets">
+					<h3>Une plateforme gratuite</h3>
+				</div>
+
+				<div class="col-12 col-md-3 qualite">
+					<img src="illustrations/savoirs.svg" alt="savoirs">
+					<h3>Des savoirs variés
+					</br>et de qualité</h3>
+			</div>
+
+			<div class="col-12 col-md-3 communaute">
+				<img src="illustrations/communaute.svg" alt="Communauté">
+				<h3>Une communauté active</h3>
+			</div>
+
+		</div>
+
+		<div class="text-center">
+			<a class="btn shadow" href="#">En savoir plus</a>
+		</div>
+	</div>
+
+
+</section>
+
+<!--FIN DE LA PREMIERE SECTION-->
+
+
+<!--DEBUT DE LA DEUXIEME SECTION-->
+
+<section id="savoirs">
+
+	<div class="container">
+		<div class="row d-flex justify-content-center align-content-center">
+			<h2>Une multitude de savoirs</h2>
+			<p class="apprenez">Apprenez des uns, transmettez aux autres.</p>
+
+			<div class="col-12 col-md-3">
+				<div class="langues">
+					<img src="illustrations/planete_bleue.svg" alt="Anglais">
+				</div>
+				<p class="text-white">Anglais</p>
+			</div>
+
+			<div class="col-12 col-md-3">
+				<div class="gastronomie"><img src="illustrations/gastronomie_bleu.svg" alt="Gastronomie">
+				</div>
+				<p class="text-white">Gastronomie</p>
+			</div>
+
+			<div class="col-12 col-md-3">
+				<div class="art"><img src="illustrations/art_bleu.svg" alt="Art">
+				</div>
+				<p class="text-white"></p>
+			</pclass>Art</p>
+	</div>
+
+	<p class="categorie">Près de
+		<span>60 catégories</span>
+		à explorer !</p>
+
+	<div class="text-center">
+		<a class="btn shadow" href="#">Accéder au savoir
+		</a>
+	</div>
+
+</div></div></section><!--FIN DE LA DEUXIEME SECTION--><!--DEBUT DE LA TROISIEME SECTION--><section id="temoignages"><div class="container">
+<div class="row">
+	<h2>Témoignages</h2>
+
+	<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active" data-bs-interval="10000">
+				<img src="img/theo.png" class="d-block w-3" alt="Théo">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>“Grâce à Platon, j’apprends à cuisiner avec Zoé. Les lasagnes n’ont plus de secret pour moi ! Et
+																																																                    j’adore donner des cours de guitare !”</h5>
+					<p>Théo, guitariste.</p>
+				</div>
+			</div>
+			<div class="carousel-item" data-bs-interval="2000">
+				<img src="img/anna.png" class="d-block w-3" alt="Anna">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>"Je suis très satistaite de la plateforme Platon ! J'ai enfin appris à dessiner comme un pro en
+																																																                    échange de mes cours de cuisine.</h5>
+					<p>Anna, spécialiste en cuisine du monde</p>
+				</div>
+			</div>
+			<div class="carousel-item" data-bs-interval="2000">
+				<img src="img/louise.png" class="d-block w-3" alt="Louise">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>"Je remercie Platon pour m'avoir fait découvrir une multitude de savoirs. J'ai également rencontré des gens géniaux !"</h5>
+					<p>Louise, pianiste</p>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+
+
+</div>
+<div class="text-center">
+	<a class="btn shadow" href="#">Rejoindre la communauté !</a>
+</div></div></section><!--FIN DE LA TROISIEME SECTION--></main>{% endblock %}

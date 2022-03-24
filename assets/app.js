@@ -10,6 +10,9 @@
 
 import './styles/connexion.css';
 import './styles/inscription.css';
+import './styles/nav.css';
+import './styles/index.css';
+
 
 
 import React from 'react';
@@ -20,8 +23,8 @@ import { App } from './component/App';
 
 let reactRoot = document.getElementById('root')
 
-if(reactRoot != undefined){
-   
-    ReactDOM.render(<App/>, reactRoot);
+if (reactRoot != undefined) {
+
+    ReactDOM.render(<App />, reactRoot);
 }
 

@@ -1,6 +1,7 @@
 body{
     font-family: 'Spartan';
     background-color: #fbfbfb;
+    font-variant-ligatures: no-common-ligatures;
 }
 
 /* BODY */ 
@@ -11,32 +12,8 @@ ul{
 }
 
 
-/* NAV */
-
-
-/* nav{
-    display: flex;
-    padding: 20px 10px 20px 10px;
-}
-nav ul{
-    display: flex;
-    justify-content: space-around;
-}
-
-nav a{
-    text-decoration: none;
-    color:#25366F;
-}
-
-nav button{
-    color: #25366F;
-    background-color: white;
-    border-color: #25366F;
-    border-radius: 10px;
-} */
-
-
 /* HEADER */
+
 header{
     background-color: #25366F;
     position: relative;
@@ -77,31 +54,41 @@ header .btn:hover{
 
 header svg {
     position: absolute;
-    bottom: -8px;
+    bottom: -0.5px;
     left: 0px;
     width: 100%;
 }
 
 /* MAIN */ 
 
-/* VALABLE POUR LES 3 SECTIONS */
-
-section h2, p{
+/* section h2, p{
     text-align: center;
     color: black;
     margin-top: 30px;
+} */
+
+
+/* PREMIERE SECTION */
+
+#quoi{
+    background-image: url(vague.svg);
+    background-position: 0% 110%;
 }
 
-
-/* PREMIERE SECTION - SECTION QUOI*/
-
-section#quoi h2{
+#quoi h2{
+    text-align: center;
     font-weight: bold;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
+    margin-top: 30px;
 }
 
-section#quoi .plateforme, .qualite, .communaute{
+/* #quoi h2, p{
+    text-align: center;
+    color: black;
+    margin-top: 30px;
+} */
+
+#quoi .plateforme, .qualite, .communaute{
     background-color: #25366F;
     text-align: center;
     color: #fbfbfb;
@@ -113,78 +100,81 @@ section#quoi .plateforme, .qualite, .communaute{
     margin-bottom: 50px;
 }
 
-section#quoi .plateforme, .qualite, .communaute, h3{
+#quoi .plateforme, .qualite, .communaute, h3{
     font-size: 20px;
 }
 
-section#quoi .plateforme{
+#quoi .plateforme, .qualite, .communaute{
     width: 300px;
 }
 
-section#quoi .qualite{
-    width: 300px;
-}
-
-section#quoi .communaute{
-    width: 300px;
-}  
-
-section#quoi img{
+#quoi img{
     margin: 30px 0px 50px 0px;
 }
 
-section#quoi .btn{
+#quoi .btn{
     color: #E5CFA9;
     background: #25366F;
     font-weight: bold;
-    padding: 10px 10px 10px 10px;
+    padding: 20px;
     text-align: center;
-    margin-bottom: 60px;
-    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-top: 50px;
 }
 
-section#quoi .btn:hover{
+#quoi .btn:hover{
     color: #25366F;
     background-color: #E5CFA9;
 }
 
+#svg-container{
+    width: 100%;
+    padding: 0px;
+    margin-top: -5vh;
+}
 
-/* DEUXIEME SECTION - SECTION SAVOIRS */
 
+/* DEUXIEME SECTION  */
 
-section#savoirs .langues, .gastronomie, .art{
+#savoirs .langues, .gastronomie, .art{
     background-color: white;
     text-align: center;
     border: solid #E5CFA9;
     padding: 50px;
+    width: 300px;
 }
 
-section#savoirs{
+#savoirs{
     background-color: #25366F;
 }
 
-section#savoirs h2{
+#savoirs h2{
     color: white;
     text-align: center;
     font-weight: bold;
-    margin-top: 60px;
+    margin-top: 100px;
 }
 
-section#savoirs .apprenez{
+#savoirs .apprenez{
     color: #E5CFA9;
 }
 
-section#savoirs p{
-    margin-top: 20px;
+#savoirs p{
+    margin-top: 40px;
     margin-bottom: 50px;
     font-weight: bold;
+    text-align: center;
 }
 
-section#savoirs img{
+#savoirs .cours{
+    margin-top: 20px;
+}
+
+#savoirs img{
    height: 100px;
 }
 
-section#savoirs .categorie{
+#savoirs .categorie{
     color: #fbfbfb;
     text-align: center;
     font-weight: lighter;
@@ -196,16 +186,16 @@ span{
     font-weight: bold;
 }
 
-section#savoirs .btn{
+#savoirs .btn{
     color: #25366F;
     background-color: #E5CFA9;
     font-weight: bold;
-    padding: 10px 10px 10px 10px;
-    margin-top: 20px;
-    margin-bottom: 60px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-section#savoirs .btn:hover{
+#savoirs .btn:hover{
     color:#E5CFA9;
     background-color: #25366F;
 }
@@ -213,34 +203,49 @@ section#savoirs .btn:hover{
 
 /* TROISIEME SECTION - SECTION TEMOIGNAGES */
 
-section#temoignages h2{
-    margin-top: 40px;
+#temoignages h2{
+    margin-top: 100px;
+    margin-bottom: 30px;
     font-weight: bold;
+    text-align: center;
 }
 
-section#temoignages p{
+#temoignages h2{
+    text-align: center;
+    color: black;
+    margin-top: 30px;
+}
+
+#temoignages p{
     color: grey;
 }
 
-section#temoignages .btn{
+#temoignages .btn{
     color: #E5CFA9;
     background: #25366F;
     font-weight: bold;
     border: none;
-    padding: 10px 10px 10px 10px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    padding: 20px;
+    margin-top: 70px;
+    margin-bottom: 100px;
 }
 
-section#temoignages .btn:hover{
+#temoignages .btn:hover{
     color: #25366F;
     background-color: #E5CFA9;
 }
 
+.platon-carousel-item .carousel-caption {
+    position: static;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+
 
 /* FOOTER */
 
-footer h3{
+h4{
     font-weight: bold;
 }
 
@@ -249,14 +254,21 @@ footer{
     color: white;
     background-color: #25366F;
 }
+
 footer a{
     color: white;
     text-decoration: none;
 }
+
+footer a:hover{
+    color: #E5CFA9;
+}
+
 footer .RS{
     margin-top: 25px;
     display: flex;
 }
+
 footer .RS img{
     margin-right: 40px;
 }
