@@ -1,5 +1,10 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheets %}
+    {# <link rel="stylesheet" href="{{asset('assets/styles/nav_blue.css')}}">     #}
+    <link rel="stylesheet" href="{{asset('assets/styles/inscription.css')}}">  
+	 
+{% endblock %}
 
 {% block innerContent %}
 
@@ -8,6 +13,7 @@
 		<div class="container">
 
 
+        <form action="" class="offset-md-3 col-md-6 col-12 formulaire">
 			<h2>Inscription</h2>
 
 			{{ form_start(registrationForm,{attr:{'class':"offset-md-3 col-md-6 col-12 formulaire"}}) }}
@@ -33,7 +39,7 @@
 			<div>
 				{{ form_widget(registrationForm.password.first) }}
 
-				<img src="icones/mdp_hidden.svg" alt="oeilferme">
+				<img src="{{asset ('assets/icones/mdp_hidden.svg')}}" alt="oeilferme">
 			</div>
 
 			<div class="confmdp">
@@ -42,7 +48,8 @@
 						  'class': ''
 					  }
 					}) }}
-				<img src="icones/mdp_hidden.svg" alt="oeilferme">
+					
+				<img src="{{asset('assets/icones/mdp_hidden.svg')}}" alt="oeilferme">
 			</div>
 
 			<div class="cgu d-flex">

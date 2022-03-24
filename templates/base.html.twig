@@ -1,30 +1,55 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>
-			{% block title %}Welcome!
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!--Google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <title>Platon, donner pour apprendre</title>
+
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/base.css">
+
+  <link rel="stylesheet" href="{{asset('assets/styles/nav.css')}}">     
+  {# <link rel="stylesheet" href="{{asset('assets/styles/connexion.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/styles/inscription.css')}}">
+  <link rel="stylesheet" href="{{asset('../../assets/styles/inscription.css')}}">		 
+  <link rel="stylesheet" href="{{asset('assets/styles/catalogue.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/styles/base.css')}}"> 
+  <link rel="stylesheet" href="{{asset('assets/styles/index.css')}}">    #}
+  {# <link rel="stylesheet" href="{{asset('assets/styles/inscription.css')}}">  #}
+
+  <link rel="icon" type="{{asset('assets/image/png')}}" href="{{asset('assets/icones/favicon.png')}}" />
+
+</head>
+
+			{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+			{% block stylesheets %}
+	{{ encore_entry_link_tags('app') }}
 			{% endblock %}
-		</title>
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-		<link
-		rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-		{# <link rel="stylesheet" href="css/nav.css"> #}
-		<link rel="stylesheet" href="{{asset('assets/styles/connexion.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/styles/inscription.css')}}">
-		{# <link rel="stylesheet" href="../../assets/styles/inscription.css"> #}
 
-
-		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-		{{ encore_entry_link_tags('app') }}{% block stylesheets %}
-
+				{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 
-			{% block javascripts %}
-		{{ encore_entry_script_tags('app') }}
-	{% endblock %}
-	</head>
-		<body>{% block body %}
+		</head>
 
-	{% endblock %}
-</body></html>
+		<body>
+
+		{% block body %}
+
+		{% endblock %}
+		
+	    </body>
+	</html>

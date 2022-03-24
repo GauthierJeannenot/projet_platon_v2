@@ -1,0 +1,289 @@
+body{
+    font-family: 'Spartan';
+    background-color: #fbfbfb;
+    font-variant-ligatures: no-common-ligatures;
+}
+
+/* BODY */ 
+
+ul{
+    padding: 0; 
+    list-style: none; 
+}
+
+
+/* HEADER */
+
+header{
+    background-color: #25366F;
+    position: relative;
+}
+
+header .container-fluid{
+    background-image: url('../img/header_background.png');
+    background-position: center;
+    background-size: cover;
+}
+
+header h1{
+    font-weight: bold;
+    font-size: 60px;
+    margin-top: 250px;
+    margin-bottom: 40px;
+}
+
+header h2{
+    font-weight: lighter;
+}
+
+header .btn{
+    color: #25366F;
+    background: #E5CFA9;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 15px 30px 15px 30px;
+    border: none;
+    margin-top: 40px;
+    margin-bottom: 250px;
+}
+
+header .btn:hover{
+    color: #E5CFA9;
+    background-color: #25366F;
+}
+
+header svg {
+    position: absolute;
+    bottom: -0.5px;
+    left: 0px;
+    width: 100%;
+}
+
+/* MAIN */ 
+
+/* PREMIERE SECTION */
+
+#quoi{
+    background-image: url(vague.svg);
+    background-position: 0% 110%;
+}
+
+#quoi h2{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
+#quoi .plateforme, .qualite, .communaute{
+    background-color: #25366F;
+    text-align: center;
+    color: #fbfbfb;
+    border: solid #E5CFA9; 
+    border-top-right-radius: 300px;
+    border-top-left-radius: 300px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+
+#quoi .plateforme, .qualite, .communaute, h3{
+    font-size: 20px;
+}
+
+#quoi .plateforme, .qualite, .communaute{
+    width: 300px;
+}
+
+#quoi img{
+    margin: 30px 0px 50px 0px;
+}
+
+#quoi .btn{
+    color: #E5CFA9;
+    background: #25366F;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+#quoi .btn:hover{
+    color: #25366F;
+    background-color: #E5CFA9;
+}
+
+#svg-container{
+    width: 100%;
+    padding: 0px;
+    margin-top: -5vh;
+}
+
+
+/* DEUXIEME SECTION  */
+
+#savoirs .langues, .gastronomie, .art{
+    background-color: white;
+    text-align: center;
+    border: solid #E5CFA9;
+    padding: 50px;
+    width: 300px;
+    margin: auto;
+}
+
+#savoirs{
+    background-color: #25366F;
+}
+
+#savoirs h2{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 100px;
+}
+
+#savoirs .apprenez{
+    color: #E5CFA9;
+}
+
+#savoirs p{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#savoirs .cours{
+    margin-top: 20px;
+}
+
+#savoirs img{
+   height: 100px;
+}
+
+#savoirs .categorie{
+    color: #fbfbfb;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 25px;
+    margin: 30px;
+}
+
+span{
+    font-weight: bold;
+}
+
+#savoirs .btn{
+    color: #25366F;
+    background-color: #E5CFA9;
+    font-weight: bold;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#savoirs .btn:hover{
+    color:#E5CFA9;
+    background-color: #25366F;
+}
+    
+
+/* TROISIEME SECTION */
+
+#temoignages h2{
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#temoignages h2{
+    text-align: center;
+    color: black;
+    margin-top: 30px;
+}
+
+#temoignages p{
+    color: grey;
+}
+
+#temoignages .btn{
+    color: #E5CFA9;
+    background: #25366F;
+    font-weight: bold;
+    border: none;
+    padding: 20px;
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+#temoignages .btn:hover{
+    color: #25366F;
+    background-color: #E5CFA9;
+}
+
+.platon-carousel-item .carousel-caption {
+    position: static;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+
+/* FOOTER */
+
+h4{
+    font-weight: bold;
+}
+
+footer{
+    padding: 50px 0px 50px 0px;
+    color: white;
+    background-color: #25366F;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #E5CFA9;
+}
+
+footer .RS{
+    margin-top: 25px;
+    display: flex;
+}
+
+footer .RS img{
+    margin-right: 40px;
+}
+
+
+
+/*******************************
+CSS MEDIA QURIES
+*******************************/
+/*Mobile*/
+@media (max-width: 768px){
+    /*******************************
+    CSS FOOTER
+    *******************************/
+footer .container{
+    display: flex;
+    text-align: center;
+}
+
+footer div .col-12{
+    margin-top: 20px;
+}
+
+footer .RS .facebook{
+    display: flex;
+    margin-left: 130px;
+}
+}
+
+
+  

@@ -15,12 +15,12 @@ class SubCategoriesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('catalogue', EntityType::class, [
-                'class' => Catalogue::class,
-                'choice_label' => 'name',
-                'multiple' => false,
-            ]);
+            ->add('name', TextType::class);
+            // ->add('catalogue', EntityType::class, [
+            //     'class' => Catalogue::class,
+            //     'choice_label' => 'name',
+            //     'multiple' => false,
+            // ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

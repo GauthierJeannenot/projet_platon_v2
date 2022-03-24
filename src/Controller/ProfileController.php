@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\InfosUser;
 use App\Entity\User;
+use App\Entity\InfosUser;
 use App\Form\ProfileType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,10 +25,11 @@ class ProfileController extends AbstractController
 
     public function index(Request $request): Response
     {
-        $InfosUser = $this->getUser()->getInfosUser();
-        if (!$InfosUser) {
-            $InfosUser = new InfosUser();
-        }
+        $InfosUser = new InfosUser();
+        // $InfosUser = $this->getUser()->getInfosUser();
+        //  if (!$InfosUser) {
+        //      $InfosUser = new InfosUser();
+        //  }
 
 
         $form = $this->createForm(ProfileType::class, $InfosUser);
@@ -41,6 +42,7 @@ class ProfileController extends AbstractController
             $this->getUser()->setInfosUser($InfosUser);
             $this->entityManager->persist($InfosUser);
             $this->entityManager->flush();
+            return $this->redirectToRoute("platon_main_home");
         }
 
         return $this->render(

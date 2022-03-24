@@ -1,0 +1,66 @@
+/* BODY */ 
+body{
+    font-family: 'Spartan';
+    background-color: #fbfbfb;
+    font-variant-ligatures: no-common-ligatures;
+}
+
+ul{
+    padding: 0; 
+    list-style: none; 
+}
+
+
+/* FOOTER */
+
+h4{
+    font-weight: bold;
+}
+
+footer{
+    padding: 50px 0px 50px 0px;
+    color: white;
+    background-color: #25366F;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #E5CFA9;
+}
+
+footer .RS{
+    margin-top: 25px;
+    display: flex;
+}
+
+footer .RS img{
+    margin-right: 40px;
+}
+
+
+/*******************************
+CSS MEDIA QURIES
+*******************************/
+/*Mobile*/
+@media (max-width: 768px){
+    /*******************************
+    CSS FOOTER
+    *******************************/
+footer .container{
+    display: flex;
+    text-align: center;
+}
+
+footer div .col-12{
+    margin-top: 20px;
+}
+
+footer .RS .facebook{
+    display: flex;
+    margin-left: 130px;
+}
+}
