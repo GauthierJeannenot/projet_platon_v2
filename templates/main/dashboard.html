@@ -1,37 +1,37 @@
-{% extends 'layout.html.twig' %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{asset ('assets/styles/dashboard.css')}}">
-{% endblock %}
-
-
-        {% block innerContent %}
+<!--------------- DEBUT DU MAIN --------------->
+<main>
   <div class="container-fluid">
+
 <!--DEBUT DE LA PREMIERE SECTION -->
     <section class="section1 row">
+
       <div class="bonjour col-5 offset-1"> 
-       <h1>Bonjour {{app.user.prenom}}</h1>
+       <h1>Bonjour Valérie</h1>
        <div>
          <div class="temps d-flex">
             <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M38.1637 22.3882V35.3975L49.4345 41.9021C49.8875 42.1679 50.2407 42.5751 50.4399 43.061C50.6391 43.547 50.6732 44.085 50.537 44.5922C50.4008 45.0995 50.1019 45.548 49.6861 45.8689C49.2703 46.1898 48.7606 46.3653 48.2354 46.3685C47.8119 46.3804 47.3944 46.2656 47.0364 46.0387L34.5667 38.8446H34.5067L34.3868 38.7847L34.2969 38.6948L34.207 38.6348L34.117 38.5449L34.0571 38.4849C33.9971 38.455 33.9672 38.395 33.9372 38.365L33.8772 38.3051L33.8173 38.1852L33.7573 38.0953L33.6974 38.0053C33.6788 37.9914 33.6637 37.9733 33.6533 37.9525C33.6429 37.9316 33.6374 37.9087 33.6374 37.8854L33.5775 37.7955C33.5775 37.7655 33.5475 37.7356 33.5475 37.6756C33.5367 37.6634 33.5284 37.6492 33.5233 37.6337C33.5181 37.6183 33.5162 37.6019 33.5175 37.5857L33.4576 37.4658C33.459 37.4495 33.457 37.4332 33.4519 37.4177C33.4467 37.4023 33.4385 37.388 33.4276 37.3759C33.4276 37.3159 33.4276 37.2859 33.3976 37.256V37.136C33.3976 37.0761 33.3677 37.0461 33.3677 37.0162V22.3882C33.3677 21.7522 33.6203 21.1422 34.07 20.6925C34.5197 20.2428 35.1297 19.9902 35.7657 19.9902C36.4017 19.9902 37.0116 20.2428 37.4614 20.6925C37.9111 21.1422 38.1637 21.7522 38.1637 22.3882ZM65.5012 14.085C65.0619 13.9071 64.5797 13.8635 64.1155 13.9595C63.6514 14.0555 63.2261 14.287 62.8934 14.6246L58.6069 18.911L56.1189 16.4231C52.0939 12.4001 46.9664 9.66096 41.3848 8.55184C35.8031 7.44272 30.0179 8.01347 24.7606 10.1919C19.5033 12.3704 15.01 16.0587 11.8486 20.7906C8.68732 25.5226 7 31.0856 7 36.7763C7 42.4671 8.68732 48.0301 11.8486 52.7621C15.01 57.494 19.5033 61.1823 24.7606 63.3608C30.0179 65.5392 35.8031 66.11 41.3848 65.0009C46.9664 63.8917 52.0939 61.1525 56.1189 57.1296C56.5674 56.6801 56.8193 56.071 56.8193 55.436C56.8193 54.801 56.5674 54.1919 56.1189 53.7424C55.8984 53.5167 55.635 53.3374 55.3441 53.2149C55.0533 53.0925 54.7409 53.0294 54.4253 53.0294C54.1098 53.0294 53.7974 53.0925 53.5066 53.2149C53.2157 53.3374 52.9523 53.5167 52.7317 53.7424C49.377 57.0934 45.104 59.3747 40.4531 60.2978C35.8021 61.2209 30.9818 60.7445 26.6015 58.9287C22.2213 57.1129 18.4776 54.0393 15.8438 50.0963C13.21 46.1533 11.8043 41.5181 11.8043 36.7763C11.8043 32.0346 13.21 27.3993 15.8438 23.4564C18.4776 19.5134 22.2213 16.4398 26.6015 14.624C30.9818 12.8082 35.8021 12.3318 40.4531 13.2549C45.104 14.178 49.377 16.4593 52.7317 19.8103L55.2197 22.2983L50.9032 26.6147C50.5729 26.9517 50.3493 27.3787 50.2606 27.8422C50.1718 28.3057 50.2217 28.785 50.4041 29.2203C50.5865 29.6555 50.8933 30.0272 51.286 30.2889C51.6787 30.5506 52.1399 30.6906 52.6118 30.6914H64.602C65.238 30.6914 65.8479 30.4387 66.2976 29.989C66.7474 29.5393 67 28.9293 67 28.2933V16.3032C66.9913 15.8282 66.8451 15.3658 66.5791 14.9722C66.3131 14.5785 65.9387 14.2703 65.5012 14.085Z" fill="#E5CFA9"/>
             </svg>
             <h3>Crédit temps : <span>9</span><span id="heure">h</span></h3>
+
          </div>
-       </div>
+       
 
       </div>
        
       <div class="jauge col-5 d-flex offset-0 align-items-center">
-        <img src="{{asset('assets/illustrations/jauge.png')}}" alt="jauge du temps">
+        <img src="illustrations/jauge.png" alt="jauge du temps">
         <div>
           <h1>Parcours certif'</h1>
           <p>Vous avez donné : <span id="troisheures">3h</span></p>
           <p>Il vous reste <span id="neufheures">9h</span> à donner</p>
           </div>
+
         </div>
+
     </section>
-    <!--FIN DE LA PREMIERE SECTION-->
+<!--FIN DE LA PREMIERE SECTION-->
  
 
 <!--DEBUT DE LA DEUXIEME SECTION : Cours prévus-->
@@ -43,20 +43,18 @@
 
 
             <div class="section2 col-3 offset-1">
-            {% for ticket in tickets %}
-                {% if ticket.status is same as(0) %}
 
               <div class="demandecours col-9">
                   
                 <div class="d-flex">
                   <div class="d-flex photobadge">
-                      <img class="portrait" src="{{asset('assets/img/michel.png')}}" alt="photo de Michel">
-                      <img class="medaille" src="{{asset('assets/icones/medaille_bleu.svg')}}" alt="badge">
+                      <img class="portrait" src="img/michel.png" alt="photo de Michel">
+                      <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
                     </div>
                   
                     <div class="informations">
-                        <p class="nom"> {{ticket.sender.prenom}}</p>
-                        <p> {{ticket.sender.infosUser.subCategories[0].name}}</p>
+                        <p class="nom"> Michel P.</p>
+                        <p> Guitare, Peinture</p>
                         <div class="d-flex">
                             <p>Avis : </p>
                             <div class="etoile">
@@ -76,7 +74,7 @@
                                 <path d="M18.0269 6.02965L12.8385 5.28047L10.5199 0.626133C10.3114 0.210234 9.90486 0 9.49828 0C9.09418 0 8.69043 0.207422 8.48129 0.626133L6.16197 5.28012L0.973188 6.02859C0.0426947 6.16219 -0.330212 7.29738 0.344352 7.94777L4.09787 11.5689L3.20956 16.6834C3.08337 17.4139 3.67144 18 4.33005 18C4.50481 18 4.68453 17.9589 4.85715 17.8682L9.49899 15.4536L14.1405 17.8689C14.3127 17.9585 14.4921 17.9993 14.6661 17.9993C15.3255 17.9993 15.9146 17.4153 15.7884 16.6845L14.9012 11.5696L18.6554 7.94918C19.3303 7.29879 18.9574 6.16324 18.0269 6.02965ZM13.7115 10.3609L13.0692 10.9804L13.221 11.855L13.9129 15.8435L10.2927 13.9595L9.49934 13.5468L9.5004 2.39555L11.3093 6.02683L11.7056 6.82242L12.5921 6.95039L16.6413 7.53504L13.7115 10.3609Z" fill="#25366F"/>
                               </svg>
                             </div>
-                            <p class="note">{{ticket.sender.infosUser.opinion}}/5</p>
+                            <p class="note">4,5</p>
                         </div>
                     </div>
                       
@@ -86,9 +84,10 @@
                     
                   <div>
                     
-                      <p class="nom text-center">{{ticket.receiver.infosUser.subCategories[0].name}}</p>
+                      <p class="nom text-center">Anglais</p>
                     
                       <div class="progression d-flex text-center">
+                        
                         <div>
                           <svg class="valide" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <circle cx="9" cy="9" r="9" fill="#25366F"/>
@@ -120,8 +119,9 @@
                   </div>
                     
                   <div class="actiondemande text-center">
-                    <button class="annuler" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit"><a href="{{ path("platon_ticket_remove", {idTicket: ticket.id}) }}">Annuler</a></button>
-                    <button type="submit" class="terminer" data-bs-toggle="modal" data-bs-target="#modale-laissezavis"><a href="{{ path("platon_ticket_update", {idTicket: ticket.id}) }}">Terminer</a></button>
+                    <button class="annuler" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">Annuler</button>
+                    <button type="submit" class="terminer" data-bs-toggle="modal"
+                    data-bs-target="#modale-laissezavis">Terminer</button>
                   </div>
               </div>
 
@@ -146,9 +146,14 @@
               <a href="#" class="return">Retour</a>
               <a class="btn shadow" href="#">Annuler</a>
             </div>
+          
           </div>
+          
         </div>
-        </div>
+
+      
+         </div>
+
       </div>
 
 
@@ -226,9 +231,8 @@
               <a class="btn shadow" href="dashboard.html">Valider</a>
             </div>
           </div>
-            {% endif %}
-          {% endfor %}
         </div>
+
       </div>
     </section>
 
@@ -239,11 +243,13 @@
       
 
             <div class="section2 col-3 offset-4">
-            {% for ticket in app.user.tickets %}
-                {% if ticket.status is same as(0) %}
+
               <div class="coursprevu col-9">
+
                 <div>
-                  <p class="nom text-center">{{ticket.sender.infosUser.subCategories[0].name}}</p>
+                    
+                  <p class="nom text-center">Anglais</p>
+                
                   <div class="progression d-flex text-center">
                     
                     <div>
@@ -281,13 +287,13 @@
                   
                 <div class="d-flex">
                   <div class="d-flex photobadge">
-                      <img class="portrait" src="{{asset('assets/img/alain.png')}}" alt="photo d'Alain">
-                      <img class="medaille" src="{{asset('assets/icones/medaille_beige.svg')}}" alt="badge">
+                      <img class="portrait" src="img/alain.png" alt="photo d'Alain">
+                      <img class="medaille" src="icones/medaille_beige.svg" alt="badge">
                     </div>
                   
                     <div class="informations">
-                        <p class="nom">{{ticket.receiver.prenom}}</p>
-                        <p> {{ticket.receiver.infosUser.subCategories[0].name}}</p>
+                        <p class="nom"> Alain de T.</p>
+                        <p> Guitare, Peinture</p>
                         <div class="d-flex">
                             <p>Avis : </p>
                             <div class="etoile">
@@ -307,19 +313,31 @@
                                 <path d="M18.0269 6.02965L12.8385 5.28047L10.5199 0.626133C10.3114 0.210234 9.90486 0 9.49828 0C9.09418 0 8.69043 0.207422 8.48129 0.626133L6.16197 5.28012L0.973188 6.02859C0.0426947 6.16219 -0.330212 7.29738 0.344352 7.94777L4.09787 11.5689L3.20956 16.6834C3.08337 17.4139 3.67144 18 4.33005 18C4.50481 18 4.68453 17.9589 4.85715 17.8682L9.49899 15.4536L14.1405 17.8689C14.3127 17.9585 14.4921 17.9993 14.6661 17.9993C15.3255 17.9993 15.9146 17.4153 15.7884 16.6845L14.9012 11.5696L18.6554 7.94918C19.3303 7.29879 18.9574 6.16324 18.0269 6.02965ZM13.7115 10.3609L13.0692 10.9804L13.221 11.855L13.9129 15.8435L10.2927 13.9595L9.49934 13.5468L9.5004 2.39555L11.3093 6.02683L11.7056 6.82242L12.5921 6.95039L16.6413 7.53504L13.7115 10.3609Z" fill="#E5CFA9"/>
                               </svg>
                             </div>
-                            <p class="note">{{ticket.receiver.infosUser.opinion}}/5</p>
+                            <p class="note">4,5</p>
                         </div>
                     </div>
+                      
+                    
                   </div>
+              
+                    
+                  
+                    
+              
               </div>
+
             </div>
+
+          
             </div>
+
           </div>
-            {% endif %}
-          {% endfor %}
+
         </div>
+
     </section>  
 <!--FIN DE LA DEUXIEME SECTION-->
+
 <!--DEBUT DE LA TROISIEME SECTION Cours passés-->
     <section id="section3">
         <h2 class="titresection offset-1">Cours passés</h2>
@@ -328,19 +346,18 @@
 
 
           <div class="section2 col-3 offset-1">
-            {% for ticket in app.user.tickets %}
-                {% if ticket.status is same as(3) %}
+
             <div class="courspasse col-9">
                 
               <div class="d-flex">
                 <div class="d-flex photobadge">
-                    <img class="portrait" src="{{asset('assets/img/michel.png')}}" alt="photo de Michel">
-                    <img class="medaille" src="{{asset('assets/icones/medaille_bleu.svg')}}" alt="badge">
+                    <img class="portrait" src="img/michel.png" alt="photo de Michel">
+                    <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
                   </div>
                 
                   <div class="informations">
-                      <p class="nom">{{ticket.receiver.prenom}}</p>
-                      <p>{{ticket.receiver.infosUser.subCategories[0].name}}</p>
+                      <p class="nom"> Michel P.</p>
+                      <p> Guitare, Peinture</p>
                       <div class="d-flex">
                           <p>Avis : </p>
                           <div class="etoile">
@@ -360,7 +377,7 @@
                               <path d="M18.0269 6.02965L12.8385 5.28047L10.5199 0.626133C10.3114 0.210234 9.90486 0 9.49828 0C9.09418 0 8.69043 0.207422 8.48129 0.626133L6.16197 5.28012L0.973188 6.02859C0.0426947 6.16219 -0.330212 7.29738 0.344352 7.94777L4.09787 11.5689L3.20956 16.6834C3.08337 17.4139 3.67144 18 4.33005 18C4.50481 18 4.68453 17.9589 4.85715 17.8682L9.49899 15.4536L14.1405 17.8689C14.3127 17.9585 14.4921 17.9993 14.6661 17.9993C15.3255 17.9993 15.9146 17.4153 15.7884 16.6845L14.9012 11.5696L18.6554 7.94918C19.3303 7.29879 18.9574 6.16324 18.0269 6.02965ZM13.7115 10.3609L13.0692 10.9804L13.221 11.855L13.9129 15.8435L10.2927 13.9595L9.49934 13.5468L9.5004 2.39555L11.3093 6.02683L11.7056 6.82242L12.5921 6.95039L16.6413 7.53504L13.7115 10.3609Z" fill="#25366F"/>
                             </svg>
                           </div>
-                          <p class="note">{{ticket.receiver.infosUser.opinion}}/5</p>
+                          <p class="note">4,5</p>
                       </div>
                   </div>
                     
@@ -370,7 +387,7 @@
                   
                 <div>
                   
-                    <p class="nom text-center">{{ticket.receiver.infosUser.subCategories[0].name}}</p>
+                    <p class="nom text-center">Anglais</p>
                   
                     <div class="progression d-flex text-center">
                       
@@ -434,8 +451,6 @@
                 
                 </div>
             </div>
-                {% endif %}
-            {% endfor %}
 
           </div>
 
@@ -446,28 +461,24 @@
     
     </section>
 <!--Fin DE LA TROISIEME SECTION-->
+
 <!--DEBUT DE LA QUATRIEME SECTION Membre favoris-->
       <section id="session4">
         <h2 class="titresection offset-1">Membres favoris :</h2>
 
         <div class="section2 col-3 offset-1">
-        {% for userFavoris in favoris %}
 
           <div class="demandecours col-10">
               
             <div class="d-flex">
               <div class="d-flex photobadge">
-                  <img class="portrait" src="{{asset('assets/img/michel.png')}}" alt="photo de Michel">
-                  <img class="medaille" src="{{asset('assets/icones/medaille_bleu.svg')}}" alt="badge">
+                  <img class="portrait" src="img/michel.png" alt="photo de Michel">
+                  <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
                 </div>
               
                 <div class="informations">
-                    <p class="nom"> {{userFavoris.added.prenom}}</p>
-                    <p>
-                    {% for subCate in userFavoris.added.infosUser.subCategories %}
-                        {{subCate.name}}, 
-                    {% endfor %}
-                    </p>
+                    <p class="nom"> Michel P.</p>
+                    <p> Guitare, Peinture</p>
                     <div class="d-flex">
                         <p>Avis : </p>
                         <div class="etoile">
@@ -487,7 +498,7 @@
                             <path d="M18.0269 6.02965L12.8385 5.28047L10.5199 0.626133C10.3114 0.210234 9.90486 0 9.49828 0C9.09418 0 8.69043 0.207422 8.48129 0.626133L6.16197 5.28012L0.973188 6.02859C0.0426947 6.16219 -0.330212 7.29738 0.344352 7.94777L4.09787 11.5689L3.20956 16.6834C3.08337 17.4139 3.67144 18 4.33005 18C4.50481 18 4.68453 17.9589 4.85715 17.8682L9.49899 15.4536L14.1405 17.8689C14.3127 17.9585 14.4921 17.9993 14.6661 17.9993C15.3255 17.9993 15.9146 17.4153 15.7884 16.6845L14.9012 11.5696L18.6554 7.94918C19.3303 7.29879 18.9574 6.16324 18.0269 6.02965ZM13.7115 10.3609L13.0692 10.9804L13.221 11.855L13.9129 15.8435L10.2927 13.9595L9.49934 13.5468L9.5004 2.39555L11.3093 6.02683L11.7056 6.82242L12.5921 6.95039L16.6413 7.53504L13.7115 10.3609Z" fill="#25366F"/>
                           </svg>
                         </div>
-                        <p class="note">{{userFavoris.added.infosUser.opinion}}</p>
+                        <p class="note">4,5</p>
                     </div>
                 </div>
                   
@@ -497,104 +508,77 @@
                 
               
           </div>
-          {% endfor %}
 
         </div>
+
+        
+        
+       
 <!--FIN DE LA QUATRIEME SECTION-->
       </section>
+</main>
+<!--------------- FIN DU MAIN --------------->
 
 
 
-        {# <h1>Bonjour {{app.user.prenom}}</h1>
-		<h1>Cours prévu à donner</h1>
-        <div>
-        {% for ticket in tickets %}
-            {% if ticket.status is same as(0) %}
-                {{ticket.sender.prenom}} <br> #}
-                {# recherche des données présentes dans tickets #}
-                 {# <pre>
-                    {{ dump(ticket.sender.infosUser.subCategories[0].name) }}
-                </pre>  #}
-                {# Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
-                {{ticket.receiver.infosUser.subCategories[0].name}} <br>
-                {{ticket.content}} <br>
-                {{ticket.status}} <br>
-                <a href="{{ path("platon_ticket_remove", {idTicket: ticket.id}) }}">Annuler</a>
-                <a href="{{ path("platon_ticket_update", {idTicket: ticket.id}) }}">Terminer</a> <br>
-            {% endif %}
-        {% endfor %}
+ <!--------------- DEBUT DU FOOTER --------------->
+ <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <ul>
+          <li>
+            <h4>À propos</h4>
+          </li>
+          <li><a href="#">Qui sommes-nous ?</a></li>
+          <li><a href="#">Mention légales</a></li>
+          <li><a href="#">CGU</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <ul>
+          <li>
+            <h4>Contact</h4>
+          </li>
+          <li><a href="#">Contactez-nous</a></li>
+          <li><a href="#">Informations légales</a></li>
+          <li><a href="#">Paramètres des cookies</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <ul>
+          <li>
+            <h4>Platon</h4>
+          </li>
+          <li><a href="#">Comment ça marche ?</a></li>
+          <li><a href="#">La charte de Platon</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <img src="logo/platon_jaune.svg" alt="Logo Platon">
+        <div class="RS">
+          <a href="#"><img src="icones/facebook.png" alt="Logo Facebook"></a>
+          <a href="#"><img src="icones/instagram.png" alt="Logo Instagram"></a>
         </div>
-		<h1>cours prévus à recevoir</h1>
-        <div> #}
-            {# On itére dans l'entité ticket afin de ne montrer que les tickets dont le user connecter (grace à app.user pas besoin de filtrer on ne sortira que les données du user connecté) #}
-            {# {% for ticket in app.user.tickets %} #}
-                {# recherche des données présentes dans ticket #}
-                 {# <pre>
-                    {{ dump(ticket.sender.infosUser.subCategories[0].name) }}
-                </pre>  #}
-                {# {% if ticket.status is same as(0) %}
-                    {{ticket.sender.infosUser.subCategories[0].name}}
-                    {{ticket.status}} <br>
-                    <p>Vous avez cours avec :</p>
-                    {{ticket.receiver.prenom}} <br> #}
-                    {# ajouter les knowledges de la table InfosUser du User concerné #}
-                    {# Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
-                    {{ticket.content}} <br>
-                {% endif %}
-            {% endfor %}
-        </div>
-		<h1>Cours passés</h1>
-		<div>
-            {% for ticket in app.user.tickets %} #}
-                {# recherche des données présentes dans ticket #}
-                 {# <pre>
-                    {{ dump(ticket.receiver.infosUser.subCategories[0].name) }}
-                </pre>  #}
-                {# {% if ticket.status is same as(3) %}
-                    {{ticket.receiver.prenom}} <br> #}
-                    {# ajouter les knowledges de la table InfosUser du User concerné #}
-                    {# Avis : {{ticket.sender.infosUser.opinion}}/5 <br>
-                    {{ticket.receiver.infosUser.subCategories[0].name}} <br>
-                    {{ticket.content}} <br>
-                    {{ticket.status}} <br>
-                    Temps donné : 1 Heure <br>
-                    Note : {{ticket.sender.infosUser.opinion}}/5<br>
-                {% endif %}
-            {% endfor %}
-        </div>
-        <div>
-        
-            {% for userTicket in tickets %} #}
-                {# recherche des données présentes dans ticket #}
-                 {# <pre>
-                    {{ dump(userTicket.receiver.infosUser.subCategories[0].name) }}
-                </pre>  #}
-                {# {% if userTicket.status is same as(3) %}
-                    {{userTicket.sender.prenom}} <br> #}
-                    {# ajouter les knowledges de la table InfosUser du User concerné #}
-                    {# Avis : {{userTicket.sender.infosUser.opinion}}/5 <br> 
-                    {{userTicket.receiver.infosUser.subCategories[0].name}} <br>
-                    {{userTicket.content}} <br>
-                    {{userTicket.status}} <br>
-                    Temps donné : 1 Heure<br>
-                    Note : {{userTicket.sender.infosUser.opinion}}/5<br>
-                {% endif %}
-            {% endfor %}
-        </div>
+      </div>
+    </div>
 
-        <h1>Membres favoris</h1>
-        <div>
-            {% for userFavoris in favoris %} #}
-                {# recherche des données présentes dans userFavoris #}
-                 {# <pre>
-                    {{ dump(userFavoris.added.infosUser) }}
-                </pre>
-                {{userFavoris.added.prenom}} <br>
-                {% for subCate in userFavoris.added.infosUser.subCategories %}
-                    {{subCate.name}}
-                {% endfor %}
-
-            {% endfor %} #}
+</footer>
+<!--------------- FIN DU FOOTER --------------->
 
 
-        {% endblock %}
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>  
+</html>

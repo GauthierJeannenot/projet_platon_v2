@@ -4,6 +4,7 @@ namespace App\Controller;
 
 
 use App\Entity\Ticket;
+use App\Repository\FavorisRepository;
 use App\Repository\InfosUserRepository;
 use App\Repository\TicketRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -29,16 +30,25 @@ class LandingController extends AbstractController
         ]);
     }
 
-    public function home(TicketRepository $ticketRepository, InfosUserRepository $infosUserRepository): Response
+    public function home(TicketRepository $ticketRepository, InfosUserRepository $infosUserRepository, FavorisRepository $favorisRepository): Response
     {
         $user = $this->getUser();
         // récupérer l'avis des users ayant envoyés un ticket à notre user connecté
         $infosUser = $infosUserRepository->findAll();
         //dd($infosUser);
+
+        // récupérer les tickets selon l'utilisateur connecté
         $tickets = $ticketRepository->findBy(['receiver' => $user->getId()]);
+        //dd($tickets)
+        
+        // récupérer les favoris selon l'utilisateur connecté
+        $favoris = $favorisRepository->findBy(['adder' => $user->getId()]);
+        //dd($favoris);
+
         return $this->render('main/home.html.twig', [
             'tickets' => $tickets,
-            'infosUser' => $infosUser
+            'infosUser' => $infosUser,
+            'favoris' => $favoris
         ]);
     }
     // On crée une fonction qui permet de supprimer un ticket en fonction de son Id en utilisant la méthode find héritée du TicketRepository
