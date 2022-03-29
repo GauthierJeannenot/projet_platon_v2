@@ -110,9 +110,9 @@ class InfosUser
     /**
      * @return Collection<int, SubCategories>
      */
-    public function getSubCategories(): Collection
+    public function getSubCategories(): array
     {
-        return $this->subCategories;
+        return $this->subCategories->toArray();
     }
 
     public function addSubCategory(SubCategories $subCategory): self

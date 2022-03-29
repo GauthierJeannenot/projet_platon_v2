@@ -1,9 +1,9 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheets %}
-    {# <link rel="stylesheet" href="{{asset('assets/styles/nav_blue.css')}}">     #}
-    <link rel="stylesheet" href="{{asset('assets/styles/inscription.css')}}">  
-	 
+	{# <link rel="stylesheet" href="{{asset('assets/styles/nav_blue.css')}}">     #}
+	<link rel="stylesheet" href="{{asset('assets/styles/inscription.css')}}">
+
 {% endblock %}
 
 {% block innerContent %}
@@ -11,12 +11,32 @@
 	<section id="inscription">
 
 		<div class="container">
-		
 
 
 			{{ form_start(registrationForm,{attr:{'class':"offset-md-3 col-md-6 col-12 formulaire"}}) }}
 
 			<h2>Inscription</h2>
+
+			{% if 
+				   form_errors(registrationForm.prenom)
+				or form_errors(registrationForm.nom) 
+				or form_errors(registrationForm.email)
+				or form_errors(registrationForm.password.first)
+				or form_errors(registrationForm.password.second)
+				or form_errors(registrationForm.agreeTerms)
+				or form_errors(registrationForm.agreeTerms)
+			%}
+				<div class="alert alert-danger">
+					{{ form_errors(registrationForm.prenom) }}
+					{{ form_errors(registrationForm.nom)  }}
+					{{ form_errors(registrationForm.email) }}
+					{{ form_errors(registrationForm.password.first) }}
+					{{ form_errors(registrationForm.password.second) }}
+					{{ form_errors(registrationForm.agreeTerms) }}
+					{{ form_errors(registrationForm.agreeTerms) }}
+				</div>
+			{% endif %}
+
 
 			<div class="name row col-12 justify-content-between">
 
@@ -39,11 +59,7 @@
 			<div>
 				{{ form_widget(registrationForm.password.first) }}
 
-<<<<<<< HEAD
-				<img src="{{('./icones/mdp_hidden.svg')}}" alt="oeilferme">
-=======
 				<img src="{{asset ('assets/icones/mdp_hidden.svg')}}" alt="oeilferme">
->>>>>>> d983385b7ca8db90d9eef8fbd43c6885779cec42
 			</div>
 
 			<div class="confmdp">
@@ -52,13 +68,8 @@
 						  'class': ''
 					  }
 					}) }}
-<<<<<<< HEAD
-
 				<img src="assets/icones/mdp_hidden.svg" alt="oeilferme">
-=======
-					
 				<img src="{{asset('assets/icones/mdp_hidden.svg')}}" alt="oeilferme">
->>>>>>> d983385b7ca8db90d9eef8fbd43c6885779cec42
 			</div>
 
 			<div class="cgu d-flex">
