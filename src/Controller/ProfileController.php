@@ -51,13 +51,9 @@ class ProfileController extends AbstractController
             'profile/index.html.twig',
 
             [
-<<<<<<< HEAD
                 'subCategories' => $subCategories,
-                'form' => $form->createView()
-=======
                 'form' => $form->createView(),
                 'infos_user' => $InfosUser,
->>>>>>> origin/rosa
             ]
         );
     }
