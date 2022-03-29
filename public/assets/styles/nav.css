@@ -68,7 +68,8 @@ nav li, nav input, nav+a {
 
 .seen{
   display: block;
-  height: 78vh;
+  /* changée à 170 ici sans changement sur le front, ? Demander à Pauline. */
+  height: 170vh;
   position: absolute;
   top: 95px;
   left: 0px;

@@ -96,7 +96,10 @@
                 <div class="col-8">
                   <p class="categorie">Administratif</p>
                   <ul>
-                    <li><a href="#">Assistance juridique</a></li>
+                  {# <pre>
+                    {{ dump(subCategories) }}
+                  </pre> #}
+                    <li><a href="{{ path('platon_subcategories_show', {'id': subCategories[0].id })}}">Assistance juridique</a></li>
                     <li><a href="#">Comptabilité</a></li>
                     <li><a href="#">Dossier banque</a></li>
                     <li><a href="#">Impôts</a></li>

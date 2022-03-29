@@ -51,10 +51,15 @@ class SubCategoriesController extends AbstractController
     /**
      * @Route("/{id}", name="app_sub_categories_show", methods={"GET"})
      */
-    public function show(SubCategories $subCategory): Response
+    public function show(SubCategories $subCategory, SubCategoriesRepository $subCategoriesRepository): Response
     {
+        // Ici on pratique une méthode barbare, le fait que notre nav soit positionnée dans le layout ne nous arrange pas
+        // Pour mieux faire il faudrait se diriger vers une injection de controller avec un controller qui géree une view de la nav que l'on injecterait par la suite avec renderController dans le twig
+        $subCategories = $subCategoriesRepository->findAll();
+
         return $this->render('sub_categories/show.html.twig', [
             'sub_category' => $subCategory,
+            'subCategories' => $subCategories
         ]);
     }
 
