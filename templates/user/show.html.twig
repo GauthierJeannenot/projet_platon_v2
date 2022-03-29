@@ -1,71 +1,360 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset ('assets/styles/user_profil.css')}}">
+
+{% endblock %}
+
+{% block title %}User
+{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
-    {# On check les informations contenues dans User coté Twigg cette fois-ci
-    <pre>
-        {{ dump(user) }}
-    </pre> #}
+	<header>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Prenom</th>
-                <td>{{ user.prenom }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ user.nom }}</td>
-            </tr>
-            <tr>
-                <th>Type de cours</th>
-                <td>
-                    {# classType étant stocker dans un array il faut itérer dedans pour en sortir les données #}
-                    {% for classTypes in user.infosUser.classType %}
-                        {{classTypes}}
-                    {% endfor %}
-                </td>
-            </tr>
-            <tr>
-                <th>Bio</th>
-                <td>{{ user.infosUser.bio }}</td>
-            </tr>
-            <tr>
-                <th>Nos membres en parlent</th>
-                <td>{{ user.infosUser.opinion }}/5</td>
-            </tr>
-            <tr>
-                <th>
-                    personnalitée
-                </th>
-                <td>
-                {# comme le User est connécter à plusieurs champs de la table personnality il faut itérer dedans pour sortir les strings #}
-                {% for personnalitys in user.infosUser.personnality %}
-                    {{personnalitys.name}}
-                {% endfor %}
-                </td>
-            </tr>
-                <th>savoir à transmettre</th>
-                <td>
-                    {% for subCategorie in user.infosUser.subCategories %}
-                        {{subCategorie.name}}
-                    {% endfor %}
-                </td>
-            <tr>
-            <tr>
-                <th>Prendre un cours</th>
-                {# Ici on transmet l'Id du User en cours dans l'url afin de placer l'Id du receiver dans le ticket au travers du bouton #}
-                <td><a href="{{ path('platon_ticket_create', {user: user.id}) }}">Prendre un cours</a></td>
-            </tr>
-            <tr>
-                <th>Ajouter aux favoris</th>
-                <td><a href="{{ path('platon_favoris', {'user': user.id})}}">Favoris</a></td>
-            </tr>
-        </tbody>
-    </table>
+		<div class="container-fluid">
+			<div class="row">
+				<img src="{{asset ('assets/img/bandeau_profil.png')}}" alt="Bandeau">
+			</div>
+		</div>
+
+	</header>
+	{# <h1>User</h1> #}
+	{# On check les informations contenues dans User coté Twigg cette fois-ci
+																																													    <pre>
+																																													        {{ dump(user) }}
+																																													    </pre> 
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>Prenom</th>
+						<td>{{ user.prenom }}</td>
+						
+					</tr>
+					<tr>
+						<th>Nom</th>
+						<td>{{ user.nom }}</td>
+						
+					</tr>
+					<tr>
+						<th>Type de cours</th>
+						<td>
+							 classType étant stocker dans un array il faut itérer dedans pour en sortir les données 
+							{% for classTypes in user.infosUser.classType %}
+								{{classTypes}}
+							{% endfor %}
+							
+						</td>
+					</tr>
+					<tr>
+						<th>Bio</th>
+						<td>{{ user.infosUser.bio }}</td>
+						
+					</tr>
+					<tr>
+						<th>Nos membres en parlent</th>
+						<td>{{ user.infosUser.opinion }}/5</td>
+						
+					</tr>
+					<tr>
+						<th>
+							personnalité
+						</th>
+						<td>
+							 comme le User est connécter à plusieurs champs de la table personnality il faut itérer dedans pour sortir les strings 
+							{% for personnalitys in user.infosUser.personnality %}
+								{{personnalitys.name}}
+							{% endfor %}
+						</td>
+					</tr>
+					<th>savoir à transmettre</th>
+					<td>
+						{% for subCategorie in user.infosUser.subCategories %}
+							{{subCategorie.name}}
+						{% endfor %}
+						
+					</td>
+					<tr></tr>
+					<tr>
+						<th>Prendre un cours</th>
+						 Ici on transmet l'Id du User en cours dans l'url afin de placer l'Id du receiver dans le ticket au travers du bouton 
+						<td>
+							<a href="{{ path('platon_ticket_create', {user: user.id}) }}">Prendre un cours</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Ajouter aux favoris</th>
+						<td>
+							<a href="{{ path('platon_favoris', {'user': user.id})}}">Favoris</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		
+		
+			<a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>#}
 
 
-    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-{% endblock %}
+	<section>
+		<div
+			class="container">
+
+
+			<!-- DEBUT DE LA PREMIERE PARTIE-->
+
+			<article class="row">
+
+				<div class="col-2 photo">
+					<img src="{{asset ('assets/img/lucile2.png')}}" alt="lucile">
+					<img class="medaille" src="{{asset ('assets/icones/medaille_bleu.svg')}}" alt="badge">
+					<p class="name">{{ (app.user.prenom ~ ' ' ~ app.user.nom |slice(0, 1) ) }}.</p>
+				</div>
+
+				<div class="d-flex flex-column justify-content-between col-4 offset-6">
+					<div class="d-flex justify-content-between">
+						<a class="btn shadow btn-favoris" href="#">Ajouter en favoris</a>
+						<a class="btn shadow btn-cours" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Prendre un
+																																																																																																																																																																																																																																																																																																																			                cours</a>
+					</div>
+
+					<div class="d-flex personalite justify-content-between">
+						{% for personnalitys in user.infosUser.personnality %}
+							<div class="tag">
+								{{personnalitys.name}}
+							</div>
+						{% endfor %}
+						{# <p class="tag">Extravertie</p>
+																																																																																																																																																																																				<p class="tag">Enthousiaste</p>
+																																																																																																																																																																																				<p class="tag">Curieuse</p> #}
+					</div>
+				</div>
+
+
+			</article>
+
+			<!-- FIN DE LA PREMIERE PARTIE-->
+
+
+			<!-- Vertically centered modal -->
+
+			<section id="modale">
+
+				<div div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header d-flex align-items-center cours">
+								<label for="cours">Choix du cours :</label>
+								<select class="col-lg-6" name="interest" id="interest">
+									<a href="{{ path('platon_ticket_create', {user: user.id}) }}">Prendre un cours</a>
+									{# <option value="anglais">Anglais</option>
+																																																																																																																																																																		<option value="sport">Sport</option> #}
+								</select>
+							</div>
+							<div class="modal-body">
+
+								<div>
+									<textarea class="col-lg-12" name="message" id="message">Écrivez votre message ici</textarea>
+								</div>
+							</div>
+
+							<div class="modal-footer justify-content-between">
+								<a class="btn-return" href="user_profil.html">Annuler</a>
+								<a class="btn shadow" href="user_profil.html">Envoyer</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<!-- DEBUT DE LA DEUXIEME PARTIE-->
+
+			<article class="row">
+
+				<div class="col-5 localisation">
+					<div class="d-flex align-items-center">
+						<svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M24.0002 21.3546C25.6602 22.0599 26.6668 22.9853 26.6668 23.9999C26.6668 26.2093 21.8908 27.9999 16.0002 27.9999C10.1095 27.9999 5.3335 26.2093 5.3335 23.9999C5.3335 22.9866 6.34016 22.0586 8.00016 21.3546" stroke="#E5CFA9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M22.6668 11.2587C22.6668 15.3827 16.0002 22.6667 16.0002 22.6667C16.0002 22.6667 9.3335 15.3827 9.3335 11.2587C9.3335 7.136 12.3188 4 16.0002 4C19.6815 4 22.6668 7.136 22.6668 11.2587V11.2587Z" stroke="#E5CFA9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M16.0003 12C16.7367 12 17.3337 11.4031 17.3337 10.6667C17.3337 9.93033 16.7367 9.33337 16.0003 9.33337C15.2639 9.33337 14.667 9.93033 14.667 10.6667C14.667 11.4031 15.2639 12 16.0003 12Z" stroke="#E5CFA9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<p class="bold">Paris</p>
+					</div>
+
+					<div class="row">
+						<div class="d-flex align-items-center">
+							<div class="d-flex col-4 cours align-items-start">
+								<img src="{{asset ('assets/icones/livre.svg')}}" alt="Livre">
+								<p class="bold">Type de cours</p>
+							</div>
+
+							<div class="d-flex offset-2 col-6 align-items-center">
+								<div class="tag">
+									{% for classTypes in user.infosUser.classType %}
+										{{classTypes}}
+									{% endfor %}
+								</div>
+								{# <p class="tag">Présentiel
+																																																																																																																																																																																																																																																																																								<img src="icones/valide_bleu.svg" alt="Valide"></p>
+																																																																																																																																																																																																																																																																																							<p class="tag">Visio
+																																																																																																																																																																																																																																																																																								<img src="icones/valide_bleu.svg" alt="Valide"></p> #}
+							</div>
+						</div>
+
+					</div>
+
+
+				</div>
+
+				<div class="col-4 offset-3">
+					<p class="bold savoirs">Savoir(s) à transmettre</p>
+
+					<div
+						class="d-flex text-center">
+						{# <div class="badges"> 
+																																																																								<img src="illustrations/badge_anglais.svg" alt="Anglais">
+																																																																								<p>Anglais</p>
+																																																																							</div>
+																																																																		
+																																																																							<div class="badges">
+																																																																								<img src="illustrations/badge_sport.svg" alt="Sport">
+																																																																			
+																																																																									<p>Sport</p>
+																																																																									#}
+						<div class="badges">
+							{% for subCategorie in user.infosUser.subCategories %}
+								{{subCategorie.name}}
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</article>
+
+		<!-- FIN DE LA DEUXIEME PARTIE-->
+
+
+		<!-- DEBUT DE LA TROISIEME PARTIE-->
+
+		<article class="row">
+			<div class="col-6">
+				<p class="bold bio">
+					Bio</p>
+				{{ user.infosUser.bio }}
+				{# <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorem vero, maiores minus placeat cumque 
+																																																																																																																																		totam minima quasi fugit nostrum consectetur sunt nesciunt itaque quos quia adipisci atque repudiandae #}
+			</p>
+		</div>
+
+		<div class="col-4 offset-2">
+			<p class="bold">Précisez vos savoirs</p>
+			<ul>
+				<li>Je suis bilingue anglais</li>
+				<li>Adepte du fitness</li>
+			</ul>
+		</div>
+	</article>
+
+
+	<section id="slideavis">
+
+
+		<div class="temoignages">
+			<p class="bold">Nos membres en parlent</p>
+			{# {{ user.infosUser.opinion }}/5 #}
+			{# <p>22 avis</p> #}
+		</div>
+
+
+		<article class="row">
+
+
+			<div class="card d-flex col-lg-5 col-12">
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="d-flex align-items-center justify-content-between col-lg-12">
+							<div class="d-flex align-items-center">
+								<img src="{{asset ('assets/img/zoe.png')}}" class="photoprofil" alt="Zoé">
+								<h5 class="card-title">Zoé L.</h5>
+							</div>
+
+
+							<div class="d-flex align-items-center starnote">
+								<p>Note :</p>
+								<div>
+									{{ user.infosUser.opinion }}/5
+									<img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="star">
+									<img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="star">
+									<img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="star">
+									<img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="star">
+									<img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="star">
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div class="card-text">
+						<p>This is a wider card with supporting text below as a natural lead-in to
+																																																																																																																																																																																																																																																																																																																																											                    additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="card d-flex offset-lg-1 col-lg-5 col-12">
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="d-flex align-items-center justify-content-between col-lg-12">
+							<div class="d-flex align-items-center">
+								<img src="{{asset ('assets/img/diego.png')}}" class="photoprofil" alt="Zoé">
+								<h5 class="card-title">Diego S.</h5>
+							</div>
+
+							<div class="d-flex align-items-center starnote">
+								<p>Note :</p>
+								{{ user.infosUser.opinion }}/5
+								<img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="star">
+								<img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="star">
+								<img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="star">
+								<img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="star">
+								<img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="star">
+							</div>
+
+						</div>
+					</div>
+
+					<div class="card-text">
+						<p>This is a wider card with supporting text below as a natural lead-in to
+																																																																																																																																																																																																																																																																																																																																											                    additional content. This content is a little bit longer.</p>
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+
+			<div class=" col-1 d-flex justify-content-end align-items-center">
+				<svg width="14.5" height="27.5" viewbox="0 0 29 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M2 2L27 27L2 52" stroke="#25366F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+
+
+		</article>
+
+
+	</section>
+
+	<!-- FIN DE LA TROISIEME PARTIE-->
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</div></section>{% endblock %}
