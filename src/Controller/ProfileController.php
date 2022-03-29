@@ -28,10 +28,10 @@ class ProfileController extends AbstractController
     {
         $subCategories = $subCategoriesRepository->findAll();
         $InfosUser = new InfosUser();
-        // $InfosUser = $this->getUser()->getInfosUser();
-        //  if (!$InfosUser) {
-        //      $InfosUser = new InfosUser();
-        //  }
+        $InfosUser = $this->getUser()->getInfosUser();
+        if (!$InfosUser) {
+            $InfosUser = new InfosUser();
+        }
 
 
         $form = $this->createForm(ProfileType::class, $InfosUser);
@@ -39,12 +39,12 @@ class ProfileController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $InfosUser = $form->getData();
             $this->getUser()->setInfosUser($InfosUser);
             $this->entityManager->persist($InfosUser);
             $this->entityManager->flush();
-            return $this->redirectToRoute("platon_main_home");
+
+            return $this->redirectToRoute("app_profile");
         }
 
         return $this->render(
