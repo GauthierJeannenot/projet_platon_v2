@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello NaveController!
+{% endblock %}
+
+{% block body %}
+	{% for subcategorie in SubCategories %}
+		<a href="{{ path('app_sub_categories', {slug: SubCategorie.slug}) }}">
+			{{ SubCategories.title }}
+		</a>
+	{% endfor %}
+{% endblock %}

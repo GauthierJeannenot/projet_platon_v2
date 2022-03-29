@@ -9,12 +9,32 @@
 	<section id="inscription">
 
 		<div class="container">
-		
 
 
 			{{ form_start(registrationForm,{attr:{'class':"offset-md-3 col-md-6 col-12 formulaire"}}) }}
 
 			<h2>Inscription</h2>
+
+			{% if 
+				   form_errors(registrationForm.prenom)
+				or form_errors(registrationForm.nom) 
+				or form_errors(registrationForm.email)
+				or form_errors(registrationForm.password.first)
+				or form_errors(registrationForm.password.second)
+				or form_errors(registrationForm.agreeTerms)
+				or form_errors(registrationForm.agreeTerms)
+			%}
+				<div class="alert alert-danger">
+					{{ form_errors(registrationForm.prenom) }}
+					{{ form_errors(registrationForm.nom)  }}
+					{{ form_errors(registrationForm.email) }}
+					{{ form_errors(registrationForm.password.first) }}
+					{{ form_errors(registrationForm.password.second) }}
+					{{ form_errors(registrationForm.agreeTerms) }}
+					{{ form_errors(registrationForm.agreeTerms) }}
+				</div>
+			{% endif %}
+
 
 			<div class="name row col-12 justify-content-between">
 
@@ -46,7 +66,7 @@
 						  'class': ''
 					  }
 					}) }}
-					
+				<img src="assets/icones/mdp_hidden.svg" alt="oeilferme">
 				<img src="{{asset('assets/icones/mdp_hidden.svg')}}" alt="oeilferme">
 			</div>
 
@@ -72,4 +92,3 @@
 
 	</section>
 {% endblock %}
-

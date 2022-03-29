@@ -1,207 +1,177 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}Hello LandingController!
-
-{% block stylesheets %}
-<link rel="stylesheet" href="{{asset('assets/styles/index.css')}}">
 {% endblock %}
 
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('assets/styles/index.css')}}">
 {% endblock %}
 
 
 {% block innerContent %}
- {# <h1>bonjour</h1>
-<div id='root'></div>  #}
 
 
+	<header>
 
-<header>
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row">
 
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
+					<div class="titre text-center text-white">
+						<h1>Échangez vos savoirs</h1>
+						<h2>On a tous quelque chose à transmettre !</h2>
+						<a class="btn shadow" href="{{ path('app_register')}}">Inscription</a>
 
-          <div class="titre text-center text-white">
-            <h1>Échangez vos savoirs</h1>
-            <h2>On a tous quelque chose à transmettre !</h2>
-			<a class="btn shadow" href="{{ path('app_register')}}">Inscription</a>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <svg viewBox="0 0 1920 146" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M960 0C960 0 375.667 88.8169 0 146H1920L960 0Z" fill="#FBFBFB" />
-    </svg>
-
-  </header>
-
-<section id="quoi">
-
-      <div class="container">
-        <div class="row d-flex justify-content-around align-content-center">
-          <h2>C'est quoi Platon ?</h2>
-
-          <div class="col-12 col-md-3 plateforme">
-            <img src="{{asset('assets/illustrations/billets.svg')}}" alt="Billets">
-            <h3>Une plateforme gratuite</h3>
-          </div>
-
-          <div class="col-12 col-md-3 qualite">
-            <img src="{{asset('assets/illustrations/savoirs.svg')}}" alt="savoirs">
-            <h3>Des savoirs variés </br>et de qualité</h3>
-          </div>
-
-          <div class="col-12 col-md-3 communaute">
-            <img src="{{asset('assets/illustrations/communaute.svg')}}" alt="Communauté">
-            <h3>Une communauté active</h3>
-          </div>
-
-        </div>
-
-        <div class="text-center"><a class="btn shadow" href="#">En savoir plus</a></div>
-      </div>
-
-    
-
-    </section>
-
-    <!--FIN DE LA PREMIERE SECTION-->
+					</div>
+				</div>
+			</div>
+		</div>
 
 
-    <!--DEBUT DE LA DEUXIEME SECTION-->
+		<svg viewbox="0 0 1920 146" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M960 0C960 0 375.667 88.8169 0 146H1920L960 0Z" fill="#FBFBFB"/>
+		</svg>
 
-    <section id="savoirs">
+	</header>
 
-      <div class="container">
-        <div class="row d-flex justify-content-center align-content-center">
-          <h2>Une multitude de savoirs</h2>
-          <p class="apprenez">Apprenez des uns, transmettez aux autres.</p>
+	<section id="quoi">
 
-          <div class="col-12 col-md-3">
-            <div class="langues">
-              <img src="{{asset('assets/illustrations/planete_bleue.svg')}}" alt="Anglais">
-            </div>
-            <p class="text-white">Anglais</p>
-          </div>
+		<div class="container">
+			<div class="row d-flex justify-content-around align-content-center">
+				<h2>C'est quoi Platon ?</h2>
 
-          <div class="col-12 col-md-3">
-            <div class="gastronomie"><img src="{{asset('assets/illustrations/gastronomie_bleu.svg')}}" alt="Gastronomie">
-            </div>
-            <p class="text-white">Gastronomie</p>
-          </div>
+				<div class="col-12 col-md-3 plateforme">
+					<img src="{{asset('assets/illustrations/billets.svg')}}" alt="Billets">
+					<h3>Une plateforme gratuite</h3>
+				</div>
 
-          <div class="col-12 col-md-3">
-            <div class="art"><img src="{{asset('assets/illustrations/art_bleu.svg')}}" alt="Art">
-            </div>
-            <p class="text-white">
-              </pclass>Art</p>
-          </div>
+				<div class="col-12 col-md-3 qualite">
+					<img src="{{asset('assets/illustrations/savoirs.svg')}}" alt="savoirs">
+					<h3>Des savoirs variés
+					</br>et de qualité</h3>
+			</div>
 
-          <p class="categorie">Près de <span>60 catégories</span> à explorer !</p>
-          
-          <div class="text-center">
-            <a class="btn shadow" href="#">Accéder au savoir
-            </a>
-          </div>
+			<div class="col-12 col-md-3 communaute">
+				<img src="{{asset('assets/illustrations/communaute.svg')}}" alt="Communauté">
+				<h3>Une communauté active</h3>
+			</div>
 
-        </div>
-      </div>
-    </section>
+		</div>
 
-    <!--FIN DE LA DEUXIEME SECTION-->
+		<div class="text-center">
+			<a class="btn shadow" href="#">En savoir plus</a>
+		</div>
+	</div>
 
 
-    <!--DEBUT DE LA TROISIEME SECTION-->
+</section>
 
-<section id="temoignages">
-
-      <div class="container">
-        <div class="row">
-          <h2>Témoignages</h2>
-
-          <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-
-              <div class="carousel-item platon-carousel-item active" data-bs-interval="10000">
-                <div class="d-flex flex-column align-items-center">
-                  <div>
-                    <img src="{{asset('assets/img/theo.png')}}" class="d-block" alt="Théo">
-                  </div>
-                  <div class="carousel-caption d-md-block">
-                    <h5>“Grâce à Platon, j’apprends à cuisiner avec Zoé. Les lasagnes n’ont plus de secret pour moi !
-                      J’adore donner des cours de guitare !”</h5>
-                    <p>Théo, guitariste</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item platon-carousel-item" data-bs-interval="20000">
-                <div class="d-flex flex-column align-items-center">
-                  <div>
-                    <img src="{{asset('assets/img/anna.png')}}" class="d-block w-3" alt="Anna">
-                  </div>
-                  <div class="carousel-caption d-md-block">
-                    <h5>"Je suis très satisfaite de la plateforme Platon ! J'ai enfin appris à dessiner comme une pro en
-                      échange de mes cours de cuisine.</h5>
-                    <p>Anna, spécialiste en cuisine du monde</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item platon-carousel-item" data-bs-interval="20000">
-                <div class="d-flex flex-column align-items-center">
-                  <div>
-                    <img src="{{asset('assets/img/louise.png')}}" class="d-block w-3" alt="Louise">
-                  </div>
-                  <div class="carousel-caption d-md-block">
-                    <h5>"Je remercie Platon pour m'avoir fait découvrir une multitude de savoirs. J'ai également
-                      rencontré
-                      des gens géniaux !"</h5>
-                    <p>Louise, pianiste</p>
-                  </div>
-                </div>
-              </div>
+<!--FIN DE LA PREMIERE SECTION-->
 
 
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
+<!--DEBUT DE LA DEUXIEME SECTION-->
 
-          </div>
-          <div class="text-center"><a class="btn shadow" href="#">Rejoindre la communauté !</a></div>
-        </div>
+<section id="savoirs">
 
-    </section>
+	<div class="container">
+		<div class="row d-flex justify-content-center align-content-center">
+			<h2>Une multitude de savoirs</h2>
+			<p class="apprenez">Apprenez des uns, transmettez aux autres.</p>
+
+			<div class="col-12 col-md-3">
+				<div class="langues">
+					<img src="{{asset('assets/illustrations/planete_bleue.svg')}}" alt="Anglais">
+				</div>
+				<p class="text-white">Anglais</p>
+			</div>
+
+			<div class="col-12 col-md-3">
+				<div class="gastronomie"><img src="{{asset('assets/illustrations/gastronomie_bleu.svg')}}" alt="Gastronomie">
+				</div>
+				<p class="text-white">Gastronomie</p>
+			</div>
+
+			<div class="col-12 col-md-3">
+				<div class="art"><img src="{{asset('assets/illustrations/art_bleu.svg')}}" alt="Art">
+				</div>
+				<p class="text-white"></p>
+			</pclass>Art</p>
+	</div>
+
+	<p class="categorie">Près de
+		<span>60 catégories</span>
+		à explorer !</p>
+
+	<div class="text-center">
+		<a class="btn shadow" href="#">Accéder au savoir
+		</a>
+	</div>
+
+</div></div></section><!--FIN DE LA DEUXIEME SECTION--><!--DEBUT DE LA TROISIEME SECTION--><section id="temoignages"><div class="container">
+<div class="row">
+	<h2>Témoignages</h2>
+
+	<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+
+			<div class="carousel-item platon-carousel-item active" data-bs-interval="10000">
+				<div class="d-flex flex-column align-items-center">
+					<div>
+						<img src="{{asset('assets/img/theo.png')}}" class="d-block" alt="Théo">
+					</div>
+					<div class="carousel-caption d-md-block">
+						<h5>“Grâce à Platon, j’apprends à cuisiner avec Zoé. Les lasagnes n’ont plus de secret pour moi !
+																																																	                      J’adore donner des cours de guitare !”</h5>
+						<p>Théo, guitariste</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="carousel-item platon-carousel-item" data-bs-interval="20000">
+				<div class="d-flex flex-column align-items-center">
+					<div>
+						<img src="{{asset('assets/img/anna.png')}}" class="d-block w-3" alt="Anna">
+					</div>
+					<div class="carousel-caption d-md-block">
+						<h5>"Je suis très satisfaite de la plateforme Platon ! J'ai enfin appris à dessiner comme une pro en
+																																																	                      échange de mes cours de cuisine.</h5>
+						<p>Anna, spécialiste en cuisine du monde</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="carousel-item platon-carousel-item" data-bs-interval="20000">
+				<div class="d-flex flex-column align-items-center">
+					<div>
+						<img src="{{asset('assets/img/louise.png')}}" class="d-block w-3" alt="Louise">
+					</div>
+					<div class="carousel-caption d-md-block">
+						<h5>"Je remercie Platon pour m'avoir fait découvrir une multitude de savoirs. J'ai également
+																																																	                      rencontré
+																																																	                      des gens géniaux !"</h5>
+						<p>Louise, pianiste</p>
+					</div>
+				</div>
+			</div>
 
 
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
 
-    <!--FIN DE LA TROISIEME SECTION-->
-
-  </main>
-
- 
-
-
-  
-{% endblock %}
-
-
+	</div>
+	<div class="text-center">
+		<a class="btn shadow" href="#">Rejoindre la communauté !</a>
+	</div>
+</div>{% endblock %}

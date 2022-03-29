@@ -19,7 +19,7 @@
   <title>Platon, donner pour apprendre</title>
 
   <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/connexion.css">
+  <link rel="stylesheet" href="css/inscription.css">
 
   <link rel="icon" type="image/png" href="icones/favicon.png" />
 
@@ -28,6 +28,7 @@
 <body>
 
   <!--------------- DEBUT DE LA NAV --------------->
+
   <nav class="container-fluid d-flex align-items-center justify-content-between">
 
     <svg width="195" height="50" viewBox="0 0 195 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,22 +242,79 @@
   <!--------------- DEBUT DU MAIN --------------->
   <main>
 
-    <form method="" action="">
+    <section id="inscription">
 
-      <h2>Connexion</h2>
+      <div class="container">
 
-      <input type="email" name="email" id="email" placeholder="Adresse mail *" size="30" />
+        <form action="" class="offset-md-3 col-md-6 col-12 formulaire">
+          <h2>Inscription</h2>
 
-      <input type="password" name="pass" id="pass" placeholder="Mot de passe *" size="30" />
+          <div class="name row col-12 justify-content-between">
+            <input class="col-lg-5 col-12 prenom" type="text" placeholder="Prénom *">
+            <input class="col-lg-5 col-12" type="text" placeholder="Nom *">
+          </div>
 
-      <a class="mdp" href="#">Mot de passe oublié ?</a>
+          <div class="mail">
+            <input class="" type="email" placeholder="Adresse mail *">
+          </div>
 
-      <div class="d-flex justify-content-between">
-        <button class="inscription" type="submit">S'inscrire</button>
-        <a class="btn shadow connexion" href="#">Connexion</a>
+          <div class="mdp">
+            <input class="" type="text" placeholder="Mot de passe *">
+            <img src="icones/mdp_hidden.svg" alt="oeilferme">
+          </div>
+
+          <div class="confmdp">
+            <input class="" type="text" placeholder="Confirmer mot de passe *">
+            <img src="icones/mdp_hidden.svg" alt="oeilferme">
+          </div>
+
+          <div class="cgu d-flex">
+            <input type="checkbox">
+            <a href="#">J'accepte les conditions générales d'utilisation*
+            </a>
+          </div>
+
+          <div class="agemin d-flex">
+            <input type="checkbox">
+            <p>Je certifie avoir plus de 18 ans *</p>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <button class="inscription" type="submit">Déjà inscrit</button>
+            <button type="button" class="submit" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">S'inscrire</button>
+          </div>
+
+        </form>
       </div>
 
-    </form>
+    </section>
+
+
+    <!-- Vertically centered modal -->
+
+    <section id="modale">
+
+      <div div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center">
+              <h2 class="modal-title" id="titremodale">Merci !</h2>
+            </div>
+            <div class="modal-body">
+              <p>Pensez à cliquer sur le lien reçu par mail pour valider votre inscription.</p>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+              <a href="#" class="return">Renvoyer le mail</a>
+              <a class="btn shadow" href="#">Continuer</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
 
   </main>
   <!--------------- FIN DU MAIN --------------->
@@ -266,7 +324,7 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-3">
+        <div class="col-3">
           <ul>
             <li>
               <h4>À propos</h4>
@@ -277,7 +335,7 @@
           </ul>
         </div>
 
-        <div class="col-12 col-md-3">
+        <div class="col-3">
           <ul>
             <li>
               <h4>Contact</h4>
@@ -288,7 +346,7 @@
           </ul>
         </div>
 
-        <div class="col-12 col-md-3">
+        <div class="col-3">
           <ul>
             <li>
               <h4>Platon</h4>
@@ -298,7 +356,7 @@
           </ul>
         </div>
 
-        <div class="col-12 col-md-3">
+        <div class="col-3">
           <img src="logo/platon_jaune.svg" alt="Logo Platon">
           <div class="RS">
             <a href="#"><img src="icones/facebook.png" alt="Logo Facebook"></a>
@@ -309,6 +367,7 @@
 
   </footer>
   <!--------------- FIN DU FOOTER --------------->
+
 
   <!-- Optional JavaScript; choose one of the two! -->
 

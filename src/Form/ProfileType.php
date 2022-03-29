@@ -10,6 +10,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -21,17 +22,22 @@ class ProfileType extends AbstractType
             ->add('classType', ChoiceType::class, [
                 'choices' => [
                     'presentiel' => 'présentiel',
-                    'visio' => 'visio'
+                    'visio' => 'visio',
 
                 ],
-                
                 'multiple' => true,
                 'expanded' => true,
+                'label' => ' '
             ])
 
-            ->add('bio')
+            ->add('bio', TextareaType::class, [
+                'label' => false,
+            ])
 
-            ->add('opinion')
+            ->add('opinion', null, [
+                'required' => false,
+                'label' => false,
+            ])
 
             ->add('personnality', EntityType::class, [
                 'class' => Personnality::class,
@@ -39,7 +45,6 @@ class ProfileType extends AbstractType
                 'expanded' => true,
                 'by_reference' => false,
                 'choice_label' => 'name'
-
             ])
 
             // ->add('catalogues', EntityType::class, [
@@ -49,13 +54,13 @@ class ProfileType extends AbstractType
             //     'choice_label' => 'name'
             // ])
 
-             ->add('subCategories', EntityType::class, [
-                 'class' => SubCategories::class,
-                 'multiple' => true,
-                 'by_reference' => false,
-                 'choice_label' => 'name',
-                 'expanded' => false,
-             ])
+            ->add('subCategories', EntityType::class, [
+                'class' => SubCategories::class,
+                'multiple' => true,
+                'by_reference' => false,
+                'choice_label' => 'name',
+                'label' => false,
+            ])
 
 
 

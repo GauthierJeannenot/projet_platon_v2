@@ -46,8 +46,8 @@ class RegistrationController extends AbstractController
             );
 
             $user->setIsVerified(true);
-    
-    
+
+
             $entityManager->persist($user);
             $entityManager->flush();
 
@@ -61,11 +61,13 @@ class RegistrationController extends AbstractController
             // );
             // do anything else you need here, like send an email
 
-            return $userAuthenticator->authenticateUser(
+            $userAuthenticator->authenticateUser(
                 $user,
                 $authenticator,
                 $request
             );
+
+            return $this->redirectToRoute('app_profile');
         }
 
         return $this->render('registration/register.html.twig', [

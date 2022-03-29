@@ -24,8 +24,8 @@ import { App } from './component/App';
 
 let reactRoot = document.getElementById('root')
 
-if(reactRoot != undefined){
-   
-    ReactDOM.render(<App/>, reactRoot);
+if (reactRoot != undefined) {
+
+    ReactDOM.render(<App />, reactRoot);
 }
 
