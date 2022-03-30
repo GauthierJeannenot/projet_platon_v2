@@ -7,6 +7,7 @@ use App\Entity\Ticket;
 use App\Entity\Favoris;
 use App\Form\UserType;
 use App\Repository\FavorisRepository;
+use App\Repository\SubCategoriesRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
@@ -63,12 +64,14 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}", name="app_user_show", methods={"GET"})
      */
-    public function show(User $user): Response
+    public function show(User $user, SubCategoriesRepository $subCategoriesRepository): Response
     {
+        $subCategories = $subCategoriesRepository->findAll();
         //dd($user);
         // checking des informations contenues dans user
         return $this->render('user/show.html.twig', [
             'user' => $user,
+            'subCategories' => $subCategories
         ]);
     }
 

@@ -41,16 +41,16 @@
 
         <div class="d-flex">
 
-
-            <div class="section2 col-3 offset-1">
-            {% for ticket in tickets %}
+                        {% for ticket in tickets %}
                 {% if ticket.status is same as(0) %}
+            <div class="section2 col-3 offset-1">
+
 
               <div class="demandecours col-9">
                   
                 <div class="d-flex">
                   <div class="d-flex photobadge">
-                      <img class="portrait" src="{{asset('assets/img/michel.png')}}" alt="photo de Michel">
+                      <img class="portrait" src="{{asset('assets/img/lucile2.png')}}" alt="photo de Michel">
                       <img class="medaille" src="{{asset('assets/icones/medaille_bleu.svg')}}" alt="badge">
                     </div>
                   
@@ -86,7 +86,7 @@
                     
                   <div>
                     
-                      <p class="nom text-center">{{ticket.receiver.infosUser.subCategories[0].name}}</p>
+                      <p class="nom text-center">{{ticket.sender.infosUser.subCategories[0].name}}</p>
                     
                       <div class="progression d-flex text-center">
                         <div>
@@ -226,9 +226,10 @@
               <a class="btn shadow" href="dashboard.html">Valider</a>
             </div>
           </div>
-            {% endif %}
-          {% endfor %}
+
         </div>
+                    {% endif %}
+          {% endfor %}
       </div>
     </section>
 
@@ -237,10 +238,10 @@
       
       
       
-
-            <div class="section2 col-3 offset-4">
-            {% for ticket in app.user.tickets %}
+                        {% for ticket in app.user.tickets %}
                 {% if ticket.status is same as(0) %}
+            <div class="section2 col-3 offset-1">
+
               <div class="coursprevu col-9">
                 <div>
                   <p class="nom text-center">{{ticket.receiver.infosUser.subCategories[0].name}}</p>
@@ -315,9 +316,10 @@
             </div>
             </div>
           </div>
-            {% endif %}
-          {% endfor %}
+
         </div>
+                    {% endif %}
+          {% endfor %}
     </section>  
 <!--FIN DE LA DEUXIEME SECTION-->
 <!--DEBUT DE LA TROISIEME SECTION Cours passés-->
