@@ -106,7 +106,7 @@
 				<div class="col-2 photo">
 					<img src="{{asset ('assets/img/lucile2.png')}}" alt="lucile">
 					<img class="medaille" src="{{asset ('assets/icones/medaille_bleu.svg')}}" alt="badge">
-					<p class="name">{{ (app.user.prenom ~ ' ' ~ app.user.nom |slice(0, 1) ) }}.</p>
+					<p class="name">{{ (user.prenom ~ ' ' ~ user.nom |slice(0, 1) ) }}.</p>
 				</div>
 
 				<div class="d-flex flex-column justify-content-between col-4 offset-6">
@@ -190,11 +190,11 @@
 							</div>
 
 							<div class="d-flex offset-2 col-6 align-items-center">
+								{% for classTypes in user.infosUser.classType %}
 								<div class="tag">
-									{% for classTypes in user.infosUser.classType %}
 										{{classTypes}}
-									{% endfor %}
 								</div>
+								{% endfor %}
 								{# <p class="tag">Présentiel
 																																																																																																																																																																																																																																																																																								<img src="icones/valide_bleu.svg" alt="Valide"></p>
 																																																																																																																																																																																																																																																																																							<p class="tag">Visio
