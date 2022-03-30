@@ -60,6 +60,7 @@
 
 			</div>
 
+<<<<<<< HEAD
 			<div class="dropdown">
 				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 					<img class="connecte" src="{{asset('assets/icones/icone_connecte.svg')}}" alt="Icone">
@@ -90,6 +91,25 @@
 					</li>
 				</ul>
 			</div>
+=======
+      <a class="blog" href="#">Blog</a>
+
+    </div>
+    
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img class="connecte" src="{{asset('assets/icones/icone_connecte.svg')}}" alt="Icone">
+        <img class="chrono" src="{{asset('assets/icones/chrono_petit.svg')}}" alt="Chrono">
+          CRÉDIT TEMPS : <span>1H</span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#"> <img src="{{asset('assets/icones/bulle_bleue.svg')}}" alt="Messagerie"> Messagerie</a></li>
+          <li><a class="dropdown-item" href="{{ path('platon_user_show', {'id':app.user.id})}}"> <img src="{{asset('assets/icones/profil_bleu.svg')}}" alt="Espace personnel"> Espace personnel</a></li>
+          <li><a class="dropdown-item" href="{{ path('platon_user_edit', {'id':app.user.id})}}"> <img src="{{asset('assets/icones/parametres_bleu.svg')}}" alt="Paramètres"> Paramètres</a></li>
+          <li><a class="dropdown-item deconnexion" href="{{ path('app_logout') }}"> <img src="{{asset('assets/icones/deconnexion.svg')}}" alt="Déconnexion"> Déconnexion</a></li>   
+        </ul>
+      </div>
+>>>>>>> origin/gauthier
 
 
 			<div id="modale" class="hidden">
