@@ -55,6 +55,7 @@
 				<path d="M163.402 49.1125V20.7128H173.646V23.5971C174.881 22.4323 176.331 21.5171 177.996 20.8514C179.661 20.1673 181.411 19.8253 183.244 19.8253C185.452 19.8253 187.407 20.306 189.11 21.2674C190.813 22.2289 192.15 23.5601 193.123 25.2612C194.115 26.9437 194.611 28.8758 194.611 31.0576V49.1125H184.367V33.2209C184.367 31.5198 183.89 30.1793 182.936 29.1994C181.982 28.201 180.691 27.7018 179.063 27.7018C177.959 27.7018 177.005 27.9236 176.2 28.3674C175.396 28.8111 174.769 29.4305 174.32 30.2256C173.871 31.0021 173.646 31.8989 173.646 32.9158V49.1125H163.402Z" fill="#25366F"/>
 				</svg>
 				</a>
+
 			{% endif %}
 			
 
@@ -506,6 +507,30 @@
 					</div>
 				</div>
 			</nav>
+		</div>
+
+
+		<div class="navbar">
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+					<img src="{{asset('assets/icones/burger.svg')}}" alt="">
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+					<li>
+						<a class="dropdown-item" href="{{ path('app_how_to')}}">Comment ça marche ?</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="#">Catalogue des savoirs</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="#">Blog</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="{{ path('app_login')}}">Connexion</a>
+					</li>
+				</ul>
+			</div>
+			<img class="logo" src="{{asset('assets/icones/favicon.png')}}" alt="Logo">
 		</div>
 
 
