@@ -238,11 +238,13 @@
       
       
       
-                        {% for ticket in app.user.tickets %}
-                {% if ticket.status is same as(0) %}
+                
             <div class="section2 col-3 offset-1">
+            {% for ticket in app.user.tickets %}
+                {% if ticket.status is same as(0) %}
 
               <div class="coursprevu col-9">
+
                 <div>
                   <p class="nom text-center">{{ticket.receiver.infosUser.subCategories[0].name}}</p>
                   <div class="progression d-flex text-center">
@@ -314,12 +316,17 @@
                   </div>
               </div>
             </div>
+
+
             </div>
+
           </div>
 
         </div>
-                    {% endif %}
+          {% endif %}
           {% endfor %}
+ 
+
     </section>  
 <!--FIN DE LA DEUXIEME SECTION-->
 <!--DEBUT DE LA TROISIEME SECTION Cours passés-->
