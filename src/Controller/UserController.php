@@ -75,7 +75,17 @@ class UserController extends AbstractController
         ]);
     }
 
-    public function addFavorite(EntityManagerInterface $em, FavorisRepository $favorisRepository, User $user){
+    public function favoris(SubCategoriesRepository $subCategoriesRepository){
+        $subCategories = $subCategoriesRepository->findAll();
+        return $this->render('platon_favoris', [
+            'user' => $user,
+            'subCategories' => $subCategories
+        ]);
+
+    }
+
+    public function addFavorite(EntityManagerInterface $em, FavorisRepository $favorisRepository, User $user, SubCategoriesRepository $subCategoriesRepository){
+        $subCategories = $subCategoriesRepository->findAll();
         // On vas chercher le FavorisRepository afin d'obtenir la méthode FindOneBy qui nous permettra de récupérer le user concerner par la page et on stock le user dans une variable $favorite
         $favorite = $favorisRepository->findOneBy([
             'added' => $user,
@@ -105,6 +115,7 @@ class UserController extends AbstractController
 
         return $this->render('user/show.html.twig', [
             'user' => $user,
+            'subCategories' => $subCategories
         ]);
     }
 
