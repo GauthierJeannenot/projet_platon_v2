@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Entity\InfosUser;
 use App\Form\ProfileType;
+use App\Repository\SubCategoriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,8 +24,9 @@ class ProfileController extends AbstractController
      * @Route("/profile", name="app_profile")
      */
 
-    public function index(Request $request): Response
+    public function index(Request $request, SubCategoriesRepository $subCategoriesRepository): Response
     {
+        $subCategories = $subCategoriesRepository->findAll();
         $InfosUser = new InfosUser();
         $InfosUser = $this->getUser()->getInfosUser();
         if (!$InfosUser) {
@@ -51,6 +53,8 @@ class ProfileController extends AbstractController
             [
                 'form' => $form->createView(),
                 'infos_user' => $InfosUser,
+                'subCategories' => $subCategories,
+
             ]
         );
     }

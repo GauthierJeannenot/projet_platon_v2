@@ -1,10 +1,66 @@
 {% extends 'layout.html.twig' %}
-
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{asset('assets/styles/catalogue.css')}}">
+{% endblock %}
 {% block title %}SubCategories{% endblock %}
 
 {% block innerContent %}
+    <section id="profilcard">
 
-     <h1>{{ sub_category.name }}</h1> 
+      <div class="container">
+
+        <div class="row d-flex justify-content-evenly">
+          {% for users in sub_category.infosUsers %}
+
+          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
+
+            <div class="d-flex photobadge">
+              {# l'on affiche pas encore de photo profil/utilisateur, il faudrait stocker le chemin de la photo lors de l'inscription puis le concaténer 
+              avec son url complet (dans le cas d'une photo déja hébergée en ligne) afin d'afficher celle-ci dynamiquement selon l'utilisateur #}
+              <img src="{{asset ('assets/img/lucile2.png')}}" alt="photoprofil">
+              {# Pour l'instant tout le utilisateurs sont certifiés (ou aucun ?!) ils ont donc tous un joli badge,
+              pour plus tard implanter une entitée badge avec une booléenne réglée à false liée à l'entitée InfosUser qui passera à TRUE lorsque * nbre de cours donnés par l'utilisateur ont aurait été clos et validés permettant ainsi d'afficher le badge dynamiquement#}
+              <img class="medaille" src="{{asset ('assets/icones/medaille_bleu.svg')}}" alt="badge">
+            </div>
+            {# Trouver le moyen de n'afficher que la premiére lettre du nom de famille #}
+            <h3>{{ users.user.prenom }} {{users.user.nom}}</h3>
+
+            {# Une propriété opinion existe déjà en base de données, pour l'affichage dynamique deux options :
+             - Relier l'integer à une table contenant le lien d'un étoile et lui demander d'itérer l'image d'autant de fois que la valeur de opinion
+             - Gérer l'affichage des étoiles en front avec du JS ou du REACT #}
+            <div class="d-flex align-items-start avismoy">
+              <img src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles"><img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="étoiles"><img
+                src="{{asset ('assets/icones/etoile_full.svg')}}" alt="étoiles"><img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="étoiles"><img
+                src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles">
+              <p>22 avis</p>
+            </div>
+
+            <div class="d-flex">
+            {# On affiche la capacité d'avoir un cours en visio, en présentiel ou les deux selon les options stockées en bdd #}
+            {% for classTypes in users.classType %}
+              <div class="typecours d-flex align-items-center">{{ classTypes }}<img src="{{asset ('assets/icones/valide_bleu.svg')}}" alt="check">
+              </div>
+            {% endfor %}
+              
+            </div>
+
+            <div class="d-flex align-items-end ville">
+              <img src="{{asset ('assets/icones/localisation.svg')}}" alt="localisation">
+              {# La localisation des users est elle stockée lors de l'affinage des profils ? Si oui, l'affichée dynamiquement ici, Si non, il faut absolument que ça soit fait #}
+              <p>Paris & Ile-de-France</>
+            </div>
+
+            <div class="d-flex align-items-center voirprofil">
+              <a class="btn shadow" href="{{ path('platon_user_show', {'id': users.user.id}) }}">Voir profil</a>
+            </div>
+          </article>
+
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+     {# Ici on trouvera la donnée simple
 
 
 
@@ -20,330 +76,9 @@
 
 
             <a href="{{ path('platon_user_show', {'id': users.user.id})}}">Voir mon profil</a>
-    {% endfor %} 
+    {% endfor %}  #}
 
-     {% endblock %}
-{#     
-
-<main>
-
- <h1>{{ sub_category.name }}</h1>
-
-{% for users in sub_category.infosUsers %}
-
-    <section id="profilcard">
-
-      <div class="container">
-
-        <div class="row d-flex justify-content-between">
-
-          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
-
-            <div class="d-flex photobadge">
-              <img src="{{asset('assets/img/lucile2.png')}}" alt="photoprofil">
-              <img class="medaille" src="{{asset('assets/icones/medaille_bleu.svg')}}" alt="badge">
-            </div>
-
-              <h3>{{ users.user.prenom }}</h3>  
-
-            <div class="d-flex align-items-start avismoy">
-              <img src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles"><img src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles"><img
-                src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles"><img src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles"><img
-                src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles">
-              <p>22 avis</p>
-             
-            </div>
-
-            <div class="d-flex">
-              <div class="typecours d-flex align-items-center">Présentiel<img src="{{asset('assets/icones/valide_bleu.svg')}}" alt="check">
-              </div>
-              <div class="typecours d-flex align-items-center">Visio<img src="{{asset('assets/icones/valide_bleu.svg')}}" alt="check"></div>
-            </div>
-
-            <div class="d-flex align-items-end ville">
-              <img src="{{asset('assets/icones/localisation.svg')}}" alt="localisation">
-              <p>Paris & Ile-de-France</>
-            </div>
-
-            {% endfor %}
-
-         
-      
-    
-            <div class="d-flex align-items-center voirprofil">
-              <a class="btn shadow" href="#">Voir profil</a>
-            </div>
-          </article>
-
-          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
-            <div class="d-flex photobadge">
-              <img src="{{ asset('assets/img/diego.png')}}" alt="photoprofil">
-              <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
-            </div>
-
-               <a href="{{ path('platon_user_show', {'id': users.user.id})}}">Voir mon profil</a>
-
-             {% endfor %}
-
-
-            <h3>Diego S.</h3>
-
-            <div class="d-flex align-items-start avismoy">
-              <img src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles">
-              <p>20 avis</p>
-            </div>
-
-            <div class="d-flex">
-              <div class="typecours d-flex align-items-center">Présentiel<img src="icones/valide_bleu.svg" alt="check">
-              </div>
-              <div class="typecours d-flex align-items-center">Visio<img src="icones/valide_bleu.svg" alt="check"></div>
-            </div>
-
-            <div class="d-flex align-items-center ville">
-              <img src="icones/localisation.svg" alt="localisation">
-              <p>Paris</p>
-            </div>
-
-            <div class="d-flex align-items-center voirprofil">
-              <a class="btn shadow" href="#">Voir profil</a>
-            </div>
-          </article>
-
-
-          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
-            <div class="d-flex photobadge">
-              <img src="img/zoe.png" alt="photoprofil">
-              <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
-            </div>
-
-            <h3>Zoé M.</h3>
-
-            <div class="d-flex align-items-start avismoy">
-              <img src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles">
-              <p>17 avis</p>
-            </div>
-
-            <div class="d-flex">
-              <div class="typecours d-flex align-items-center">Présentiel<img src="icones/valide_bleu.svg" alt="check">
-              </div>
-              <div class="typecours d-flex align-items-center">Visio<img src="icones/valide_bleu.svg" alt="check"></div>
-            </div>
-
-            <div class="d-flex align-items-center ville">
-              <img src="icones/localisation.svg" alt="localisation">
-              <p>Cergy-Pontoise</p>
-            </div>
-
-            <div class="d-flex align-items-center voirprofil">
-              <a class="btn shadow" href="#">Voir profil</a>
-            </div>
-          </article>
-
-
-          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
-            <div class="d-flex photobadge">
-              <img src="img/jean.png" alt="photoprofil">
-              <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
-            </div>
-
-            <h3>Jean S.</h3>
-
-            <div class="d-flex align-items-start avismoy">
-              <img src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles">
-              <p>15 avis</p>
-            </div>
-
-            <div class="d-flex">
-              <div class="typecours">Présentiel<img src="icones/valide_bleu.svg" alt="check"></div>
-              <div class="typecours">Visio<img src="icones/valide_bleu.svg" alt="check"></div>
-            </div>
-
-            <div class="d-flex align-items-center ville">
-              <img src="icones/localisation.svg" alt="localisation">
-              <p>Montreuil</p>
-            </div>
-
-            <div class="d-flex align-items-center voirprofil">
-              <a class="btn shadow" href="#">Voir profil</a>
-            </div>
-          </article>
-
-
-          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
-            <div class="d-flex photobadge">
-              <img src="img/julie.png" alt="photoprofil">
-              <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
-            </div>
-
-            <h3>Julie F.</h3>
-
-            <div class="d-flex align-items-start avismoy">
-              <img src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_demi.svg" alt="étoiles">
-              <p>14 avis</p>
-            </div>
-
-            <div class="d-flex">
-              <div class="typecours d-flex align-items-center">Présentiel<img src="icones/valide_bleu.svg" alt="check">
-              </div>
-              <div class="typecours d-flex align-items-center">Visio<img src="icones/valide_bleu.svg" alt="check"></div>
-            </div>
-
-            <div class="d-flex align-items-center ville">
-              <img src="icones/localisation.svg" alt="localisation">
-              <p>Montargis</p>
-            </div>
-
-            <div class="d-flex align-items-center voirprofil">
-              <a class="btn shadow" href="#">Voir profil</a>
-            </div>
-          </article>
-
-
-          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
-            <div class="d-flex photobadge">
-              <img src="img/katy.png" alt="photoprofil">
-              <img class="medaille" src="icones/medaille_bleu.svg" alt="badge">
-            </div>
-
-            <h3>Katy P.</h3>
-
-            <div class="d-flex align-items-start avismoy">
-              <img src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_demi.svg" alt="étoiles">
-              <p>10 avis</p>
-            </div>
-
-            <div class="d-flex">
-              <div class="typecours">Présentiel<img src="icones/valide_bleu.svg" alt="check"></div>
-              <div class="typecours">Visio<img src="icones/valide_bleu.svg" alt="check"></div>
-            </div>
-
-            <div class="d-flex align-items-center ville">
-              <img src="icones/localisation.svg" alt="localisation">
-              <p>Dieppe</p>
-            </div>
-
-            <div class="d-flex align-items-center voirprofil">
-              <a class="btn shadow" href="#">Voir profil</a>
-            </div>
-          </article>
-
-          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
-            <div class="d-flex photobadge">
-              <img src="img/tom.png" alt="photoprofil">
-            </div>
-
-            <h3>Tom D.</h3>
-
-            <div class="d-flex align-items-start avismoy">
-              <img src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_demi.svg" alt="étoiles">
-              <p>9 avis</p>
-            </div>
-
-            <div class="d-flex">
-              <div class="typecours d-flex align-items-center">Présentiel<img src="icones/valide_bleu.svg" alt="check">
-              </div>
-              <div class="typecours d-flex align-items-center">Visio<img src="icones/valide_bleu.svg" alt="check"></div>
-            </div>
-
-            <div class="d-flex align-items-center ville">
-              <img src="icones/localisation.svg" alt="localisation">
-              <p>Strasbourg</p>
-            </div>
-
-            <div class="d-flex align-items-center voirprofil">
-              <a class="btn shadow" href="#">Voir profil</a>
-            </div>
-          </article>
-
-          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
-            <div class="d-flex photobadge">
-              <img src="img/john.png" alt="photoprofil">
-            </div>
-
-            <h3>John T.</h3>
-
-            <div class="d-flex align-items-start avismoy">
-              <img src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_demi.svg" alt="étoiles">
-              <p>7 avis</p>
-            </div>
-
-            <div class="d-flex">
-              <div class="typecours d-flex align-items-center">Présentiel<img src="icones/valide_bleu.svg" alt="check">
-              </div>
-              <div class="typecours d-flex align-items-center">Visio<img src="icones/valide_bleu.svg" alt="check"></div>
-            </div>
-
-            <div class="d-flex align-items-center ville">
-              <img src="icones/localisation.svg" alt="localisation">
-              <p>Toulouse</p>
-            </div>
-
-            <div class="d-flex align-items-center voirprofil">
-              <a class="btn shadow" href="#">Voir profil</a>
-            </div>
-          </article>
-
-          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
-            <div class="d-flex photobadge">
-              <img src="img/marie.png" alt="photoprofil">
-            </div>
-
-            <h3>Marie J.</h3>
-
-            <div class="d-flex align-items-start avismoy">
-              <img src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_full.svg" alt="étoiles"><img src="icones/etoile_full.svg" alt="étoiles"><img
-                src="icones/etoile_demi.svg" alt="étoiles">
-              <p>7 avis</p>
-            </div>
-
-            <div class="d-flex">
-              <div class="typecours d-flex align-items-center">Présentiel<img src="icones/valide_bleu.svg" alt="check">
-              </div>
-              <div class="typecours d-flex align-items-center">Visio<img src="icones/valide_bleu.svg" alt="check"></div>
-            </div>
-
-            <div class="d-flex align-items-center ville">
-              <img src="icones/localisation.svg" alt="localisation">
-              <p>Marseille</p>
-            </div>
-
-            <div class="d-flex align-items-center voirprofil">
-              <a class="btn shadow" href="#">Voir profil</a>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="pagination">
-          <ul class="pagination pagination-sm">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1">1</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    {% endblock %}
-  </main> #}
+{% endblock %}
 
 
  

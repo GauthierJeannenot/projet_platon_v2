@@ -1,13 +1,23 @@
 {% extends 'layout.html.twig' %}
+<<<<<<< HEAD
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{asset ('assets/styles/comment_ca_marche.css')}}">
 
 {% endblock %}
+=======
+>>>>>>> fa0dbbd73f6a7e82dfbcedeee1319e244d81ccf5
 
-{% block title %}Hello HowToController!
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('assets\styles\comment_ca_marche.css')}}">
 {% endblock %}
 
+{% block title %}
+    HowTo
+{% endblock %}
+
+<<<<<<< HEAD
 {% block innerContent %}
 	<header>
 
@@ -206,3 +216,156 @@ modale.className = "seen"
 
 
 </div></div></section></div></main>{% endblock %}
+=======
+
+{% block innerContent %}
+    <div class="container">
+
+      <section class="concept1">
+
+        <div class="row align-items-center" id="etape">
+
+          <div class="col-md-6">
+
+            <div class="d-flex align-items-center">
+              <h2>1.</h2>
+              <h3>Créez votre compte</h3>
+            </div>
+
+            <p> Inscrivez-vous sur Platon en seulement quelques clics. Puis, complétez <span class="textebold">votre profil</span> pour bénéficier de votre première heure de cours.</p>
+
+          </div>
+
+          <div class="d-flex offset-3 col-md-3">
+            <img src="{{asset('assets/illustrations/chrono.svg')}}" alt="Créez mon compte" id="moncompte">
+          </div>
+        </div>
+
+        <div class="fleche3">
+          <img src="{{asset('assets/img/fleche1.png')}}" alt="sectionfleche1">
+        </div>
+
+      </section>
+
+
+      <section class="concept2">
+
+        <div class="row align-items-center" id="etape">
+
+          <div class="d-flex offset col-md-4">
+            <img src="{{asset('assets/illustrations/loupe.svg')}}" alt="Trouvez un savoir" id="savoir">
+          </div>
+
+
+          <div class="offset-3 col-md-5">
+            <div class="d-flex align-items-center trouversavoir">
+              <h2>2.</h2>
+              <h3>Découvrez les savoirs</h3>
+            </div>
+
+            <p>Consultez <span class="textebold">le catalogue des savoirs</span> alimenté par la communauté. Entrez en contact avec les autres membres pour réserver vos cours.</p>
+          </div>
+        </div>
+
+        <div class="fleche2">
+          <img src="{{asset('assets/img/fleche2.png')}}" alt="sectionfleche2">
+        </div>
+
+
+      </section>
+
+
+
+
+      <section class="concept3">
+
+
+        <div class="row align-items-center" id="etape">
+
+          <div class="col-md-6">
+
+            <div class="d-flex align-items-center">
+              <h2>3.</h2>
+              <h3>Apprenez de nouvelles choses</h3>
+            </div>
+
+            <p>Planifiez votre cours avec votre mentor en respectant la charte de Platon et rencontrez-vous. Récompensez son travail par votre <span class="textebold">crédit temps.</span class="textebold"></br>
+          </div>
+
+          <div class="d-flex offset-3 col-md-3">
+            <img src="{{asset('assets/illustrations/main.svg')}}" alt="Apprendre de nouvelles choses" id="choses">
+          </div>
+        </div>
+
+        <div class="fleche3">
+          <img src="{{asset('assets/img/fleche1.png')}}" alt="sectionfleche3">
+        </div>
+
+      </section>
+
+
+
+      <section class="concept4">
+
+
+        <div class="row align-items-center" id="etape">
+
+          <div class="d-flex col-md-5">
+            <img src="{{asset('assets/illustrations/arbre.svg')}}" alt="Partagez vos connaissances" id="connaissances">
+          </div>
+
+
+          <div class="offset-2 col-md-5">
+
+            <div class="d-flex align-items-center">
+              <h2>4.</h2>
+
+              <h3>Partagez vos connaissances</h3>
+            </div>
+
+            <p>À votre tour, gagnez des crédits temps en partageant <span class="textebold">vos connaissances et savoirs</span> avec les autres membres.
+              <br>Aidez-nous à faire grandir la communauté Platon !
+            </p>
+          </div>
+        </div>
+
+
+      </section>
+
+    </div>
+
+
+
+    <section class="endsection">
+
+      <div class="container">
+
+
+
+        <div class="row">
+
+          <div class="col-md-7 supermentor">
+
+            <h3>Le programme super mentor</h3>
+
+            <br><span class="textebold">Faites de votre passion votre métier !</span> <br>
+          </br>
+          Conseils personnalisés, master classes, entretiens individuels... <br>Platon propose un <span class="textebold">coaching personnalisé</span> réservé aux membres pour lesquels transmettre leurs savoirs est devenu une vocation. <br></br><span class="textebold">Une seule condition</span> : les personnes devront avoir réalisé <span class="textebold">au moins 40 cours</span> via
+              la plateforme Platon pour bénéficier de ce service d’accompagnement.
+            </p>
+          </div>
+
+          <div class="offset-1 col-md-4">
+
+            <div class="d-flex justify-content-center"> <img src="{{asset('assets/icones/medaille_bleu.svg')}}" alt="medal"></div>
+            <div class="d-flex justify-content-center"><a class="boutonensavoirplus" href="#">En savoir plus</a></div>
+
+          </div>
+
+        </div>
+
+    </section>
+    </div>
+
+{% endblock %}
+>>>>>>> fa0dbbd73f6a7e82dfbcedeee1319e244d81ccf5

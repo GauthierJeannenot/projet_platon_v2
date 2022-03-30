@@ -20,17 +20,17 @@
 
 
 		{# 
-										
-														<p>Bonjour
-															{{app.user.prenom}}
-										        </p> #}
+		
+						<p>Bonjour
+							{{app.user.prenom}}
+		        </p> #}
 
 		{# <a href="{{ path('app_logout') }}">Déconnexion</a> #}
 		{# <a href="{{ path('app_login')}}">Connexion</a> #}
 		{# <li><a href="{{ path('app_how_to')}}"> Comment ça marche ?</a></li>
-										<input type="search" name="search-bar" id="root" placeholder="Recherche">
-										<li><a class="dropdown-item deconnexion" href="{{ path('app_logout') }}"> 
-										<img src="{{asset('assets/icones/deconnexion.svg')}}" alt="Déconnexion"> Déconnexion</a></li> #}
+		<input type="search" name="search-bar" id="root" placeholder="Recherche">
+		<li><a class="dropdown-item deconnexion" href="{{ path('app_logout') }}"> 
+		<img src="{{asset('assets/icones/deconnexion.svg')}}" alt="Déconnexion"> Déconnexion</a></li> #}
 
 			<nav class="container-fluid d-flex align-items-center justify-content-between"> <svg width="195" height="50" viewbox="0 0 195 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M22.1806 0H39.3003C42.2939 0 44.9787 0.517703 47.3549 1.55311C49.7498 2.58852 51.6489 4.15087 53.0521 6.24018C54.4554 8.32948 55.157 10.9642 55.157 14.1444C55.157 17.3061 54.4554 19.9871 53.0521 22.1873C51.6489 24.369 49.7498 26.0331 47.3549 27.1794C44.9787 28.3073 42.2939 28.8712 39.3003 28.8712H32.9856L32.9764 49.2378H15.8567C12.8631 49.2378 10.1782 48.7201 7.80208 47.6847C5.4072 46.6493 3.50813 45.0869 2.10488 42.9976C0.701626 40.9083 0 38.2736 0 35.0934C0 31.9317 0.701626 29.2507 2.10488 27.0505C3.50813 24.8687 5.4072 23.2047 7.80208 22.0583C10.1782 20.9305 12.8631 20.3666 15.8567 20.3666H22.1714V3.47649L22.1806 0ZM35.8202 20.3846H32.9856V8.51438H35.8202C37.1486 8.51438 38.4209 8.69003 39.637 9.04132C40.8532 9.39262 41.8448 10.0028 42.6119 10.8718C43.379 11.7223 43.7626 12.9241 43.7626 14.4772C43.7626 16.0118 43.379 17.2044 42.6119 18.0549C41.8448 18.9054 40.8532 19.5063 39.637 19.8576C38.4209 20.2089 37.1486 20.3846 35.8202 20.3846ZM19.3368 28.8532H22.1714V40.7234H19.3368C18.0084 40.7234 16.7361 40.5478 15.52 40.1965C14.3038 39.8452 13.3122 39.235 12.5451 38.366C11.778 37.5155 11.3944 36.3137 11.3944 34.7606C11.3944 33.226 11.778 32.0334 12.5451 31.1829C13.3122 30.3324 14.3038 29.7315 15.52 29.3802C16.7361 29.0289 18.0084 28.8532 19.3368 28.8532Z" fill="#25366F"/>
@@ -74,12 +74,12 @@
 							Messagerie</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="{{ path('app_profile') }}">
+						<a class="dropdown-item" href="{{ path('platon_user_show', {'id':app.user.id})}}">
 							<img src="{{asset('assets/icones/profil_bleu.svg')}}" alt="Espace personnel">
 							Espace personnel</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">
+						<a class="dropdown-item" href="{{ path('platon_user_edit', {'id':app.user.id})}}">
 							<img src="{{asset('assets/icones/parametres_bleu.svg')}}" alt="Paramètres">
 							Paramètres</a>
 					</li>
@@ -105,11 +105,24 @@
 									<div class="col-8">
 										<p class="categorie">Administratif</p>
 										<ul>
-											<li><a href="#">Assistance juridique</a></li>
-											<li><a href="#">Comptabilité</a></li>
-											<li><a href="#">Dossier banque</a></li>
-											<li><a href="#">Impôts</a></li>
-											<li><a href="#">Rédaction</a></li>
+											{# <pre>
+											                    {{ dump(subCategories) }}
+											                  </pre> #}
+											<li>
+												<a href="{{ path('platon_subcategories_show', {'id': subCategories[0].id })}}">Assistance juridique</a>
+											</li>
+											<li>
+												<a href="#">Comptabilité</a>
+											</li>
+											<li>
+												<a href="#">Dossier banque</a>
+											</li>
+											<li>
+												<a href="#">Impôts</a>
+											</li>
+											<li>
+												<a href="#">Rédaction</a>
+											</li>
 										</ul>
 									</div>
 								</div>
@@ -604,9 +617,9 @@ modale.className = "seen"
 
 	<!-- Option 2: Separate Popper and Bootstrap JS -->
 	<!--
-					    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-					    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-					    -->
+						    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+						    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+						    -->
 
 
 {% endblock %}
