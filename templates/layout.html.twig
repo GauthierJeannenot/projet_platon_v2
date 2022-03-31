@@ -325,8 +325,8 @@
 					<a class="blog" href="#">Blog</a>
 
 				</div>
-				{# <button>Connexion</button> #}
-				<a href="{{ path('app_login')}}">Connexion</a>
+				<button><a href="{{ path('app_login')}}">Connexion</a></button>
+				
 
 				<div id="modale" class="hidden">
 					<div class="container">
@@ -510,28 +510,7 @@
 		</div>
 
 
-		<div class="navbar">
-			<div class="dropdown">
-				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-					<img src="{{asset('assets/icones/burger.svg')}}" alt="">
-				</button>
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-					<li>
-						<a class="dropdown-item" href="{{ path('app_how_to')}}">Comment ça marche ?</a>
-					</li>
-					<li>
-						<a class="dropdown-item" href="#">Catalogue des savoirs</a>
-					</li>
-					<li>
-						<a class="dropdown-item" href="#">Blog</a>
-					</li>
-					<li>
-						<a class="dropdown-item" href="{{ path('app_login')}}">Connexion</a>
-					</li>
-				</ul>
-			</div>
-			<img class="logo" src="{{asset('assets/icones/favicon.png')}}" alt="Logo">
-		</div>
+
 
 
 	{% endif %}
