@@ -27,11 +27,13 @@ class ProfileType extends AbstractType
                 ],
                 'multiple' => true,
                 'expanded' => true,
-                'label' => ' '
+                'label' => ' ',
+                'required' => false
             ])
 
             ->add('bio', TextareaType::class, [
                 'label' => false,
+                'required' => false
             ])
 
             ->add('opinion', null, [
@@ -44,7 +46,8 @@ class ProfileType extends AbstractType
                 'multiple' => true,
                 'expanded' => true,
                 'by_reference' => false,
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                'required' => false
             ])
 
             // ->add('catalogues', EntityType::class, [
@@ -60,6 +63,7 @@ class ProfileType extends AbstractType
                 'by_reference' => false,
                 'choice_label' => 'name',
                 'label' => false,
+                'required' => false
             ])
 
 

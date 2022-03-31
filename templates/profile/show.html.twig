@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{asset ('assets/styles/user_profil.css')}}">
@@ -10,8 +10,7 @@
 
 {% block body %}
 
-
-			<nav class="container-fluid d-flex align-items-center justify-content-between"> <svg width="195" height="50" viewbox="0 0 195 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<nav class="container-fluid d-flex align-items-center justify-content-between"> <svg width="195" height="50" viewbox="0 0 195 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M22.1806 0H39.3003C42.2939 0 44.9787 0.517703 47.3549 1.55311C49.7498 2.58852 51.6489 4.15087 53.0521 6.24018C54.4554 8.32948 55.157 10.9642 55.157 14.1444C55.157 17.3061 54.4554 19.9871 53.0521 22.1873C51.6489 24.369 49.7498 26.0331 47.3549 27.1794C44.9787 28.3073 42.2939 28.8712 39.3003 28.8712H32.9856L32.9764 49.2378H15.8567C12.8631 49.2378 10.1782 48.7201 7.80208 47.6847C5.4072 46.6493 3.50813 45.0869 2.10488 42.9976C0.701626 40.9083 0 38.2736 0 35.0934C0 31.9317 0.701626 29.2507 2.10488 27.0505C3.50813 24.8687 5.4072 23.2047 7.80208 22.0583C10.1782 20.9305 12.8631 20.3666 15.8567 20.3666H22.1714V3.47649L22.1806 0ZM35.8202 20.3846H32.9856V8.51438H35.8202C37.1486 8.51438 38.4209 8.69003 39.637 9.04132C40.8532 9.39262 41.8448 10.0028 42.6119 10.8718C43.379 11.7223 43.7626 12.9241 43.7626 14.4772C43.7626 16.0118 43.379 17.2044 42.6119 18.0549C41.8448 18.9054 40.8532 19.5063 39.637 19.8576C38.4209 20.2089 37.1486 20.3846 35.8202 20.3846ZM19.3368 28.8532H22.1714V40.7234H19.3368C18.0084 40.7234 16.7361 40.5478 15.52 40.1965C14.3038 39.8452 13.3122 39.235 12.5451 38.366C11.778 37.5155 11.3944 36.3137 11.3944 34.7606C11.3944 33.226 11.778 32.0334 12.5451 31.1829C13.3122 30.3324 14.3038 29.7315 15.52 29.3802C16.7361 29.0289 18.0084 28.8532 19.3368 28.8532Z" fill="#25366F"/>
 				<path d="M57.3737 49.1125V1.40982H67.6175V49.1125H57.3737Z" fill="#25366F"/>
 				<path d="M84.4894 50C81.8512 50 79.4564 49.3529 77.3047 48.0586C75.1531 46.7459 73.4411 44.9524 72.1688 42.6782C70.8965 40.3855 70.2604 37.7785 70.2604 34.8572C70.2604 32.0283 70.8685 29.486 72.0846 27.2303C73.3008 24.9561 74.9753 23.1534 77.1083 21.8221C79.2412 20.4909 81.7016 19.8253 84.4894 19.8253C86.3042 19.8253 88.0256 20.1304 89.6533 20.7405C91.2998 21.3507 92.6937 22.2104 93.835 23.3198V20.7128H104.079V49.1125H93.835V46.1727C92.4879 47.43 91.0285 48.3822 89.4569 49.0293C87.9039 49.6764 86.2481 50 84.4894 50ZM87.5765 41.4302C88.8488 41.4302 89.9714 41.1528 90.9443 40.5981C91.9172 40.025 92.675 39.2484 93.2176 38.2685C93.7602 37.2885 94.0315 36.1699 94.0315 34.9126C94.0315 33.6554 93.7508 32.5367 93.1895 31.5568C92.6469 30.5769 91.8892 29.8096 90.9162 29.2549C89.9433 28.6817 88.8301 28.3951 87.5765 28.3951C86.3416 28.3951 85.2284 28.6817 84.2368 29.2549C83.2639 29.8096 82.4874 30.5769 81.9074 31.5568C81.3461 32.5367 81.0654 33.6554 81.0654 34.9126C81.0654 36.1514 81.3461 37.27 81.9074 38.2685C82.4687 39.2484 83.2358 40.025 84.2087 40.5981C85.2003 41.1528 86.3229 41.4302 87.5765 41.4302Z" fill="#25366F"/>
@@ -281,6 +280,13 @@
 
 
 
+  
+
+
+
+
+
+
 
 
 
@@ -295,78 +301,78 @@
 	</header>
 	{# <h1>User</h1> #}
 	{# On check les informations contenues dans User coté Twigg cette fois-ci
-																																														    <pre>
-																																														        {{ dump(user) }}
-																																														    </pre> 
-				<table class="table">
-					<tbody>
-						<tr>
-							<th>Prenom</th>
-							<td>{{ user.prenom }}</td>
-							
-						</tr>
-						<tr>
-							<th>Nom</th>
-							<td>{{ user.nom }}</td>
-							
-						</tr>
-						<tr>
-							<th>Type de cours</th>
-							<td>
-								 classType étant stocker dans un array il faut itérer dedans pour en sortir les données 
-								{% for classTypes in user.infosUser.classType %}
-									{{classTypes}}
-								{% endfor %}
-								
-							</td>
-						</tr>
-						<tr>
-							<th>Bio</th>
-							<td>{{ user.infosUser.bio }}</td>
-							
-						</tr>
-						<tr>
-							<th>Nos membres en parlent</th>
-							<td>{{ user.infosUser.opinion }}/5</td>
-							
-						</tr>
-						<tr>
-							<th>
-								personnalité
-							</th>
-							<td>
-								 comme le User est connécter à plusieurs champs de la table personnality il faut itérer dedans pour sortir les strings 
-								{% for personnalitys in user.infosUser.personnality %}
-									{{personnalitys.name}}
-								{% endfor %}
-							</td>
-						</tr>
-						<th>savoir à transmettre</th>
-						<td>
-							{% for subCategorie in user.infosUser.subCategories %}
-								{{subCategorie.name}}
-							{% endfor %}
-							
-						</td>
-						<tr></tr>
-						<tr>
-							<th>Prendre un cours</th>
-							 Ici on transmet l'Id du User en cours dans l'url afin de placer l'Id du receiver dans le ticket au travers du bouton 
-							<td>
-								<a href="{{ path('platon_ticket_create', {user: user.id}) }}">Prendre un cours</a>
-							</td>
-						</tr>
-						<tr>
-							<th>Ajouter aux favoris</th>
-							<td>
-								<a href="{{ path('platon_favoris', {'user': user.id})}}">Favoris</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			
-			
-				<a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>#}
+																																																	    <pre>
+																																																	        {{ dump(user) }}
+																																																	    </pre> 
+							<table class="table">
+								<tbody>
+									<tr>
+										<th>Prenom</th>
+										<td>{{ user.prenom }}</td>
+										
+									</tr>
+									<tr>
+										<th>Nom</th>
+										<td>{{ user.nom }}</td>
+										
+									</tr>
+									<tr>
+										<th>Type de cours</th>
+										<td>
+											 classType étant stocker dans un array il faut itérer dedans pour en sortir les données 
+											{% for classTypes in user.infosUser.classType %}
+												{{classTypes}}
+											{% endfor %}
+											
+										</td>
+									</tr>
+									<tr>
+										<th>Bio</th>
+										<td>{{ user.infosUser.bio }}</td>
+										
+									</tr>
+									<tr>
+										<th>Nos membres en parlent</th>
+										<td>{{ user.infosUser.opinion }}/5</td>
+										
+									</tr>
+									<tr>
+										<th>
+											personnalité
+										</th>
+										<td>
+											 comme le User est connécter à plusieurs champs de la table personnality il faut itérer dedans pour sortir les strings 
+											{% for personnalitys in user.infosUser.personnality %}
+												{{personnalitys.name}}
+											{% endfor %}
+										</td>
+									</tr>
+									<th>savoir à transmettre</th>
+									<td>
+										{% for subCategorie in user.infosUser.subCategories %}
+											{{subCategorie.name}}
+										{% endfor %}
+										
+									</td>
+									<tr></tr>
+									<tr>
+										<th>Prendre un cours</th>
+										 Ici on transmet l'Id du User en cours dans l'url afin de placer l'Id du receiver dans le ticket au travers du bouton 
+										<td>
+											<a href="{{ path('platon_ticket_create', {user: user.id}) }}">Prendre un cours</a>
+										</td>
+									</tr>
+									<tr>
+										<th>Ajouter aux favoris</th>
+										<td>
+											<a href="{{ path('platon_favoris', {'user': user.id})}}">Favoris</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						
+						
+							<a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>#}
 
 
 	<section>
@@ -381,25 +387,25 @@
 				<div class="col-2 photo">
 					<img src="{{asset ('assets/img/lucile2.png')}}" alt="lucile">
 					<img class="medaille" src="{{asset ('assets/icones/medaille_bleu.svg')}}" alt="badge">
-					<p class="name">{{ (user.prenom ~ ' ' ~ user.nom |slice(0, 1) ) }}.</p>
+					<p class="name">{{ (app.user.prenom ~ ' ' ~ app.user.nom |slice(0, 1) ) }}.</p>
 				</div>
 
-				<div class="d-flex flex-column justify-content-between col-4 offset-6">
+				{# <div class="d-flex flex-column justify-content-between col-4 offset-6">
 					<div class="d-flex justify-content-between">
 						<a class="btn shadow btn-favoris" href="#">Ajouter en favoris</a>
 						<a class="btn shadow btn-cours" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Prendre un
-																																																																																																																																																																																																																																																																																																																										                cours</a>
-					</div>
+																																																																																																																																																																																																																																																																																																																																															                cours</a>
+					</div> #}
 
-					<div class="d-flex personalite justify-content-between">
+					<div class="d-flex personalite justify-content-end ">
 						{% for personnalitys in user.infosUser.personnality %}
 							<div class="tag">
 								{{personnalitys.name}}
 							</div>
 						{% endfor %}
 						{# <p class="tag">Extravertie</p>
-																																																																																																																																																																																										<p class="tag">Enthousiaste</p>
-																																																																																																																																																																																										<p class="tag">Curieuse</p> #}
+																																																																																																																																																																																																												<p class="tag">Enthousiaste</p>
+																																																																																																																																																																																																												<p class="tag">Curieuse</p> #}
 					</div>
 				</div>
 
@@ -421,7 +427,7 @@
 								<select class="col-lg-6" name="interest" id="interest">
 									<a href="{{ path('platon_ticket_create', {user: user.id}) }}">Prendre un cours</a>
 									{# <option value="anglais">Anglais</option>
-																																																																																																																																																																											<option value="sport">Sport</option> #}
+																																																																																																																																																																																																						<option value="sport">Sport</option> #}
 								</select>
 							</div>
 							<div class="modal-body">
@@ -471,9 +477,9 @@
 									{% endfor %}
 								</div>
 								{# <p class="tag">Présentiel
-																																																																																																																																																																																																																																																																																																<img src="icones/valide_bleu.svg" alt="Valide"></p>
-																																																																																																																																																																																																																																																																																															<p class="tag">Visio
-																																																																																																																																																																																																																																																																																																<img src="icones/valide_bleu.svg" alt="Valide"></p> #}
+																																																																																																																																																																																																																																																																																																																								<img src="icones/valide_bleu.svg" alt="Valide"></p>
+																																																																																																																																																																																																																																																																																																																							<p class="tag">Visio
+																																																																																																																																																																																																																																																																																																																								<img src="icones/valide_bleu.svg" alt="Valide"></p> #}
 							</div>
 						</div>
 
@@ -488,15 +494,15 @@
 					<div
 						class="d-flex text-center">
 						{# <div class="badges"> 
-																																																																														<img src="illustrations/badge_anglais.svg" alt="Anglais">
-																																																																														<p>Anglais</p>
-																																																																													</div>
-																																																																								
-																																																																													<div class="badges">
-																																																																														<img src="illustrations/badge_sport.svg" alt="Sport">
-																																																																									
-																																																																															<p>Sport</p>
-																																																																															#}
+																																																																																																<img src="illustrations/badge_anglais.svg" alt="Anglais">
+																																																																																																<p>Anglais</p>
+																																																																																															</div>
+																																																																																										
+																																																																																															<div class="badges">
+																																																																																																<img src="illustrations/badge_sport.svg" alt="Sport">
+																																																																																											
+																																																																																																	<p>Sport</p>
+																																																																																																	#}
 						<div class="badges">
 							{% for subCategorie in user.infosUser.subCategories %}
 								{{subCategorie.name}}
@@ -520,7 +526,7 @@
 					Bio</p>
 				{{ user.infosUser.bio }}
 				{# <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorem vero, maiores minus placeat cumque 
-																																																																																																																																						totam minima quasi fugit nostrum consectetur sunt nesciunt itaque quos quia adipisci atque repudiandae #}
+																																																																																																																																																		totam minima quasi fugit nostrum consectetur sunt nesciunt itaque quos quia adipisci atque repudiandae #}
 			</p>
 		</div>
 
@@ -541,6 +547,11 @@
 			<p class="bold">Nos membres en parlent</p>
 			{# {{ user.infosUser.opinion }}/5 #}
 			{# <p>22 avis</p> #}
+		</div>
+
+
+		<div class="d-flex justify-content-end">
+			<a class="d-flex justify-content-end btn shadow btn-credit " href="{{ path('app_profile') }}">Modifier mes informations</a>
 		</div>
 
 
@@ -576,7 +587,7 @@
 
 					<div class="card-text">
 						<p>This is a wider card with supporting text below as a natural lead-in to
-																																																																																																																																																																																																																																																																																																																																																		                    additional content. This content is a little bit longer.</p>
+																																																																																																																																																																																																																																																																																																																																																																							                    additional content. This content is a little bit longer.</p>
 					</div>
 				</div>
 			</div>
@@ -607,7 +618,7 @@
 
 					<div class="card-text">
 						<p>This is a wider card with supporting text below as a natural lead-in to
-																																																																																																																																																																																																																																																																																																																																																		                    additional content. This content is a little bit longer.</p>
+																																																																																																																																																																																																																																																																																																																																																																							                    additional content. This content is a little bit longer.</p>
 					</div>
 
 
@@ -625,14 +636,15 @@
 
 
 		</article>
+		
 
 
 	</section>
 
+
 	<!-- FIN DE LA TROISIEME PARTIE-->
 
-
-	<footer>
+		<footer>
 		<div class="container">
 			<div class="row d-flex">
 				<div class="col-12 col-md-3">
@@ -675,6 +687,7 @@
 	</footer>
 
 
+	
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </div></section>{% endblock %}

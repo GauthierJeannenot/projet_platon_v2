@@ -23,7 +23,6 @@ class ProfileController extends AbstractController
     /**
      * @Route("/profile", name="app_profile")
      */
-
     public function index(Request $request, SubCategoriesRepository $subCategoriesRepository): Response
     {
         $subCategories = $subCategoriesRepository->findAll();
@@ -40,11 +39,12 @@ class ProfileController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $InfosUser = $form->getData();
+
             $this->getUser()->setInfosUser($InfosUser);
             $this->entityManager->persist($InfosUser);
             $this->entityManager->flush();
 
-            return $this->redirectToRoute("app_profile");
+            return $this->redirectToRoute("show_profile");
         }
 
         return $this->render(
@@ -57,5 +57,16 @@ class ProfileController extends AbstractController
 
             ]
         );
+    }
+    /**
+     * @Route("/affiche-profile", name="show_profile")
+     */
+    public function showprofile(Request $request): Response
+    {
+        $InfosUser = $this->getUser()->getInfosUser();
+        return $this->render('profile/show.html.twig', [
+            'user' => $this->getUser(),
+            'infos_user' => $InfosUser,
+        ]);
     }
 }

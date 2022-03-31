@@ -16,16 +16,16 @@
 
 
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { App } from './component/App';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import { App } from './component/App';
 
 
 
-let reactRoot = document.getElementById('root')
+// let reactRoot = document.getElementById('root')
 
-if (reactRoot != undefined) {
+// if (reactRoot != undefined) {
 
-    ReactDOM.render(<App />, reactRoot);
-}
+//     ReactDOM.render(<App />, reactRoot);
+// }
 

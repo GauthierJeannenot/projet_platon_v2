@@ -21,9 +21,14 @@ class RegistrationController extends AbstractController
 {
     private EmailVerifier $emailVerifier;
 
-    public function __construct(EmailVerifier $emailVerifier)
+    private $userAuthenticator;
+    private $authenticator;
+
+    public function __construct(EmailVerifier $emailVerifier, UserAuthenticatorInterface $userAuthenticator, LoginFormAuthenticator $authenticator)
     {
         $this->emailVerifier = $emailVerifier;
+        $this->userAuthenticator = $userAuthenticator;
+        $this->authenticator = $authenticator;
     }
 
     /**
@@ -45,27 +50,25 @@ class RegistrationController extends AbstractController
                 )
             );
 
-            $user->setIsVerified(true);
+            // $user->setIsVerified(true);
 
 
             $entityManager->persist($user);
             $entityManager->flush();
 
             // generate a signed url and email it to the user
-            // $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
-            //     (new TemplatedEmail())
-            //         ->from(new Address('mailer@platon.com', 'platon'))
-            //         ->to($user->getEmail())
-            //         ->subject('Please Confirm your Email')
-            //         ->htmlTemplate('registration/confirmation_email.html.twig')
-            // );
-            // do anything else you need here, like send an email
-
-            $userAuthenticator->authenticateUser(
+            $this->emailVerifier->sendEmailConfirmation(
+                'app_verify_email',
                 $user,
-                $authenticator,
-                $request
+                (new TemplatedEmail())
+                    ->from(new Address('rose.ais@gmail.com', 'platon'))
+                    ->to($user->getEmail())
+                    ->subject('Veuillez Confirmer Votre Email')
+                    ->htmlTemplate('registration/confirmation_email.html.twig')
             );
+
+
+            $this->addFlash('success', 'Un email vous a été envoyé veuillez confirmer votre email');
 
             return $this->redirectToRoute('app_profile');
         }
@@ -94,6 +97,12 @@ class RegistrationController extends AbstractController
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
         $this->addFlash('success', 'Your email address has been verified.');
 
-        return $this->redirectToRoute('app_register');
+
+        $this->userAuthenticator->authenticateUser(
+            $this->getUser(),
+            $this->authenticator,
+            $request
+        );
+        return $this->redirectToRoute('platon_main_home');
     }
 }
