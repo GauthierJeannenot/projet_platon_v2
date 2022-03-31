@@ -56,6 +56,34 @@
           </article>
 
           {% endfor %}
+          <article class="col-xxl-3 d-flex flex-column align-items-center membercard">
+
+            <div class="d-flex photobadge">
+              <img src="{{asset ('assets/img/john.png')}}" alt="photoprofil">
+
+            </div>
+            <h3>Alain Poisson</h3>
+
+            <div class="d-flex align-items-start avismoy">
+              <img src="{{asset('assets/icones/etoile_full.svg')}}" alt="étoiles"><img src="{{asset ('assets/icones/etoile_full.svg')}}" alt="étoiles"><img
+                src="{{asset ('assets/icones/etoile_full.svg')}}" alt="étoiles">
+              <p>3 avis</p>
+            </div>
+
+            <div class="d-flex">
+              <div class="typecours d-flex align-items-center">Visio<img src="{{asset ('assets/icones/valide_bleu.svg')}}" alt="check">
+              </div>
+            </div>
+
+            <div class="d-flex align-items-end ville">
+              <img src="{{asset ('assets/icones/localisation.svg')}}" alt="localisation">
+              <p>Lyon</>
+            </div>
+
+            <div class="d-flex align-items-center voirprofil">
+              <a class="btn shadow" href="#">Voir profil</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
